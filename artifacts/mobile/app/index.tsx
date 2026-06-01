@@ -95,11 +95,11 @@ export default function HomeScreen() {
         {/* Title */}
         <Text style={[styles.title, { color: colors.foreground }]}>
           Tu préfères{"\n"}
-          <Text style={styles.titleGrad}>quel candidat ?</Text>
+          <Text style={styles.titleGrad}>2027</Text>
         </Text>
 
         <Text style={[styles.subtitle, { color: colors.mutedForeground }]}>
-          Choisis entre deux visions opposées de la France. Sélectionne un format, réponds aux dilemmes, puis découvre le classement complet.
+          Le jeu politique qui te fait choisir entre deux propositions opposées. Choisis un format, réponds aux dilemmes, puis découvre ton classement.
         </Text>
 
         {/* Mode cards */}

@@ -99,19 +99,19 @@ export default function QuizScreen() {
         {q.theme}
       </Text>
 
-      {/* Question */}
-      <Animated.View
-        style={{ opacity: cardAnim, transform: [{ translateY: cardSlide }] }}
-      >
-        <Text style={[styles.questionText, { color: colors.foreground }]}>
-          {q.enonce}
-        </Text>
-      </Animated.View>
-
-      {/* Options */}
+      {/* Options + central sentence */}
       <Animated.View
         style={[styles.options, { opacity: cardAnim, transform: [{ translateY: cardSlide }] }]}
       >
+        {/* Central sentence */}
+        <Text style={[styles.questionText, { color: colors.foreground }]}>
+          {"Tu préfères "}
+          <Text style={styles.optionAInline}>{q.optionA}</Text>
+          {" ou "}
+          <Text style={styles.optionBInline}>{q.optionB}</Text>
+          {" ?"}
+        </Text>
+
         {/* Option A */}
         <OptionCard
           label="Option A"
@@ -317,12 +317,19 @@ function makeStyles(colors: ReturnType<typeof useColors>) {
       marginBottom: 10,
     },
     questionText: {
-      fontSize: 19,
-      fontFamily: "Inter_700Bold",
+      fontSize: 17,
+      fontFamily: "Inter_500Medium",
       lineHeight: 26,
-      letterSpacing: -0.3,
-      textAlign: "center",
-      marginBottom: 18,
+      letterSpacing: -0.2,
+      marginBottom: 14,
+    },
+    optionAInline: {
+      fontFamily: "Inter_700Bold",
+      color: "#7eb8f7",
+    },
+    optionBInline: {
+      fontFamily: "Inter_700Bold",
+      color: "#67e8f9",
     },
     options: {
       flex: 1,
