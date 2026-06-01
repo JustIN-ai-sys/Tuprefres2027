@@ -231,18 +231,18 @@ function ChoiceCard({
 
 const cardStyles = StyleSheet.create({
   card: {
-    borderRadius: 22,
-    padding: 22,
-    minHeight: 110,
+    borderRadius: 24,
+    padding: 28,
+    minHeight: 160,
     justifyContent: "center",
-    gap: 12,
+    gap: 14,
   },
   text: {
-    fontSize: 18,
+    fontSize: 22,
     fontFamily: "Inter_700Bold",
     color: "#fff",
-    lineHeight: 26,
-    letterSpacing: -0.2,
+    lineHeight: 32,
+    letterSpacing: -0.3,
   },
   check: {
     alignSelf: "flex-end",
