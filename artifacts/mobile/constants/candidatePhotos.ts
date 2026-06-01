@@ -1,0 +1,27 @@
+const candidatePhotos: Record<string, number> = {
+  b_cazeneuve: require("@/assets/images/candidates/b_cazeneuve.jpg"),
+  b_retailleau: require("@/assets/images/candidates/b_retailleau.jpg"),
+  c_autain: require("@/assets/images/candidates/c_autain.png"),
+  d_batho: require("@/assets/images/candidates/d_batho.jpg"),
+  d_de_villepin: require("@/assets/images/candidates/d_de_villepin.jpg"),
+  d_lisnard: require("@/assets/images/candidates/d_lisnard.webp"),
+  e_philippe: require("@/assets/images/candidates/e_philippe.jpg"),
+  e_zemmour: require("@/assets/images/candidates/e_zemmour.jpg"),
+  f_asselineau: require("@/assets/images/candidates/f_asselineau.jpg"),
+  f_philippot: require("@/assets/images/candidates/f_philippot.jpg"),
+  f_roussel: require("@/assets/images/candidates/f_roussel.jpg"),
+  f_ruffin: require("@/assets/images/candidates/f_ruffin.jpg"),
+  g_attal: require("@/assets/images/candidates/g_attal.jpg"),
+  j_bardella: require("@/assets/images/candidates/j_bardella.jpg"),
+  j_branco: require("@/assets/images/candidates/j_branco.jpg"),
+  j_guedj: require("@/assets/images/candidates/j_guedj.webp"),
+  j_melenchon: require("@/assets/images/candidates/j_melenchon.jpg"),
+  m_tondelier: require("@/assets/images/candidates/m_tondelier.jpg"),
+  n_arthaud: require("@/assets/images/candidates/n_arthaud.jpg"),
+  n_dupont_aignan: require("@/assets/images/candidates/n_dupont_aignan.jpg"),
+  o_faure: require("@/assets/images/candidates/o_faure.jpg"),
+  r_glucksmann: require("@/assets/images/candidates/r_glucksmann.jpg"),
+  x_bertrand: require("@/assets/images/candidates/x_bertrand.jpg"),
+};
+
+export default candidatePhotos;

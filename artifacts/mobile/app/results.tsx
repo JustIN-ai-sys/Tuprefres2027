@@ -5,6 +5,7 @@ import React, { useEffect, useRef } from "react";
 import {
   Animated,
   FlatList,
+  Image,
   Platform,
   Pressable,
   StyleSheet,
@@ -13,6 +14,7 @@ import {
 } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
+import candidatePhotos from "@/constants/candidatePhotos";
 import { CandidateResult, useQuiz } from "@/contexts/QuizContext";
 import { useColors } from "@/hooks/useColors";
 
@@ -23,6 +25,7 @@ export default function ResultsScreen() {
 
   const fadeAnim = useRef(new Animated.Value(0)).current;
   const slideAnim = useRef(new Animated.Value(40)).current;
+  const heroScale = useRef(new Animated.Value(0.85)).current;
 
   useEffect(() => {
     if (!results) {
@@ -31,14 +34,20 @@ export default function ResultsScreen() {
     }
     Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
     Animated.parallel([
+      Animated.spring(heroScale, {
+        toValue: 1,
+        tension: 60,
+        friction: 8,
+        useNativeDriver: true,
+      }),
       Animated.timing(fadeAnim, {
         toValue: 1,
-        duration: 600,
+        duration: 500,
         useNativeDriver: true,
       }),
       Animated.timing(slideAnim, {
         toValue: 0,
-        duration: 600,
+        duration: 500,
         useNativeDriver: true,
       }),
     ]).start();
@@ -54,61 +63,56 @@ export default function ResultsScreen() {
 
   const topPad = Platform.OS === "web" ? 67 : insets.top;
   const botPad = Platform.OS === "web" ? 34 : insets.bottom;
-
   const styles = makeStyles(colors);
+  const top1 = results[0];
   const top3 = results.slice(0, 3);
 
   return (
-    <View
-      style={[
-        styles.container,
-        { paddingTop: topPad + 8 },
-      ]}
-    >
+    <View style={[styles.container, { paddingTop: topPad + 8 }]}>
       {/* Header */}
       <View style={styles.header}>
-        <Pressable
-          style={styles.resetBtn}
-          onPress={handleRestart}
-          hitSlop={12}
-          testID="restart-btn"
-        >
-          <Ionicons name="refresh" size={20} color={colors.foreground} />
+        <Pressable style={styles.iconBtn} onPress={handleRestart} hitSlop={12} testID="restart-btn">
+          <Ionicons name="close" size={20} color={colors.foreground} />
         </Pressable>
-        <Text style={[styles.headerTitle, { color: colors.foreground }]}>
-          Vos résultats
-        </Text>
+        <Text style={[styles.headerTitle, { color: colors.foreground }]}>Vos résultats</Text>
         <View style={{ width: 40 }} />
       </View>
 
-      <Animated.View
-        style={{
-          flex: 1,
-          opacity: fadeAnim,
-          transform: [{ translateY: slideAnim }],
-        }}
-      >
-        {/* Top 3 podium */}
-        <View
+      <Animated.View style={{ flex: 1, opacity: fadeAnim, transform: [{ translateY: slideAnim }] }}>
+        {/* Hero card — winner */}
+        <Animated.View
           style={[
-            styles.podiumCard,
-            { backgroundColor: colors.card, borderColor: colors.border },
+            styles.heroCard,
+            { backgroundColor: colors.card, borderColor: top1.color },
+            { transform: [{ scale: heroScale }] },
           ]}
         >
-          <View style={styles.podiumHeader}>
-            <Ionicons name="trophy" size={18} color="#f59e0b" />
-            <Text style={[styles.podiumTitle, { color: colors.foreground }]}>
-              Vos candidats les plus proches
-            </Text>
+          <View style={styles.heroLeft}>
+            <CandidateAvatar id={top1.id} color={top1.color} size={72} />
           </View>
+          <View style={styles.heroRight}>
+            <View style={[styles.winnerBadge, { backgroundColor: "#f59e0b" }]}>
+              <Ionicons name="trophy" size={11} color="#fff" />
+              <Text style={styles.winnerBadgeText}>Votre candidat</Text>
+            </View>
+            <Text style={[styles.heroName, { color: colors.foreground }]}>{top1.name}</Text>
+            <Text style={[styles.heroParty, { color: colors.mutedForeground }]} numberOfLines={2}>
+              {top1.party}
+            </Text>
+            <View style={styles.heroScoreRow}>
+              <Text style={[styles.heroPercent, { color: top1.color }]}>{top1.percentage}%</Text>
+              <Text style={[styles.heroMatches, { color: colors.mutedForeground }]}>
+                de compatibilité
+              </Text>
+            </View>
+          </View>
+        </Animated.View>
+
+        {/* Top 3 */}
+        <View style={[styles.podiumCard, { backgroundColor: colors.card, borderColor: colors.border }]}>
+          <Text style={[styles.sectionLabel, { color: colors.mutedForeground }]}>Top 3</Text>
           {top3.map((c, i) => (
-            <TopCandidateRow
-              key={c.id}
-              candidate={c}
-              rank={i + 1}
-              colors={colors}
-              isFirst={i === 0}
-            />
+            <TopRow key={c.id} candidate={c} rank={i + 1} colors={colors} />
           ))}
         </View>
 
@@ -132,35 +136,23 @@ export default function ResultsScreen() {
             />
           )}
           ItemSeparatorComponent={() => (
-            <View
-              style={{ height: 1, backgroundColor: colors.border, marginHorizontal: 4 }}
-            />
+            <View style={{ height: 1, backgroundColor: colors.border, marginHorizontal: 16 }} />
           )}
-          style={[
-            styles.rankingList,
-            { backgroundColor: colors.card, borderColor: colors.border },
-          ]}
+          style={[styles.rankingList, { backgroundColor: colors.card, borderColor: colors.border }]}
         />
       </Animated.View>
 
-      {/* Restart button */}
+      {/* Bottom bar */}
       <View
         style={[
           styles.bottomBar,
-          {
-            backgroundColor: colors.background,
-            paddingBottom: botPad + 16,
-            borderTopColor: colors.border,
-          },
+          { backgroundColor: colors.background, paddingBottom: botPad + 16, borderTopColor: colors.border },
         ]}
       >
         <Pressable
           style={({ pressed }) => [
             styles.restartBtn,
-            {
-              backgroundColor: colors.primary,
-              opacity: pressed ? 0.85 : 1,
-            },
+            { backgroundColor: colors.primary, opacity: pressed ? 0.85 : 1 },
           ]}
           onPress={handleRestart}
           testID="restart-quiz-btn"
@@ -173,16 +165,52 @@ export default function ResultsScreen() {
   );
 }
 
-function TopCandidateRow({
+/* ── CandidateAvatar ─────────────────────────────────── */
+function CandidateAvatar({ id, color, size }: { id: string; color: string; size: number }) {
+  const photo = candidatePhotos[id];
+  const radius = size / 2;
+  if (photo) {
+    return (
+      <Image
+        source={photo}
+        style={{
+          width: size,
+          height: size,
+          borderRadius: radius,
+          borderWidth: 2.5,
+          borderColor: color,
+        }}
+        resizeMode="cover"
+      />
+    );
+  }
+  return (
+    <View
+      style={{
+        width: size,
+        height: size,
+        borderRadius: radius,
+        backgroundColor: color + "33",
+        borderWidth: 2,
+        borderColor: color,
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <Ionicons name="person" size={size * 0.45} color={color} />
+    </View>
+  );
+}
+
+/* ── TopRow ──────────────────────────────────────────── */
+function TopRow({
   candidate,
   rank,
   colors,
-  isFirst,
 }: {
   candidate: CandidateResult;
   rank: number;
   colors: ReturnType<typeof useColors>;
-  isFirst: boolean;
 }) {
   const barAnim = useRef(new Animated.Value(0)).current;
 
@@ -190,100 +218,56 @@ function TopCandidateRow({
     Animated.timing(barAnim, {
       toValue: candidate.percentage,
       duration: 800,
-      delay: rank * 120,
+      delay: rank * 150,
       useNativeDriver: false,
     }).start();
   }, []);
 
-  const styles = StyleSheet.create({
-    row: {
-      paddingVertical: 12,
-      gap: 8,
-    },
-    topRow: {
-      flexDirection: "row",
-      alignItems: "center",
-      gap: 10,
-    },
-    rankBadge: {
-      width: 26,
-      height: 26,
-      borderRadius: 13,
-      alignItems: "center",
-      justifyContent: "center",
-      backgroundColor: isFirst ? "#f59e0b" : colors.secondary,
-    },
-    rankText: {
-      fontSize: 12,
-      fontFamily: "Inter_700Bold",
-      color: isFirst ? "#fff" : colors.mutedForeground,
-    },
-    colorDot: {
-      width: 10,
-      height: 10,
-      borderRadius: 5,
-    },
-    nameContainer: { flex: 1 },
-    name: {
-      fontSize: 15,
-      fontFamily: "Inter_600SemiBold",
-      color: colors.foreground,
-    },
-    party: {
-      fontSize: 11,
-      fontFamily: "Inter_400Regular",
-      color: colors.mutedForeground,
-    },
-    pct: {
-      fontSize: 20,
-      fontFamily: "Inter_700Bold",
-      color: colors.foreground,
-    },
-    barTrack: {
-      height: 5,
-      borderRadius: 3,
-      backgroundColor: colors.border,
-      overflow: "hidden",
-    },
-    bar: {
-      height: 5,
-      borderRadius: 3,
-    },
-  });
-
   return (
-    <View style={styles.row}>
-      <View style={styles.topRow}>
-        <View style={styles.rankBadge}>
-          <Text style={styles.rankText}>{rank}</Text>
+    <View style={{ paddingVertical: 10, gap: 8 }}>
+      <View style={{ flexDirection: "row", alignItems: "center", gap: 10 }}>
+        <View
+          style={{
+            width: 24,
+            height: 24,
+            borderRadius: 12,
+            backgroundColor: rank === 1 ? "#f59e0b" : colors.secondary,
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Text style={{ fontSize: 11, fontFamily: "Inter_700Bold", color: rank === 1 ? "#fff" : colors.mutedForeground }}>
+            {rank}
+          </Text>
         </View>
-        <View style={[styles.colorDot, { backgroundColor: candidate.color }]} />
-        <View style={styles.nameContainer}>
-          <Text style={styles.name}>{candidate.name}</Text>
-          <Text style={styles.party} numberOfLines={1}>
+        <CandidateAvatar id={candidate.id} color={candidate.color} size={36} />
+        <View style={{ flex: 1 }}>
+          <Text style={{ fontSize: 14, fontFamily: "Inter_600SemiBold", color: colors.foreground }}>
+            {candidate.name}
+          </Text>
+          <Text style={{ fontSize: 11, fontFamily: "Inter_400Regular", color: colors.mutedForeground }} numberOfLines={1}>
             {candidate.party}
           </Text>
         </View>
-        <Text style={styles.pct}>{candidate.percentage}%</Text>
+        <Text style={{ fontSize: 18, fontFamily: "Inter_700Bold", color: candidate.color }}>
+          {candidate.percentage}%
+        </Text>
       </View>
-      <View style={styles.barTrack}>
+      <View style={{ height: 4, borderRadius: 2, backgroundColor: colors.border, overflow: "hidden" }}>
         <Animated.View
-          style={[
-            styles.bar,
-            {
-              backgroundColor: candidate.color,
-              width: barAnim.interpolate({
-                inputRange: [0, 100],
-                outputRange: ["0%", "100%"],
-              }),
-            },
-          ]}
+          style={{
+            height: 4,
+            borderRadius: 2,
+            backgroundColor: candidate.color,
+            width: barAnim.interpolate({ inputRange: [0, 100], outputRange: ["0%", "100%"] }),
+          }}
         />
       </View>
     </View>
   );
 }
 
+/* ── RankingRow ──────────────────────────────────────── */
 function RankingRow({
   candidate,
   rank,
@@ -300,87 +284,41 @@ function RankingRow({
   useEffect(() => {
     Animated.timing(barAnim, {
       toValue: maxPercentage > 0 ? (candidate.percentage / maxPercentage) * 100 : 0,
-      duration: 600,
-      delay: rank * 30,
+      duration: 500,
+      delay: rank * 25,
       useNativeDriver: false,
     }).start();
   }, []);
 
   return (
-    <View
-      style={{
-        flexDirection: "row",
-        alignItems: "center",
-        paddingHorizontal: 16,
-        paddingVertical: 10,
-        gap: 10,
-      }}
-    >
-      <Text
-        style={{
-          width: 24,
-          fontSize: 12,
-          fontFamily: "Inter_500Medium",
-          color: colors.mutedForeground,
-          textAlign: "center",
-        }}
-      >
+    <View style={{ flexDirection: "row", alignItems: "center", paddingHorizontal: 14, paddingVertical: 8, gap: 10 }}>
+      <Text style={{ width: 20, fontSize: 11, fontFamily: "Inter_500Medium", color: colors.mutedForeground, textAlign: "center" }}>
         {rank}
       </Text>
-      <View
-        style={{
-          width: 8,
-          height: 8,
-          borderRadius: 4,
-          backgroundColor: candidate.color,
-        }}
-      />
-      <View style={{ flex: 1, gap: 4 }}>
-        <Text
-          style={{
-            fontSize: 13,
-            fontFamily: "Inter_500Medium",
-            color: colors.foreground,
-          }}
-        >
+      <CandidateAvatar id={candidate.id} color={candidate.color} size={32} />
+      <View style={{ flex: 1, gap: 3 }}>
+        <Text style={{ fontSize: 13, fontFamily: "Inter_500Medium", color: colors.foreground }}>
           {candidate.name}
         </Text>
-        <View
-          style={{
-            height: 3,
-            borderRadius: 2,
-            backgroundColor: colors.border,
-            overflow: "hidden",
-          }}
-        >
+        <View style={{ height: 3, borderRadius: 2, backgroundColor: colors.border, overflow: "hidden" }}>
           <Animated.View
             style={{
               height: 3,
               borderRadius: 2,
               backgroundColor: candidate.color,
-              width: barAnim.interpolate({
-                inputRange: [0, 100],
-                outputRange: ["0%", "100%"],
-              }),
+              width: barAnim.interpolate({ inputRange: [0, 100], outputRange: ["0%", "100%"] }),
             }}
           />
         </View>
       </View>
-      <Text
-        style={{
-          fontSize: 14,
-          fontFamily: "Inter_700Bold",
-          color: colors.foreground,
-          minWidth: 40,
-          textAlign: "right",
-        }}
-      >
+      <Text style={{ fontSize: 14, fontFamily: "Inter_700Bold", color: colors.foreground, minWidth: 38, textAlign: "right" }}>
         {candidate.percentage}%
       </Text>
     </View>
   );
 }
 
+/* ── Styles ──────────────────────────────────────────── */
 function makeStyles(colors: ReturnType<typeof useColors>) {
   return StyleSheet.create({
     container: {
@@ -392,9 +330,9 @@ function makeStyles(colors: ReturnType<typeof useColors>) {
       flexDirection: "row",
       alignItems: "center",
       justifyContent: "space-between",
-      marginBottom: 16,
+      marginBottom: 14,
     },
-    resetBtn: {
+    iconBtn: {
       width: 40,
       height: 40,
       borderRadius: 20,
@@ -408,25 +346,76 @@ function makeStyles(colors: ReturnType<typeof useColors>) {
       fontSize: 17,
       fontFamily: "Inter_700Bold",
     },
+    heroCard: {
+      borderRadius: colors.radius,
+      borderWidth: 2,
+      padding: 16,
+      flexDirection: "row",
+      gap: 14,
+      alignItems: "center",
+      marginBottom: 12,
+    },
+    heroLeft: {},
+    heroRight: {
+      flex: 1,
+      gap: 4,
+    },
+    winnerBadge: {
+      flexDirection: "row",
+      alignItems: "center",
+      gap: 4,
+      alignSelf: "flex-start",
+      borderRadius: 10,
+      paddingHorizontal: 8,
+      paddingVertical: 3,
+    },
+    winnerBadgeText: {
+      fontSize: 10,
+      fontFamily: "Inter_700Bold",
+      color: "#fff",
+      letterSpacing: 0.3,
+    },
+    heroName: {
+      fontSize: 18,
+      fontFamily: "Inter_700Bold",
+      letterSpacing: -0.3,
+    },
+    heroParty: {
+      fontSize: 12,
+      fontFamily: "Inter_400Regular",
+      lineHeight: 16,
+    },
+    heroScoreRow: {
+      flexDirection: "row",
+      alignItems: "baseline",
+      gap: 6,
+      marginTop: 2,
+    },
+    heroPercent: {
+      fontSize: 28,
+      fontFamily: "Inter_700Bold",
+      letterSpacing: -1,
+    },
+    heroMatches: {
+      fontSize: 12,
+      fontFamily: "Inter_400Regular",
+    },
     podiumCard: {
       borderRadius: colors.radius,
       borderWidth: 1,
-      padding: 16,
-      marginBottom: 16,
+      padding: 14,
+      marginBottom: 14,
       gap: 2,
     },
-    podiumHeader: {
-      flexDirection: "row",
-      alignItems: "center",
-      gap: 8,
-      marginBottom: 8,
-    },
-    podiumTitle: {
-      fontSize: 14,
+    sectionLabel: {
+      fontSize: 10,
       fontFamily: "Inter_600SemiBold",
+      letterSpacing: 1,
+      textTransform: "uppercase",
+      marginBottom: 4,
     },
     sectionTitle: {
-      fontSize: 11,
+      fontSize: 10,
       fontFamily: "Inter_600SemiBold",
       letterSpacing: 0.8,
       textTransform: "uppercase",
