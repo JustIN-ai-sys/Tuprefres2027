@@ -1,139 +1,139 @@
 [
   {
     "id": "n_dupont_aignan",
-    "name": "N. Dupont-Aignan",
+    "name": "Nicolas Dupont-Aignan",
     "party": "Debout la France / souverainiste",
     "color": "#1d4ed8"
   },
   {
     "id": "e_philippe",
-    "name": "É. Philippe",
+    "name": "Édouard Philippe",
     "party": "Horizons / centre droit",
     "color": "#2563eb"
   },
   {
     "id": "j_guedj",
-    "name": "J. Guedj",
+    "name": "Jérôme Guedj",
     "party": "Parti socialiste / gauche sociale-démocrate",
     "color": "#db2777"
   },
   {
     "id": "x_bertrand",
-    "name": "X. Bertrand",
+    "name": "Xavier Bertrand",
     "party": "Droite modérée",
     "color": "#3b82f6"
   },
   {
     "id": "d_batho",
-    "name": "D. Batho",
+    "name": "Delphine Batho",
     "party": "Écologie Génération / écologiste",
     "color": "#16a34a"
   },
   {
     "id": "f_roussel",
-    "name": "F. Roussel",
+    "name": "Fabien Roussel",
     "party": "PCF / gauche communiste",
     "color": "#b91c1c"
   },
   {
     "id": "f_philippot",
-    "name": "F. Philippot",
+    "name": "Florian Philippot",
     "party": "Les Patriotes / souverainiste",
     "color": "#0f172a"
   },
   {
     "id": "b_cazeneuve",
-    "name": "B. Cazeneuve",
+    "name": "Bernard Cazeneuve",
     "party": "Gauche républicaine / social-démocrate",
     "color": "#64748b"
   },
   {
     "id": "f_ruffin",
-    "name": "F. Ruffin",
+    "name": "François Ruffin",
     "party": "Gauche sociale",
     "color": "#dc2626"
   },
   {
     "id": "j_branco",
-    "name": "J. Branco",
+    "name": "Juan Branco",
     "party": "Souverainiste / antisystème",
     "color": "#7c2d12"
   },
   {
     "id": "g_attal",
-    "name": "G. Attal",
+    "name": "Gabriel Attal",
     "party": "Renaissance / centre",
     "color": "#7c3aed"
   },
   {
     "id": "b_retailleau",
-    "name": "B. Retailleau",
+    "name": "Bruno Retailleau",
     "party": "Les Républicains / droite conservatrice",
     "color": "#172554"
   },
   {
     "id": "n_arthaud",
-    "name": "N. Arthaud",
+    "name": "Nathalie Arthaud",
     "party": "Lutte ouvrière / extrême gauche",
     "color": "#991b1b"
   },
   {
     "id": "c_autain",
-    "name": "C. Autain",
+    "name": "Clémentine Autain",
     "party": "Gauche écologiste",
     "color": "#be185d"
   },
   {
     "id": "j_bardella",
-    "name": "J. Bardella",
+    "name": "Jordan Bardella",
     "party": "Rassemblement national",
     "color": "#111827"
   },
   {
     "id": "m_tondelier",
-    "name": "M. Tondelier",
+    "name": "Marine Tondelier",
     "party": "Les Écologistes",
     "color": "#22c55e"
   },
   {
     "id": "d_de_villepin",
-    "name": "D. de Villepin",
+    "name": "Dominique de Villepin",
     "party": "Gaulliste / souverainiste modéré",
     "color": "#475569"
   },
   {
     "id": "d_lisnard",
-    "name": "D. Lisnard",
+    "name": "David Lisnard",
     "party": "Les Républicains / libéral-conservateur",
     "color": "#0369a1"
   },
   {
     "id": "j_melenchon",
-    "name": "J. Mélenchon",
+    "name": "Jean-Luc Mélenchon",
     "party": "La France insoumise",
     "color": "#ef4444"
   },
   {
     "id": "f_asselineau",
-    "name": "F. Asselineau",
+    "name": "François Asselineau",
     "party": "UPR / souverainiste",
     "color": "#334155"
   },
   {
     "id": "o_faure",
-    "name": "O. Faure",
+    "name": "Olivier Faure",
     "party": "Parti socialiste",
     "color": "#e11d48"
   },
   {
     "id": "e_zemmour",
-    "name": "É. Zemmour",
+    "name": "Éric Zemmour",
     "party": "Reconquête / droite identitaire",
     "color": "#581c87"
   },
   {
     "id": "r_glucksmann",
-    "name": "R. Glucksmann",
+    "name": "Raphaël Glucksmann",
     "party": "Place publique / social-démocrate européen",
     "color": "#f43f5e"
   }
