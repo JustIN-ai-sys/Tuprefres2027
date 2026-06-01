@@ -150,12 +150,12 @@ export default function QuizScreen() {
               {
                 backgroundColor:
                   prevAnswer === "N"
-                    ? "rgba(148,163,184,0.35)"
-                    : "rgba(148,163,184,0.15)",
+                    ? "rgba(148,163,184,0.45)"
+                    : "rgba(148,163,184,0.28)",
                 borderColor:
                   prevAnswer === "N"
-                    ? "rgba(203,213,225,0.55)"
-                    : "rgba(203,213,225,0.2)",
+                    ? "rgba(203,213,225,0.7)"
+                    : "rgba(203,213,225,0.45)",
                 opacity: pressed ? 0.7 : 1,
               },
             ]}
@@ -351,16 +351,16 @@ const styles = StyleSheet.create({
   },
   neutralBtn: {
     flexDirection: "row",
-    borderRadius: 999,
-    borderWidth: 1,
-    paddingVertical: 13,
+    borderRadius: 20,
+    borderWidth: 1.5,
+    paddingVertical: 20,
     paddingHorizontal: 24,
     alignItems: "center",
     justifyContent: "center",
     marginTop: 4,
   },
   neutralText: {
-    fontSize: 14,
-    fontFamily: "Inter_600SemiBold",
+    fontSize: 18,
+    fontFamily: "Inter_700Bold",
   },
 });
