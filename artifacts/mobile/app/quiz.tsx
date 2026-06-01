@@ -150,12 +150,12 @@ export default function QuizScreen() {
               {
                 backgroundColor:
                   prevAnswer === "N"
-                    ? "rgba(148,163,184,0.45)"
-                    : "rgba(148,163,184,0.28)",
+                    ? "rgba(255,255,255,0.95)"
+                    : "rgba(255,255,255,0.88)",
                 borderColor:
                   prevAnswer === "N"
-                    ? "rgba(203,213,225,0.7)"
-                    : "rgba(203,213,225,0.45)",
+                    ? "#fff"
+                    : "rgba(255,255,255,0.7)",
                 opacity: pressed ? 0.7 : 1,
               },
             ]}
@@ -165,7 +165,7 @@ export default function QuizScreen() {
             {prevAnswer === "N" && (
               <Ionicons name="checkmark-circle" size={16} color="#e2e8f0" style={{ marginRight: 6 }} />
             )}
-            <Text style={[styles.neutralText, { color: "#cbd5e1" }]}>
+            <Text style={[styles.neutralText, { color: "#07081f" }]}>
               Neutre / Sans opinion
             </Text>
           </Pressable>
