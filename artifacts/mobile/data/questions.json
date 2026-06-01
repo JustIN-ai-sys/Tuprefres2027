@@ -1,0 +1,1802 @@
+[
+  {
+    "id": "Q1",
+    "theme": "Immigration / intégration",
+    "bloc": "Immigration / sécurité / justice / laïcité",
+    "question": "Immigration légale",
+    "optionA": "Réduire significativement l’immigration légale en France",
+    "optionB": "Maintenir une immigration légale plus ouverte, notamment pour les études, le travail et les familles",
+    "enonce": "Il faut réduire significativement l'immigration légale en France."
+  },
+  {
+    "id": "Q2",
+    "theme": "Sécurité / justice",
+    "bloc": "Immigration / sécurité / justice / laïcité",
+    "question": "Peines violentes",
+    "optionA": "Alourdir les peines pour les crimes et délits violents",
+    "optionB": "Investir davantage dans la prévention, la réinsertion et la lutte contre la récidive",
+    "enonce": "Les peines pour les crimes et délits violents doivent être alourdies."
+  },
+  {
+    "id": "Q3",
+    "theme": "Économie / fiscalité",
+    "bloc": "Économie / fiscalité / travail",
+    "question": "Très grandes fortunes",
+    "optionA": "Augmenter les impôts sur les très grandes fortunes",
+    "optionB": "Ne pas les augmenter pour préserver l’investissement et l’attractivité économique",
+    "enonce": "Il faut augmenter les impôts sur les très grandes fortunes."
+  },
+  {
+    "id": "Q4",
+    "theme": "Économie / travail",
+    "bloc": "Économie / fiscalité / travail",
+    "question": "Retraites",
+    "optionA": "Abaisser l’âge légal de départ à la retraite",
+    "optionB": "Maintenir ou relever l’âge légal pour préserver l’équilibre financier du système",
+    "enonce": "L'âge légal de départ à la retraite doit être abaissé."
+  },
+  {
+    "id": "Q5",
+    "theme": "International / droits",
+    "bloc": "Europe / international",
+    "question": "CPI",
+    "optionA": "Appliquer les mandats d’arrêt de la CPI, même contre des dirigeants de pays alliés",
+    "optionB": "Préserver les relations diplomatiques avec les pays alliés, même si cela limite certaines poursuites",
+    "enonce": "La France doit appliquer les mandats d'arrêt de la CPI, y compris contre des dirigeants de pays alliés."
+  },
+  {
+    "id": "Q6",
+    "theme": "Europe / souveraineté",
+    "bloc": "Europe / international",
+    "question": "Intégration européenne",
+    "optionA": "Renforcer l’intégration européenne",
+    "optionB": "Redonner plus de pouvoir aux États nationaux",
+    "enonce": "L'intégration européenne doit être renforcée."
+  },
+  {
+    "id": "Q7",
+    "theme": "Institutions / démocratie",
+    "bloc": "Institutions / démocratie / société",
+    "question": "Proportionnelle",
+    "optionA": "Introduire une part de représentation proportionnelle aux législatives",
+    "optionB": "Garder un scrutin majoritaire qui favorise des majorités plus stables",
+    "enonce": "Une part de représentation proportionnelle doit être introduite aux législatives."
+  },
+  {
+    "id": "Q8",
+    "theme": "Santé / éducation",
+    "bloc": "Santé / éducation / jeunesse",
+    "question": "Embauches publiques",
+    "optionA": "Embaucher massivement dans les hôpitaux et l’éducation nationale",
+    "optionB": "Réorganiser les services publics existants avant d’augmenter fortement les effectifs",
+    "enonce": "L'État doit embaucher massivement dans les hôpitaux et l'éducation nationale."
+  },
+  {
+    "id": "Q9",
+    "theme": "Économie / travail",
+    "bloc": "Économie / fiscalité / travail",
+    "question": "SMIC",
+    "optionA": "Augmenter significativement le SMIC",
+    "optionB": "Limiter sa hausse pour ne pas fragiliser les petites entreprises et l’emploi",
+    "enonce": "Le SMIC doit être augmenté significativement."
+  },
+  {
+    "id": "Q10",
+    "theme": "Écologie / énergie",
+    "bloc": "Écologie / énergie / logement",
+    "question": "Nucléaire",
+    "optionA": "Garder le nucléaire comme pilier de la politique énergétique française",
+    "optionB": "Réduire progressivement la place du nucléaire au profit des énergies renouvelables",
+    "enonce": "Le nucléaire doit rester un pilier de la politique énergétique française."
+  },
+  {
+    "id": "Q11",
+    "theme": "Services publics / État",
+    "bloc": "Économie / fiscalité / travail",
+    "question": "Gestion privée",
+    "optionA": "Ouvrir une partie des services publics à la gestion privée",
+    "optionB": "Garder les services publics majoritairement sous gestion publique",
+    "enonce": "Une partie des services publics devrait être ouverte à la gestion privée."
+  },
+  {
+    "id": "Q12",
+    "theme": "International / défense",
+    "bloc": "Europe / international",
+    "question": "OTAN",
+    "optionA": "Faire sortir la France de l’OTAN",
+    "optionB": "Maintenir la France dans l’OTAN pour conserver ses alliances militaires actuelles",
+    "enonce": "La France doit quitter l'OTAN."
+  },
+  {
+    "id": "Q13",
+    "theme": "Institutions / démocratie",
+    "bloc": "Institutions / démocratie / société",
+    "question": "RIC",
+    "optionA": "Instaurer le référendum d’initiative citoyenne",
+    "optionB": "Garder un système représentatif où les élus décident principalement à la place des citoyens",
+    "enonce": "Il faut instaurer le référendum d'initiative citoyenne (RIC)."
+  },
+  {
+    "id": "Q14",
+    "theme": "Éducation / société",
+    "bloc": "Santé / éducation / jeunesse",
+    "question": "Uniforme scolaire",
+    "optionA": "Rendre l’uniforme scolaire obligatoire dans les écoles",
+    "optionB": "Laisser les élèves s’habiller librement dans le cadre du règlement scolaire",
+    "enonce": "L'uniforme scolaire doit être rendu obligatoire dans les écoles."
+  },
+  {
+    "id": "Q15",
+    "theme": "Écologie / climat",
+    "bloc": "Écologie / énergie / logement",
+    "question": "Objectifs climatiques",
+    "optionA": "Fixer des objectifs climatiques plus ambitieux",
+    "optionB": "Avancer plus progressivement pour limiter l’impact sur le pouvoir d’achat et les entreprises",
+    "enonce": "La France doit se fixer des objectifs climatiques plus ambitieux."
+  },
+  {
+    "id": "Q16",
+    "theme": "Société / libertés",
+    "bloc": "Institutions / démocratie / société",
+    "question": "Cannabis",
+    "optionA": "Légaliser le cannabis récréatif pour mieux encadrer sa consommation",
+    "optionB": "Maintenir son interdiction pour éviter sa banalisation et protéger la santé publique",
+    "enonce": "Il faut légaliser le cannabis récréatif."
+  },
+  {
+    "id": "Q17",
+    "theme": "Sécurité / police",
+    "bloc": "Immigration / sécurité / justice / laïcité",
+    "question": "Forces de l’ordre",
+    "optionA": "Donner davantage de moyens aux forces de l’ordre",
+    "optionB": "Prioriser la prévention, la médiation et la justice plutôt que l’augmentation des moyens policiers",
+    "enonce": "Les forces de l'ordre doivent disposer de davantage de moyens."
+  },
+  {
+    "id": "Q18",
+    "theme": "Économie / finances publiques",
+    "bloc": "Économie / fiscalité / travail",
+    "question": "Dette publique",
+    "optionA": "Réduire la dette publique en priorité, même si cela implique de limiter certaines dépenses",
+    "optionB": "Maintenir des investissements publics importants, même si la dette baisse plus lentement",
+    "enonce": "La dette publique est un problème majeur qu'il faut réduire en priorité."
+  },
+  {
+    "id": "Q19",
+    "theme": "Immigration / santé",
+    "bloc": "Santé / éducation / jeunesse",
+    "question": "AME",
+    "optionA": "Supprimer l’aide médicale d’État pour les personnes sans papiers",
+    "optionB": "Maintenir l’aide médicale d’État pour des raisons sanitaires et humanitaires",
+    "enonce": "L'aide médicale d'État (AME) pour les sans-papiers doit être supprimée."
+  },
+  {
+    "id": "Q20",
+    "theme": "International / développement",
+    "bloc": "Europe / international",
+    "question": "Aide au développement",
+    "optionA": "Accroître l’aide au développement des pays du Sud",
+    "optionB": "Réduire cette aide pour concentrer les moyens publics sur les priorités nationales",
+    "enonce": "La France doit accroître son aide au développement des pays du Sud."
+  },
+  {
+    "id": "Q21",
+    "theme": "Immigration / nationalité",
+    "bloc": "Immigration / sécurité / justice / laïcité",
+    "question": "Droit du sol",
+    "optionA": "Mettre fin au droit du sol en France",
+    "optionB": "Maintenir le droit du sol comme principe d’intégration républicaine",
+    "enonce": "Il faut mettre fin au droit du sol en France."
+  },
+  {
+    "id": "Q22",
+    "theme": "Immigration / expulsions",
+    "bloc": "Immigration / sécurité / justice / laïcité",
+    "question": "Situation irrégulière",
+    "optionA": "Expulser systématiquement les étrangers en situation irrégulière",
+    "optionB": "Examiner les situations au cas par cas avant toute expulsion",
+    "enonce": "Les étrangers en situation irrégulière doivent être expulsés systématiquement."
+  },
+  {
+    "id": "Q23",
+    "theme": "Immigration / quotas",
+    "bloc": "Immigration / sécurité / justice / laïcité",
+    "question": "Quotas par nationalité",
+    "optionA": "Instaurer des quotas d’immigration par nationalité",
+    "optionB": "Refuser les quotas par nationalité et traiter les demandes selon des critères individuels",
+    "enonce": "La France doit instaurer des quotas d'immigration par nationalité."
+  },
+  {
+    "id": "Q24",
+    "theme": "Immigration / aides sociales",
+    "bloc": "Immigration / sécurité / justice / laïcité",
+    "question": "Accès aux aides",
+    "optionA": "Faire attendre les étrangers 5 ans avant d’accéder aux aides sociales",
+    "optionB": "Permettre un accès plus rapide aux aides sociales pour les étrangers en situation régulière",
+    "enonce": "Les étrangers devraient attendre 5 ans avant d'accéder aux aides sociales."
+  },
+  {
+    "id": "Q25",
+    "theme": "Immigration / nationalité",
+    "bloc": "Immigration / sécurité / justice / laïcité",
+    "question": "Double nationalité",
+    "optionA": "Restreindre la double nationalité franco-étrangère",
+    "optionB": "Maintenir largement la possibilité d’avoir une double nationalité",
+    "enonce": "La double nationalité franco-étrangère devrait être restreinte."
+  },
+  {
+    "id": "Q26",
+    "theme": "Immigration / travail",
+    "bloc": "Économie / fiscalité / travail",
+    "question": "Immigration de travail",
+    "optionA": "Donner la priorité aux immigrés venant travailler pour l’accueil en France",
+    "optionB": "Accueillir aussi largement les familles, étudiants et personnes vulnérables",
+    "enonce": "Les immigrés venant travailler doivent être prioritaires sur les autres pour l'accueil en France."
+  },
+  {
+    "id": "Q27",
+    "theme": "Immigration / famille",
+    "bloc": "Immigration / sécurité / justice / laïcité",
+    "question": "Regroupement familial",
+    "optionA": "Faciliter le regroupement familial",
+    "optionB": "Durcir les conditions du regroupement familial",
+    "enonce": "Il faut faciliter le regroupement familial."
+  },
+  {
+    "id": "Q28",
+    "theme": "Immigration / asile",
+    "bloc": "Immigration / sécurité / justice / laïcité",
+    "question": "Demandeurs d’asile",
+    "optionA": "Accueillir davantage de demandeurs d’asile",
+    "optionB": "Réduire le nombre de demandeurs d’asile accueillis en France",
+    "enonce": "La France doit accueillir davantage de demandeurs d'asile."
+  },
+  {
+    "id": "Q29",
+    "theme": "Sécurité / justice",
+    "bloc": "Immigration / sécurité / justice / laïcité",
+    "question": "Peines planchers",
+    "optionA": "Rétablir des peines planchers pour les récidivistes",
+    "optionB": "Laisser les juges adapter les peines selon chaque situation",
+    "enonce": "Il faut rétablir des peines planchers pour les récidivistes."
+  },
+  {
+    "id": "Q30",
+    "theme": "Sécurité / justice",
+    "bloc": "Immigration / sécurité / justice / laïcité",
+    "question": "Mineurs délinquants",
+    "optionA": "Juger les mineurs délinquants comme des majeurs à partir de 16 ans",
+    "optionB": "Maintenir une justice spécifique pour les mineurs, centrée sur l’éducation et la réinsertion",
+    "enonce": "Les mineurs délinquants doivent être jugés comme des majeurs à partir de 16 ans."
+  },
+  {
+    "id": "Q31",
+    "theme": "Sécurité / libertés publiques",
+    "bloc": "Immigration / sécurité / justice / laïcité",
+    "question": "Vidéosurveillance",
+    "optionA": "Installer davantage de vidéosurveillance dans les espaces publics",
+    "optionB": "Limiter la vidéosurveillance pour protéger les libertés individuelles",
+    "enonce": "Il faut davantage de surveillance vidéo dans les espaces publics."
+  },
+  {
+    "id": "Q32",
+    "theme": "Sécurité / justice",
+    "bloc": "Immigration / sécurité / justice / laïcité",
+    "question": "Détention provisoire",
+    "optionA": "Limiter davantage la détention provisoire",
+    "optionB": "Permettre un recours plus large à la détention provisoire pour protéger la société",
+    "enonce": "La détention provisoire doit être limitée."
+  },
+  {
+    "id": "Q33",
+    "theme": "Sécurité / police",
+    "bloc": "Immigration / sécurité / justice / laïcité",
+    "question": "Réforme de la police",
+    "optionA": "Réformer la police pour améliorer ses relations avec la population",
+    "optionB": "Soutenir le fonctionnement actuel de la police et renforcer d’abord ses moyens",
+    "enonce": "Il faut réformer la police pour améliorer les relations avec la population."
+  },
+  {
+    "id": "Q34",
+    "theme": "Institutions / justice",
+    "bloc": "Immigration / sécurité / justice / laïcité",
+    "question": "Indépendance de la justice",
+    "optionA": "Rendre la justice plus indépendante du pouvoir exécutif",
+    "optionB": "Maintenir l’organisation actuelle pour préserver la cohérence de l’action publique",
+    "enonce": "La justice doit être plus indépendante du pouvoir exécutif."
+  },
+  {
+    "id": "Q35",
+    "theme": "Sécurité / justice",
+    "bloc": "Immigration / sécurité / justice / laïcité",
+    "question": "Places de prison",
+    "optionA": "Créer davantage de places de prison",
+    "optionB": "Développer davantage les alternatives à l’incarcération",
+    "enonce": "Il faut créer davantage de places de prison."
+  },
+  {
+    "id": "Q36",
+    "theme": "Numérique / plateformes",
+    "bloc": "Institutions / démocratie / société",
+    "question": "Responsabilité des plateformes",
+    "optionA": "Responsabiliser davantage les plateformes pour les contenus diffusés par leurs utilisateurs",
+    "optionB": "Préserver un régime de responsabilité plus limité pour éviter une censure excessive",
+    "enonce": "Énoncé partiellement masqué sur la capture — … par leurs utilisateurs."
+  },
+  {
+    "id": "Q37",
+    "theme": "Agriculture / revenus",
+    "bloc": "Économie / fiscalité / travail",
+    "question": "Prix planchers",
+    "optionA": "Garantir des prix planchers rémunérateurs pour les agriculteurs",
+    "optionB": "Laisser les prix agricoles se fixer davantage par le marché et la négociation commerciale",
+    "enonce": "L'État doit garantir des prix planchers rémunérateurs pour les agriculteurs."
+  },
+  {
+    "id": "Q38",
+    "theme": "Économie / fiscalité",
+    "bloc": "Économie / fiscalité / travail",
+    "question": "Transactions financières",
+    "optionA": "Augmenter la taxe sur les transactions financières",
+    "optionB": "Ne pas l’augmenter pour préserver l’attractivité financière",
+    "enonce": "La taxe sur les transactions financières doit être augmentée."
+  },
+  {
+    "id": "Q39",
+    "theme": "Économie / entreprises",
+    "bloc": "Économie / fiscalité / travail",
+    "question": "Cotisations patronales",
+    "optionA": "Baisser les cotisations patronales pour soutenir les entreprises et l’emploi",
+    "optionB": "Maintenir ou augmenter les cotisations pour financer la protection sociale",
+    "enonce": "Il faut baisser les cotisations patronales."
+  },
+  {
+    "id": "Q40",
+    "theme": "Économie / entreprises",
+    "bloc": "Économie / fiscalité / travail",
+    "question": "Impôt sur les sociétés",
+    "optionA": "Augmenter l’impôt sur les sociétés",
+    "optionB": "Baisser ou stabiliser l’impôt sur les sociétés pour favoriser l’investissement",
+    "enonce": "L'impôt sur les sociétés doit être augmenté."
+  },
+  {
+    "id": "Q41",
+    "theme": "Économie / souveraineté",
+    "bloc": "Économie / fiscalité / travail",
+    "question": "Nationalisations",
+    "optionA": "Nationaliser les secteurs stratégiques comme l’énergie et les transports",
+    "optionB": "Garder ces secteurs majoritairement ouverts aux acteurs privés",
+    "enonce": "Il faut nationaliser les secteurs stratégiques (énergie, transports)."
+  },
+  {
+    "id": "Q42",
+    "theme": "Europe / monnaie",
+    "bloc": "Europe / international",
+    "question": "Euro",
+    "optionA": "Faire sortir la France de l’euro",
+    "optionB": "Maintenir la France dans l’euro",
+    "enonce": "La France doit sortir de l'euro."
+  },
+  {
+    "id": "Q43",
+    "theme": "Économie / travail",
+    "bloc": "Économie / fiscalité / travail",
+    "question": "Retraite par points",
+    "optionA": "Instaurer une retraite universelle par points",
+    "optionB": "Maintenir un système de retraite avec des régimes et règles différenciés",
+    "enonce": "Il faut instaurer une retraite universelle par points."
+  },
+  {
+    "id": "Q44",
+    "theme": "Écologie / transports",
+    "bloc": "Santé / éducation / jeunesse",
+    "question": "Véhicules thermiques",
+    "optionA": "Interdire la vente de véhicules thermiques neufs d’ici 2035",
+    "optionB": "Autoriser plus longtemps les véhicules thermiques pour préserver le pouvoir d’achat et l’industrie",
+    "enonce": "La vente de véhicules thermiques neufs doit être interdite d'ici 2035."
+  },
+  {
+    "id": "Q45",
+    "theme": "Économie / protection sociale",
+    "bloc": "Économie / fiscalité / travail",
+    "question": "Revenu universel",
+    "optionA": "Instaurer un revenu universel de base",
+    "optionB": "Cibler les aides sociales sur les personnes les plus en difficulté",
+    "enonce": "Il faut instaurer un revenu universel de base."
+  },
+  {
+    "id": "Q46",
+    "theme": "Économie / pouvoir d’achat",
+    "bloc": "Économie / fiscalité / travail",
+    "question": "TVA première nécessité",
+    "optionA": "Supprimer la TVA sur les produits de première nécessité",
+    "optionB": "Garder la TVA mais compenser par des aides ciblées aux ménages modestes",
+    "enonce": "La TVA sur les produits de première nécessité doit être supprimée."
+  },
+  {
+    "id": "Q47",
+    "theme": "Économie / travail",
+    "bloc": "Économie / fiscalité / travail",
+    "question": "Durée légale du travail",
+    "optionA": "Porter la durée légale du travail au-dessus de 35 heures par semaine",
+    "optionB": "Maintenir ou réduire le temps de travail légal",
+    "enonce": "La durée légale du travail doit être portée au-dessus de 35 heures par semaine."
+  },
+  {
+    "id": "Q48",
+    "theme": "Services publics / travail",
+    "bloc": "Économie / fiscalité / travail",
+    "question": "Droit de grève",
+    "optionA": "Limiter le droit de grève dans les services publics",
+    "optionB": "Préserver largement le droit de grève, y compris dans les services publics",
+    "enonce": "Le droit de grève dans les services publics doit être limité."
+  },
+  {
+    "id": "Q49",
+    "theme": "Société / santé",
+    "bloc": "Santé / éducation / jeunesse",
+    "question": "PMA",
+    "optionA": "Rembourser intégralement la PMA et élargir ses conditions d’accès",
+    "optionB": "Maintenir un cadre plus limité pour l’accès et le remboursement de la PMA",
+    "enonce": "La PMA doit être intégralement remboursée et ses conditions d'accès élargies (âge, critères médicaux)."
+  },
+  {
+    "id": "Q50",
+    "theme": "Société / famille",
+    "bloc": "Institutions / démocratie / société",
+    "question": "GPA",
+    "optionA": "Légaliser la GPA en France",
+    "optionB": "Maintenir l’interdiction de la GPA en France",
+    "enonce": "La gestation pour autrui (GPA) doit être légalisée en France."
+  },
+  {
+    "id": "Q51",
+    "theme": "Société / santé",
+    "bloc": "Santé / éducation / jeunesse",
+    "question": "Aide à mourir",
+    "optionA": "Légaliser l’aide à mourir en France",
+    "optionB": "Maintenir l’interdiction de l’assistance médicale pour mettre fin à sa vie",
+    "enonce": "Le droit à l'aide à mourir (assistance médicale pour mettre fin à sa vie) doit être légalisé en France."
+  },
+  {
+    "id": "Q52",
+    "theme": "Société / droits",
+    "bloc": "Institutions / démocratie / société",
+    "question": "Avortement",
+    "optionA": "Faciliter et élargir l’accès à l’avortement",
+    "optionB": "Maintenir le cadre actuel sans nouvel élargissement",
+    "enonce": "Il faut faciliter et élargir l'accès à l'avortement."
+  },
+  {
+    "id": "Q53",
+    "theme": "Écologie / énergie",
+    "bloc": "Écologie / énergie / logement",
+    "question": "Part du nucléaire",
+    "optionA": "Réduire la part du nucléaire dans le mix énergétique français",
+    "optionB": "Maintenir le nucléaire comme pilier majeur de l’énergie française",
+    "enonce": "La France doit réduire la part du nucléaire dans son mix énergétique."
+  },
+  {
+    "id": "Q54",
+    "theme": "Économie / travail",
+    "bloc": "Économie / fiscalité / travail",
+    "question": "Travailleurs des plateformes",
+    "optionA": "Requalifier les travailleurs des plateformes comme Uber ou Deliveroo en salariés",
+    "optionB": "Maintenir leur statut indépendant avec plus de protections spécifiques",
+    "enonce": "Les travailleurs des plateformes (Uber, Deliveroo) doivent être requalifiés en salariés."
+  },
+  {
+    "id": "Q55",
+    "theme": "Logement / pouvoir d’achat",
+    "bloc": "Écologie / énergie / logement",
+    "question": "Contrôle des loyers",
+    "optionA": "Instaurer un contrôle strict des loyers dans les grandes villes",
+    "optionB": "Laisser les loyers se fixer plus librement pour encourager l’investissement immobilier",
+    "enonce": "Il faut instaurer un contrôle strict des loyers dans les grandes villes."
+  },
+  {
+    "id": "Q56",
+    "theme": "Économie / travail",
+    "bloc": "Économie / fiscalité / travail",
+    "question": "Semaine de 4 jours",
+    "optionA": "Généraliser la semaine de 4 jours",
+    "optionB": "Laisser les entreprises choisir librement leur organisation du temps de travail",
+    "enonce": "La semaine de 4 jours doit être généralisée."
+  },
+  {
+    "id": "Q57",
+    "theme": "Écologie / fiscalité",
+    "bloc": "Économie / fiscalité / travail",
+    "question": "Taxe carbone",
+    "optionA": "Augmenter la taxe carbone pour accélérer la transition écologique",
+    "optionB": "Ne pas l’augmenter pour protéger le pouvoir d’achat",
+    "enonce": "La taxe carbone doit être augmentée."
+  },
+  {
+    "id": "Q58",
+    "theme": "Écologie / agriculture",
+    "bloc": "Économie / fiscalité / travail",
+    "question": "Élevage intensif",
+    "optionA": "Interdire progressivement l’élevage intensif",
+    "optionB": "Maintenir l’élevage intensif tout en renforçant certaines normes",
+    "enonce": "Il faut interdire progressivement l'élevage intensif."
+  },
+  {
+    "id": "Q59",
+    "theme": "Écologie / agriculture",
+    "bloc": "Économie / fiscalité / travail",
+    "question": "Pesticides",
+    "optionA": "Interdire progressivement les pesticides",
+    "optionB": "Réduire leur usage sans interdiction générale pour préserver les rendements agricoles",
+    "enonce": "Les pesticides doivent être progressivement interdits."
+  },
+  {
+    "id": "Q60",
+    "theme": "Société / animaux",
+    "bloc": "Institutions / démocratie / société",
+    "question": "Corrida",
+    "optionA": "Interdire la corrida en France",
+    "optionB": "Maintenir la corrida là où elle fait partie des traditions locales",
+    "enonce": "La corrida doit être interdite en France."
+  },
+  {
+    "id": "Q61",
+    "theme": "Écologie / énergie",
+    "bloc": "Écologie / énergie / logement",
+    "question": "100 % renouvelables",
+    "optionA": "Atteindre 100 % d’énergies renouvelables dans le mix électrique d’ici 2050",
+    "optionB": "Garder un mix combinant renouvelables, nucléaire et autres sources d’énergie",
+    "enonce": "Les énergies renouvelables doivent représenter 100 % du mix électrique d'ici 2050."
+  },
+  {
+    "id": "Q62",
+    "theme": "Écologie / transports",
+    "bloc": "Santé / éducation / jeunesse",
+    "question": "Vols intérieurs",
+    "optionA": "Interdire les vols intérieurs lorsqu’un trajet ferroviaire peut les remplacer",
+    "optionB": "Maintenir ces vols pour préserver la liberté de déplacement et l’activité économique",
+    "enonce": "Il faut interdire les vols intérieurs remplaçables par un trajet ferroviaire."
+  },
+  {
+    "id": "Q63",
+    "theme": "International / défense",
+    "bloc": "Europe / international",
+    "question": "Budget défense",
+    "optionA": "Porter le budget de la défense nationale à 3 % du PIB",
+    "optionB": "Limiter la hausse du budget militaire pour financer d’autres priorités publiques",
+    "enonce": "Le budget de la défense nationale doit atteindre 3 % du PIB."
+  },
+  {
+    "id": "Q64",
+    "theme": "Économie / fiscalité",
+    "bloc": "Économie / fiscalité / travail",
+    "question": "Superprofits pétroliers",
+    "optionA": "Taxer les superprofits des entreprises pétrolières",
+    "optionB": "Ne pas créer de taxe spécifique pour préserver l’investissement des entreprises",
+    "enonce": "Il faut instaurer une taxe sur les superprofits des entreprises pétrolières."
+  },
+  {
+    "id": "Q65",
+    "theme": "International / défense",
+    "bloc": "Europe / international",
+    "question": "Ukraine",
+    "optionA": "Soutenir davantage l’Ukraine militairement",
+    "optionB": "Limiter l’aide militaire à l’Ukraine pour éviter l’escalade et préserver les ressources françaises",
+    "enonce": "La France doit soutenir davantage l'Ukraine militairement."
+  },
+  {
+    "id": "Q66",
+    "theme": "Europe / frontières",
+    "bloc": "Europe / international",
+    "question": "Frontières extérieures UE",
+    "optionA": "Renforcer les contrôles aux frontières extérieures de l’Union européenne",
+    "optionB": "Garder une politique de contrôle plus souple pour faciliter l’asile et la circulation",
+    "enonce": "Il faut renforcer les contrôles aux frontières extérieures de l'UE."
+  },
+  {
+    "id": "Q67",
+    "theme": "Europe / défense",
+    "bloc": "Europe / international",
+    "question": "Armée européenne",
+    "optionA": "Développer une armée européenne commune",
+    "optionB": "Préserver une défense principalement nationale",
+    "enonce": "La France doit développer une armée européenne commune."
+  },
+  {
+    "id": "Q68",
+    "theme": "Europe / social",
+    "bloc": "Europe / international",
+    "question": "Traités européens sociaux",
+    "optionA": "Réformer les traités européens pour y inclure davantage de protection sociale",
+    "optionB": "Garder les traités actuels pour préserver la stabilité de l’Union européenne",
+    "enonce": "Il faut réformer les traités européens pour y inclure davantage de protection sociale."
+  },
+  {
+    "id": "Q69",
+    "theme": "International / diplomatie",
+    "bloc": "Europe / international",
+    "question": "Russie",
+    "optionA": "Maintenir des relations diplomatiques avec la Russie",
+    "optionB": "Réduire fortement les relations diplomatiques avec la Russie tant que le contexte international reste tendu",
+    "enonce": "La France doit maintenir des relations diplomatiques avec la Russie."
+  },
+  {
+    "id": "Q70",
+    "theme": "Numérique / IA",
+    "bloc": "Institutions / démocratie / société",
+    "question": "Encadrement de l’IA",
+    "optionA": "Encadrer fortement l’intelligence artificielle par la loi",
+    "optionB": "Laisser plus de liberté d’innovation aux entreprises développant l’intelligence artificielle",
+    "enonce": "L'intelligence artificielle doit être fortement encadrée par la loi."
+  },
+  {
+    "id": "Q71",
+    "theme": "International / défense",
+    "bloc": "Europe / international",
+    "question": "Présence militaire en Afrique",
+    "optionA": "Réduire la présence militaire française en Afrique",
+    "optionB": "Maintenir cette présence pour des raisons de sécurité et d’influence internationale",
+    "enonce": "La France doit réduire sa présence militaire en Afrique."
+  },
+  {
+    "id": "Q72",
+    "theme": "Europe / fiscalité",
+    "bloc": "Économie / fiscalité / travail",
+    "question": "Harmonisation fiscale",
+    "optionA": "Harmoniser la fiscalité entre les pays de l’Union européenne",
+    "optionB": "Laisser chaque État européen fixer librement sa fiscalité",
+    "enonce": "Il faut harmoniser la fiscalité entre les pays de l'UE pour éviter la concurrence fiscale entre États."
+  },
+  {
+    "id": "Q73",
+    "theme": "Institutions / démocratie",
+    "bloc": "Institutions / démocratie / société",
+    "question": "VIe République",
+    "optionA": "Passer à une VIe République",
+    "optionB": "Conserver la Ve République en la réformant éventuellement à la marge",
+    "enonce": "Il faut passer à une VIe République."
+  },
+  {
+    "id": "Q74",
+    "theme": "Institutions / exécutif",
+    "bloc": "Institutions / démocratie / société",
+    "question": "Mandat présidentiel",
+    "optionA": "Limiter le mandat présidentiel à un seul terme",
+    "optionB": "Maintenir la possibilité pour un président d’être réélu",
+    "enonce": "Le mandat présidentiel doit être limité à un seul terme."
+  },
+  {
+    "id": "Q75",
+    "theme": "Institutions / Parlement",
+    "bloc": "Institutions / démocratie / société",
+    "question": "Pouvoirs du Parlement",
+    "optionA": "Donner davantage de pouvoirs au Parlement face à l’exécutif",
+    "optionB": "Garder un exécutif fort pour permettre des décisions plus rapides",
+    "enonce": "Il faut donner davantage de pouvoirs au Parlement face à l'exécutif."
+  },
+  {
+    "id": "Q76",
+    "theme": "Numérique / souveraineté",
+    "bloc": "Institutions / démocratie / société",
+    "question": "Données européennes",
+    "optionA": "Imposer que les données des utilisateurs français restent sous contrôle européen",
+    "optionB": "Laisser davantage de liberté aux plateformes internationales dans la gestion des données",
+    "enonce": "Les données des utilisateurs français stockées par des plateformes étrangères doivent rester sous contrôle européen."
+  },
+  {
+    "id": "Q77",
+    "theme": "Agriculture / écologie",
+    "bloc": "Économie / fiscalité / travail",
+    "question": "Aides agricoles",
+    "optionA": "Conditionner les aides agricoles au respect de normes environnementales strictes",
+    "optionB": "Verser les aides agricoles avec moins de contraintes environnementales pour soutenir les exploitants",
+    "enonce": "Les aides agricoles doivent être conditionnées au respect de normes environnementales strictes."
+  },
+  {
+    "id": "Q78",
+    "theme": "Société / laïcité",
+    "bloc": "Immigration / sécurité / justice / laïcité",
+    "question": "Signes religieux services publics",
+    "optionA": "Interdire les signes religieux ostensibles pour tous dans les services publics, agents et usagers",
+    "optionB": "Limiter cette interdiction aux agents publics et préserver la liberté des usagers",
+    "enonce": "Le port de signes religieux ostensibles doit être interdit pour tous dans les services publics, agents et usagers."
+  },
+  {
+    "id": "Q79",
+    "theme": "Société / égalité",
+    "bloc": "Institutions / démocratie / société",
+    "question": "Parité entreprise",
+    "optionA": "Imposer des quotas de parité hommes-femmes dans les directions des grandes entreprises",
+    "optionB": "Encourager la parité sans imposer de quotas obligatoires",
+    "enonce": "Il faut imposer des quotas de parité hommes-femmes dans les directions des grandes entreprises."
+  },
+  {
+    "id": "Q80",
+    "theme": "Médias / culture",
+    "bloc": "Institutions / démocratie / société",
+    "question": "Audiovisuel public",
+    "optionA": "Augmenter le financement de l’audiovisuel public",
+    "optionB": "Réduire ou stabiliser ce financement pour limiter la dépense publique",
+    "enonce": "L'État doit renforcer et augmenter le financement de l'audiovisuel public (France Télévisions, Radio France)."
+  },
+  {
+    "id": "Q81",
+    "theme": "Éducation / université",
+    "bloc": "Santé / éducation / jeunesse",
+    "question": "Frais universitaires",
+    "optionA": "Garder des frais d’inscription universitaires symboliques",
+    "optionB": "Augmenter les frais pour mieux financer les universités",
+    "enonce": "Les frais d'inscription à l'université doivent rester symboliques."
+  },
+  {
+    "id": "Q82",
+    "theme": "Économie / revenus",
+    "bloc": "Économie / fiscalité / travail",
+    "question": "Revenu maximum",
+    "optionA": "Instaurer un revenu maximum légal",
+    "optionB": "Ne pas plafonner légalement les revenus",
+    "enonce": "Un revenu maximum légal doit être instauré."
+  },
+  {
+    "id": "Q83",
+    "theme": "Médias / pluralisme",
+    "bloc": "Institutions / démocratie / société",
+    "question": "Concentration des médias",
+    "optionA": "Limiter la concentration de la propriété des médias d’information",
+    "optionB": "Laisser le marché organiser librement la propriété des médias",
+    "enonce": "La loi doit limiter la concentration de la propriété des médias d'information."
+  },
+  {
+    "id": "Q84",
+    "theme": "Éducation / privé",
+    "bloc": "Santé / éducation / jeunesse",
+    "question": "Écoles privées sous contrat",
+    "optionA": "Supprimer les subventions publiques aux écoles privées sous contrat",
+    "optionB": "Maintenir ces subventions au nom de la liberté de choix scolaire",
+    "enonce": "Les subventions publiques aux écoles privées sous contrat doivent être supprimées."
+  },
+  {
+    "id": "Q85",
+    "theme": "Institutions / outre-mer",
+    "bloc": "Institutions / démocratie / société",
+    "question": "Autonomie outre-mer",
+    "optionA": "Donner davantage d’autonomie institutionnelle aux territoires d’outre-mer",
+    "optionB": "Maintenir un cadre institutionnel plus centralisé avec la métropole",
+    "enonce": "Les territoires d'outre-mer doivent obtenir davantage d'autonomie institutionnelle."
+  },
+  {
+    "id": "Q86",
+    "theme": "Institutions / démocratie",
+    "bloc": "Institutions / démocratie / société",
+    "question": "Vote à 16 ans",
+    "optionA": "Abaisser le droit de vote à 16 ans",
+    "optionB": "Maintenir le droit de vote à 18 ans",
+    "enonce": "Le droit de vote doit être abaissé à 16 ans."
+  },
+  {
+    "id": "Q87",
+    "theme": "Culture / budget",
+    "bloc": "Institutions / démocratie / société",
+    "question": "Budget culture",
+    "optionA": "Augmenter les budgets consacrés à la culture",
+    "optionB": "Stabiliser ou réduire ces budgets pour financer d’autres priorités",
+    "enonce": "Les budgets consacrés à la culture doivent être augmentés."
+  },
+  {
+    "id": "Q88",
+    "theme": "Éducation / citoyenneté",
+    "bloc": "Santé / éducation / jeunesse",
+    "question": "SNU",
+    "optionA": "Rendre le Service National Universel obligatoire",
+    "optionB": "Garder le Service National Universel facultatif",
+    "enonce": "Le Service National Universel (SNU) doit être rendu obligatoire."
+  },
+  {
+    "id": "Q89",
+    "theme": "Santé / protection sociale",
+    "bloc": "Santé / éducation / jeunesse",
+    "question": "Sécurité sociale à 100 %",
+    "optionA": "Faire prendre en charge 100 % des frais de santé par la Sécurité sociale",
+    "optionB": "Maintenir un système combinant Sécurité sociale, mutuelles et reste à charge limité",
+    "enonce": "La Sécurité sociale doit prendre en charge 100 % des frais de santé."
+  },
+  {
+    "id": "Q90",
+    "theme": "Santé / territoires",
+    "bloc": "Santé / éducation / jeunesse",
+    "question": "Déserts médicaux",
+    "optionA": "Imposer aux médecins nouvellement diplômés une première affectation dans les déserts médicaux",
+    "optionB": "Inciter les médecins à s’y installer sans obligation",
+    "enonce": "Il faut imposer aux médecins nouvellement diplômés une première affectation dans les déserts médicaux."
+  },
+  {
+    "id": "Q91",
+    "theme": "Éducation / supérieur",
+    "bloc": "Santé / éducation / jeunesse",
+    "question": "Parcoursup",
+    "optionA": "Supprimer Parcoursup",
+    "optionB": "Réformer Parcoursup sans le supprimer",
+    "enonce": "Parcoursup doit être supprimé."
+  },
+  {
+    "id": "Q92",
+    "theme": "Sport / associations",
+    "bloc": "Santé / éducation / jeunesse",
+    "question": "Subventions locales",
+    "optionA": "Augmenter fortement les subventions aux clubs sportifs amateurs et aux associations locales",
+    "optionB": "Maintenir ces subventions à leur niveau actuel pour maîtriser la dépense publique",
+    "enonce": "L'État doit augmenter significativement les subventions aux clubs sportifs amateurs et aux associations locales."
+  },
+  {
+    "id": "Q93",
+    "theme": "Économie / infrastructures",
+    "bloc": "Économie / fiscalité / travail",
+    "question": "Autoroutes",
+    "optionA": "Renationaliser les autoroutes",
+    "optionB": "Maintenir leur gestion par des sociétés concessionnaires privées",
+    "enonce": "Les autoroutes doivent être renationalisées."
+  },
+  {
+    "id": "Q94",
+    "theme": "Santé / prévention",
+    "bloc": "Santé / éducation / jeunesse",
+    "question": "Publicité produits nocifs",
+    "optionA": "Restreindre davantage la publicité pour l’alcool, le tabac et la malbouffe",
+    "optionB": "Laisser plus de liberté publicitaire aux entreprises, avec information des consommateurs",
+    "enonce": "La publicité pour les produits nocifs pour la santé (alcool, tabac, malbouffe) doit être davantage restreinte."
+  },
+  {
+    "id": "Q95",
+    "theme": "Logement / social",
+    "bloc": "Écologie / énergie / logement",
+    "question": "Logements sociaux",
+    "optionA": "Construire davantage de logements sociaux",
+    "optionB": "Favoriser d’abord l’accession à la propriété et la construction privée",
+    "enonce": "Il faut construire davantage de logements sociaux."
+  },
+  {
+    "id": "Q96",
+    "theme": "Numérique / ordre public",
+    "bloc": "Institutions / démocratie / société",
+    "question": "Blocage réseaux sociaux",
+    "optionA": "Permettre à l’État de bloquer les réseaux sociaux en cas de troubles à l’ordre public",
+    "optionB": "Protéger l’accès aux réseaux sociaux même en période de tension",
+    "enonce": "L'État doit pouvoir bloquer les réseaux sociaux en cas de troubles à l'ordre public."
+  },
+  {
+    "id": "Q97",
+    "theme": "Logement / propriété",
+    "bloc": "Écologie / énergie / logement",
+    "question": "Expulsion locataires mauvais payeurs",
+    "optionA": "Faciliter l’expulsion des locataires mauvais payeurs",
+    "optionB": "Renforcer les protections des locataires avant toute expulsion",
+    "enonce": "Les propriétaires doivent avoir davantage de facilités pour expulser les locataires mauvais payeurs."
+  },
+  {
+    "id": "Q98",
+    "theme": "Écologie / consommation",
+    "bloc": "Écologie / énergie / logement",
+    "question": "Fast fashion",
+    "optionA": "Instaurer une taxe sur la fast fashion produite à bas coût à l’étranger",
+    "optionB": "Ne pas taxer davantage ces vêtements pour préserver les prix bas",
+    "enonce": "Une taxe sur la fast fashion (vêtements produits à bas coût à l'étranger) doit être instaurée."
+  },
+  {
+    "id": "Q99",
+    "theme": "Logement / énergie",
+    "bloc": "Écologie / énergie / logement",
+    "question": "Rénovation énergétique",
+    "optionA": "Subventionner massivement la rénovation énergétique des logements",
+    "optionB": "Limiter les subventions et laisser davantage les propriétaires financer les travaux",
+    "enonce": "La rénovation énergétique des logements doit être subventionnée massivement."
+  },
+  {
+    "id": "Q100",
+    "theme": "Logement / urbanisme",
+    "bloc": "Écologie / énergie / logement",
+    "question": "Zones protégées",
+    "optionA": "Faciliter la construction dans les zones protégées pour répondre aux besoins de logement",
+    "optionB": "Protéger strictement ces zones même si cela limite la construction",
+    "enonce": "Il faut faciliter la construction dans les zones protégées pour répondre aux besoins de logement."
+  },
+  {
+    "id": "Q101",
+    "theme": "Économie / fiscalité",
+    "bloc": "Économie / fiscalité / travail",
+    "question": "Actifs non productifs",
+    "optionA": "Imposer les actifs non productifs détenus par des sociétés",
+    "optionB": "Ne pas créer d’imposition spécifique sur ces actifs",
+    "enonce": "Les actifs non productifs détenu par des sociétés doivent être imposé "
+  },
+  {
+    "id": "Q102",
+    "theme": "Europe / réglementation",
+    "bloc": "Europe / international",
+    "question": "Réglementation européenne",
+    "optionA": "Assouplir la réglementation européenne",
+    "optionB": "Maintenir ou renforcer les règles européennes pour protéger les consommateurs, les salariés et l’environnement",
+    "enonce": "La réglementation européenne doit être assoupli "
+  },
+  {
+    "id": "Q103",
+    "theme": "Économie / industrie",
+    "bloc": "Économie / fiscalité / travail",
+    "question": "Subventions stratégiques",
+    "optionA": "Subventionner massivement les secteurs stratégiques et innovants pour faire émerger des leaders",
+    "optionB": "Limiter les subventions et laisser l’investissement privé sélectionner les projets",
+    "enonce": "Les secteurs stratégiques et innovants doivent être massivement subventionné afin naître des leaders"
+  },
+  {
+    "id": "Q104",
+    "theme": "Société / laïcité",
+    "bloc": "Immigration / sécurité / justice / laïcité",
+    "question": "Signes religieux espace public",
+    "optionA": "Interdire les signes religieux trop ostensibles dans l’espace public",
+    "optionB": "Préserver la liberté religieuse dans l’espace public",
+    "enonce": "Le port de signes religieux trop ostensibles doit être interdit sur l'espace publique"
+  },
+  {
+    "id": "Q105",
+    "theme": "Éducation / laïcité",
+    "bloc": "Santé / éducation / jeunesse",
+    "question": "Abaya à l’école",
+    "optionA": "Interdire l’abaya à l’école",
+    "optionB": "Ne pas interdire spécifiquement l’abaya et appliquer les règles existantes au cas par cas",
+    "enonce": "Le port de l'abaya doit-être interdit à l'école "
+  },
+  {
+    "id": "Q106",
+    "theme": "Santé / consommation",
+    "bloc": "Santé / éducation / jeunesse",
+    "question": "Nutri-score",
+    "optionA": "Rendre le Nutri-score obligatoire",
+    "optionB": "Laisser le Nutri-score volontaire pour les entreprises",
+    "enonce": "Le nutri-score doit-être rendu obligatoire "
+  },
+  {
+    "id": "Q107",
+    "theme": "Santé / fiscalité",
+    "bloc": "Économie / fiscalité / travail",
+    "question": "Taxe malbouffe",
+    "optionA": "Instaurer une taxe sur la malbouffe",
+    "optionB": "Privilégier l’éducation alimentaire et l’information sans nouvelle taxe",
+    "enonce": "Une taxe sur la malbouffe doit être instauré"
+  },
+  {
+    "id": "Q108",
+    "theme": "Écologie / déchets",
+    "bloc": "Écologie / énergie / logement",
+    "question": "Consigne plastique",
+    "optionA": "Mettre en place un système de consigne pour les bouteilles en plastique",
+    "optionB": "Miser sur le tri et le recyclage existants sans consigne généralisée",
+    "enonce": "Un système de consigne pour les bouteilles en plastique doit être mise en place "
+  },
+  {
+    "id": "Q109",
+    "theme": "Immigration / travail",
+    "bloc": "Économie / fiscalité / travail",
+    "question": "Immigration de travail facilitée",
+    "optionA": "Faciliter l’immigration pour le travail",
+    "optionB": "Garder une politique plus restrictive et sélective sur l’immigration de travail",
+    "enonce": "L'immigration pour le travail doit-être facilité "
+  },
+  {
+    "id": "Q110",
+    "theme": "Numérique / jeunesse",
+    "bloc": "Institutions / démocratie / société",
+    "question": "Réseaux sociaux moins de 16 ans",
+    "optionA": "Interdire les réseaux sociaux aux moins de 16 ans",
+    "optionB": "Encadrer les réseaux sociaux pour les mineurs sans interdiction générale",
+    "enonce": "Les réseaux sociaux doivent-être interdit au moins de 16 ans "
+  },
+  {
+    "id": "Q111",
+    "theme": "Économie / fiscalité",
+    "bloc": "Économie / fiscalité / travail",
+    "question": "Patrimoine",
+    "optionA": "Taxer davantage les très grosses successions",
+    "optionB": "Préserver la transmission du patrimoine familial",
+    "enonce": "Les successions supérieures à 5 millions d'euros doivent être davantage taxées."
+  },
+  {
+    "id": "Q112",
+    "theme": "Économie / fiscalité",
+    "bloc": "Économie / fiscalité / travail",
+    "question": "Capital",
+    "optionA": "Aligner la fiscalité du capital sur celle du travail",
+    "optionB": "Maintenir une fiscalité spécifique du capital pour encourager l'investissement",
+    "enonce": "Les revenus du capital doivent être imposés comme les revenus du travail."
+  },
+  {
+    "id": "Q113",
+    "theme": "Économie / fiscalité",
+    "bloc": "Économie / fiscalité / travail",
+    "question": "Capital",
+    "optionA": "Maintenir la flat tax pour préserver l'attractivité",
+    "optionB": "Supprimer ou réduire la flat tax pour taxer davantage le capital",
+    "enonce": "La flat tax sur les revenus du capital doit être maintenue."
+  },
+  {
+    "id": "Q114",
+    "theme": "Économie / fiscalité",
+    "bloc": "Économie / fiscalité / travail",
+    "question": "Partage de la valeur",
+    "optionA": "Rendre le partage des profits obligatoire",
+    "optionB": "Laisser les entreprises choisir librement leur politique de rémunération",
+    "enonce": "Le partage des profits avec les salariés doit devenir obligatoire dans les entreprises de plus de 50 salariés."
+  },
+  {
+    "id": "Q115",
+    "theme": "Économie / travail",
+    "bloc": "Économie / fiscalité / travail",
+    "question": "Chômage",
+    "optionA": "Rendre les allocations chômage plus dégressives",
+    "optionB": "Maintenir une indemnisation plus stable dans le temps",
+    "enonce": "Les allocations chômage doivent diminuer plus rapidement après plusieurs mois sans emploi."
+  },
+  {
+    "id": "Q116",
+    "theme": "Économie / travail",
+    "bloc": "Économie / fiscalité / travail",
+    "question": "Formation",
+    "optionA": "Concentrer la formation sur les métiers en tension",
+    "optionB": "Laisser les individus choisir plus librement leur formation",
+    "enonce": "Les aides à la formation doivent être orientées en priorité vers les métiers en tension."
+  },
+  {
+    "id": "Q117",
+    "theme": "Économie / industrie",
+    "bloc": "Économie / fiscalité / travail",
+    "question": "Commande publique",
+    "optionA": "Favoriser les PME françaises et européennes dans les marchés publics",
+    "optionB": "Choisir les fournisseurs surtout selon le prix et la concurrence ouverte",
+    "enonce": "La commande publique doit favoriser davantage les PME françaises et européennes."
+  },
+  {
+    "id": "Q118",
+    "theme": "Économie / industrie",
+    "bloc": "Économie / fiscalité / travail",
+    "question": "Investissement",
+    "optionA": "Créer un fonds souverain industriel ambitieux",
+    "optionB": "Laisser l'investissement productif venir principalement du secteur privé",
+    "enonce": "La France doit créer un grand fonds souverain pour investir dans l'industrie et les technologies stratégiques."
+  },
+  {
+    "id": "Q119",
+    "theme": "Économie / logement",
+    "bloc": "Économie / fiscalité / travail",
+    "question": "Fiscalité immobilière",
+    "optionA": "Taxer davantage les résidences secondaires en zones tendues",
+    "optionB": "Ne pas pénaliser fiscalement les propriétaires de résidences secondaires",
+    "enonce": "Les résidences secondaires dans les zones tendues doivent être davantage taxées."
+  },
+  {
+    "id": "Q120",
+    "theme": "Économie / industrie",
+    "bloc": "Économie / fiscalité / travail",
+    "question": "Production",
+    "optionA": "Réduire fortement les impôts de production",
+    "optionB": "Maintenir ces impôts pour financer les collectivités et les services publics",
+    "enonce": "Les impôts de production doivent être fortement réduits pour soutenir l'industrie."
+  },
+  {
+    "id": "Q121",
+    "theme": "Économie / entreprise",
+    "bloc": "Économie / fiscalité / travail",
+    "question": "Actionnariat salarié",
+    "optionA": "Rendre l'actionnariat salarié obligatoire dans les grandes entreprises",
+    "optionB": "Laisser l'actionnariat salarié au choix des entreprises",
+    "enonce": "Les grandes entreprises doivent réserver une part obligatoire de leur capital aux salariés."
+  },
+  {
+    "id": "Q122",
+    "theme": "Économie / entreprise",
+    "bloc": "Économie / fiscalité / travail",
+    "question": "Rémunérations",
+    "optionA": "Plafonner l'écart entre dirigeants et salariés",
+    "optionB": "Ne pas encadrer légalement la rémunération des dirigeants",
+    "enonce": "La rémunération des dirigeants des grandes entreprises doit être plafonnée par rapport au salaire médian de leurs salariés."
+  },
+  {
+    "id": "Q123",
+    "theme": "Économie / travail",
+    "bloc": "Économie / fiscalité / travail",
+    "question": "Droit du travail",
+    "optionA": "Assouplir le droit du travail pour les PME",
+    "optionB": "Maintenir les protections actuelles des salariés dans les PME",
+    "enonce": "Le droit du travail doit être assoupli pour les petites entreprises."
+  },
+  {
+    "id": "Q124",
+    "theme": "Économie / fiscalité",
+    "bloc": "Économie / fiscalité / travail",
+    "question": "ISF financier",
+    "optionA": "Créer un impôt sur la fortune financière",
+    "optionB": "Ne pas rétablir d'impôt sur la fortune, même limité aux actifs financiers",
+    "enonce": "Un impôt sur la fortune financière doit être instauré."
+  },
+  {
+    "id": "Q125",
+    "theme": "Économie / aides publiques",
+    "bloc": "Économie / fiscalité / travail",
+    "question": "Conditionnalité",
+    "optionA": "Conditionner les aides publiques aux comportements sociaux des entreprises",
+    "optionB": "Accorder les aides selon les besoins économiques sans conditions trop strictes",
+    "enonce": "Les aides publiques aux entreprises doivent être conditionnées à l'absence de dividendes et de licenciements."
+  },
+  {
+    "id": "Q126",
+    "theme": "Santé",
+    "bloc": "Santé / éducation / jeunesse",
+    "question": "Compétences médicales",
+    "optionA": "Élargir les prescriptions possibles pour pharmaciens et infirmiers",
+    "optionB": "Réserver l'essentiel de la prescription aux médecins",
+    "enonce": "Les pharmaciens et infirmiers doivent pouvoir prescrire certains traitements simples."
+  },
+  {
+    "id": "Q127",
+    "theme": "Éducation",
+    "bloc": "Santé / éducation / jeunesse",
+    "question": "Affectation des enseignants",
+    "optionA": "Renforcer les incitations pour enseigner dans les établissements difficiles",
+    "optionB": "Éviter de différencier fortement les débuts de carrière selon les territoires",
+    "enonce": "Les jeunes enseignants doivent être incités financièrement à commencer dans les établissements les plus difficiles."
+  },
+  {
+    "id": "Q128",
+    "theme": "Santé",
+    "bloc": "Santé / éducation / jeunesse",
+    "question": "Santé mentale",
+    "optionA": "Rembourser plus largement les consultations psychologiques",
+    "optionB": "Limiter le remboursement pour maîtriser les dépenses de santé",
+    "enonce": "Les consultations psychologiques doivent être remboursées plus largement sans prescription médicale."
+  },
+  {
+    "id": "Q129",
+    "theme": "Éducation",
+    "bloc": "Santé / éducation / jeunesse",
+    "question": "Autonomie scolaire",
+    "optionA": "Donner plus d'autonomie aux établissements scolaires",
+    "optionB": "Préserver un cadre national commun plus strict",
+    "enonce": "Les établissements scolaires doivent avoir davantage d'autonomie sur leurs horaires, projets et méthodes pédagogiques."
+  },
+  {
+    "id": "Q130",
+    "theme": "Éducation",
+    "bloc": "Santé / éducation / jeunesse",
+    "question": "Devoirs",
+    "optionA": "Supprimer les devoirs écrits à la maison au primaire",
+    "optionB": "Maintenir les devoirs pour consolider les apprentissages",
+    "enonce": "Les devoirs écrits à la maison doivent être supprimés à l'école primaire."
+  },
+  {
+    "id": "Q131",
+    "theme": "Éducation",
+    "bloc": "Santé / éducation / jeunesse",
+    "question": "Orientation",
+    "optionA": "Introduire plus tôt l'orientation professionnelle",
+    "optionB": "Préserver plus longtemps un enseignement général commun",
+    "enonce": "L'orientation professionnelle doit commencer plus tôt, dès le collège."
+  },
+  {
+    "id": "Q132",
+    "theme": "Enseignement supérieur",
+    "bloc": "Santé / éducation / jeunesse",
+    "question": "Sélection",
+    "optionA": "Autoriser plus de sélection à l'entrée des filières demandées",
+    "optionB": "Garantir un accès universitaire plus ouvert",
+    "enonce": "Les filières universitaires très demandées doivent pouvoir sélectionner davantage à l'entrée."
+  },
+  {
+    "id": "Q133",
+    "theme": "Enseignement supérieur",
+    "bloc": "Santé / éducation / jeunesse",
+    "question": "Étudiants",
+    "optionA": "Créer un revenu étudiant",
+    "optionB": "Cibler les aides sur les étudiants les plus précaires",
+    "enonce": "Un revenu étudiant doit être instauré pour limiter la précarité."
+  },
+  {
+    "id": "Q134",
+    "theme": "Santé",
+    "bloc": "Santé / éducation / jeunesse",
+    "question": "Cliniques privées",
+    "optionA": "Encadrer davantage les marges des cliniques privées",
+    "optionB": "Laisser plus de liberté économique aux cliniques privées",
+    "enonce": "Les cliniques privées financées par l'Assurance maladie doivent voir leurs marges davantage encadrées."
+  },
+  {
+    "id": "Q135",
+    "theme": "Santé / vieillissement",
+    "bloc": "Santé / éducation / jeunesse",
+    "question": "Dépendance",
+    "optionA": "Créer un service public de la dépendance",
+    "optionB": "S'appuyer davantage sur les familles, associations et acteurs privés",
+    "enonce": "Un grand service public de la dépendance doit être créé pour les personnes âgées."
+  },
+  {
+    "id": "Q136",
+    "theme": "Santé publique",
+    "bloc": "Santé / éducation / jeunesse",
+    "question": "Alimentation",
+    "optionA": "Taxer davantage les boissons très sucrées",
+    "optionB": "Éviter de taxer plus les produits de consommation courante",
+    "enonce": "Les boissons très sucrées doivent être davantage taxées."
+  },
+  {
+    "id": "Q137",
+    "theme": "Transport / jeunesse",
+    "bloc": "Santé / éducation / jeunesse",
+    "question": "Mobilité",
+    "optionA": "Rendre les transports publics gratuits pour les moins de 25 ans",
+    "optionB": "Maintenir une participation financière des usagers jeunes",
+    "enonce": "Les transports publics doivent être gratuits pour les moins de 25 ans."
+  },
+  {
+    "id": "Q138",
+    "theme": "Travail",
+    "bloc": "Santé / éducation / jeunesse",
+    "question": "Transparence salariale",
+    "optionA": "Imposer plus de transparence sur les écarts de salaires",
+    "optionB": "Limiter les obligations de publication pour les entreprises",
+    "enonce": "Les entreprises doivent publier davantage d'informations sur les écarts de salaires internes."
+  },
+  {
+    "id": "Q139",
+    "theme": "Travail",
+    "bloc": "Santé / éducation / jeunesse",
+    "question": "Télétravail",
+    "optionA": "Créer un droit légal au télétravail régulier",
+    "optionB": "Laisser l'organisation du télétravail à la négociation en entreprise",
+    "enonce": "Les salariés dont le métier le permet doivent avoir un droit légal au télétravail plusieurs jours par semaine."
+  },
+  {
+    "id": "Q140",
+    "theme": "Éducation",
+    "bloc": "Santé / éducation / jeunesse",
+    "question": "Effectifs scolaires",
+    "optionA": "Fixer un plafond légal d'élèves par classe",
+    "optionB": "Laisser la taille des classes dépendre des moyens et des territoires",
+    "enonce": "La loi doit fixer un nombre maximum d'élèves par classe."
+  },
+  {
+    "id": "Q141",
+    "theme": "Écologie",
+    "bloc": "Écologie / énergie / agriculture",
+    "question": "Publicité",
+    "optionA": "Interdire la publicité pour les véhicules très polluants",
+    "optionB": "Laisser la publicité automobile libre avec information environnementale",
+    "enonce": "La publicité pour les SUV et véhicules très polluants doit être interdite."
+  },
+  {
+    "id": "Q142",
+    "theme": "Écologie / villes",
+    "bloc": "Écologie / énergie / agriculture",
+    "question": "ZFE",
+    "optionA": "Accélérer les zones à faibles émissions",
+    "optionB": "Assouplir ou ralentir les ZFE pour protéger les ménages dépendants de la voiture",
+    "enonce": "Les zones à faibles émissions doivent être accélérées dans les grandes agglomérations."
+  },
+  {
+    "id": "Q143",
+    "theme": "Alimentation",
+    "bloc": "Écologie / énergie / agriculture",
+    "question": "Cantines",
+    "optionA": "Rendre obligatoire une option végétarienne quotidienne",
+    "optionB": "Laisser les cantines choisir librement leurs menus",
+    "enonce": "Une option végétarienne quotidienne doit être obligatoire dans les cantines publiques."
+  },
+  {
+    "id": "Q144",
+    "theme": "Montagne / climat",
+    "bloc": "Écologie / énergie / agriculture",
+    "question": "Ski",
+    "optionA": "Interdire les nouveaux projets de neige artificielle",
+    "optionB": "Autoriser ces projets pour protéger l'économie des stations",
+    "enonce": "Les nouveaux projets de neige artificielle en station de ski doivent être interdits."
+  },
+  {
+    "id": "Q145",
+    "theme": "Énergie",
+    "bloc": "Écologie / énergie / agriculture",
+    "question": "Solaire",
+    "optionA": "Rendre le solaire obligatoire sur grands bâtiments et parkings",
+    "optionB": "Encourager le solaire sans obligation générale",
+    "enonce": "Les panneaux solaires doivent être obligatoires sur les nouveaux grands bâtiments et parkings."
+  },
+  {
+    "id": "Q146",
+    "theme": "Écologie / commerce",
+    "bloc": "Écologie / énergie / agriculture",
+    "question": "Sobriété",
+    "optionA": "Interdire les pratiques commerciales très énergivores",
+    "optionB": "Laisser les commerces gérer librement leur consommation d'énergie",
+    "enonce": "Les terrasses chauffées et magasins climatisés portes ouvertes doivent être interdits."
+  },
+  {
+    "id": "Q147",
+    "theme": "Agriculture / eau",
+    "bloc": "Écologie / énergie / agriculture",
+    "question": "Sécheresse",
+    "optionA": "Limiter fortement l'irrigation en zones de sécheresse",
+    "optionB": "Préserver l'irrigation pour protéger la production agricole",
+    "enonce": "L'irrigation des cultures très consommatrices d'eau doit être limitée dans les zones en tension hydrique."
+  },
+  {
+    "id": "Q148",
+    "theme": "Consommation",
+    "bloc": "Écologie / énergie / agriculture",
+    "question": "Réparation",
+    "optionA": "Imposer une réparabilité garantie pendant dix ans",
+    "optionB": "Éviter d'imposer des obligations trop lourdes aux fabricants",
+    "enonce": "Les appareils électroménagers doivent être garantis réparables pendant au moins dix ans."
+  },
+  {
+    "id": "Q149",
+    "theme": "Santé / environnement",
+    "bloc": "Écologie / énergie / agriculture",
+    "question": "Vapes jetables",
+    "optionA": "Interdire les vapes jetables",
+    "optionB": "Les autoriser avec une réglementation renforcée",
+    "enonce": "Les cigarettes électroniques jetables doivent être interdites."
+  },
+  {
+    "id": "Q150",
+    "theme": "Justice environnementale",
+    "bloc": "Écologie / énergie / agriculture",
+    "question": "Écocide",
+    "optionA": "Créer un crime d'écocide",
+    "optionB": "Garder les sanctions environnementales dans le cadre actuel",
+    "enonce": "Les atteintes graves à l'environnement doivent être reconnues comme des crimes d'écocide."
+  },
+  {
+    "id": "Q151",
+    "theme": "Agriculture / eau",
+    "bloc": "Écologie / énergie / agriculture",
+    "question": "Réserves d'eau",
+    "optionA": "Autoriser plus largement les réserves d'eau agricoles",
+    "optionB": "Limiter ces réserves pour protéger les nappes et les milieux naturels",
+    "enonce": "Les réserves de substitution pour l'irrigation agricole doivent être autorisées plus largement."
+  },
+  {
+    "id": "Q152",
+    "theme": "Énergie",
+    "bloc": "Écologie / énergie / agriculture",
+    "question": "Éolien en mer",
+    "optionA": "Accélérer l'éolien en mer",
+    "optionB": "Ralentir les projets pour mieux respecter les territoires et paysages",
+    "enonce": "Le développement de l'éolien en mer doit être accéléré, même face aux oppositions locales."
+  },
+  {
+    "id": "Q153",
+    "theme": "Commerce / climat",
+    "bloc": "Écologie / énergie / agriculture",
+    "question": "Taxe carbone aux frontières",
+    "optionA": "Taxer les importations très polluantes aux frontières",
+    "optionB": "Éviter de nouvelles taxes qui renchérissent les biens importés",
+    "enonce": "Les produits importés très polluants doivent être taxés aux frontières européennes."
+  },
+  {
+    "id": "Q154",
+    "theme": "Énergie",
+    "bloc": "Écologie / énergie / agriculture",
+    "question": "Petits réacteurs nucléaires",
+    "optionA": "Investir dans les petits réacteurs nucléaires",
+    "optionB": "Concentrer l'effort sur les renouvelables et la sobriété",
+    "enonce": "La France doit investir dans les petits réacteurs nucléaires modulaires."
+  },
+  {
+    "id": "Q155",
+    "theme": "Alimentation publique",
+    "bloc": "Écologie / énergie / agriculture",
+    "question": "Viande",
+    "optionA": "Réduire fortement la viande dans les achats publics",
+    "optionB": "Maintenir une offre carnée importante dans les cantines",
+    "enonce": "Les achats publics doivent réduire fortement la part de viande servie dans les cantines."
+  },
+  {
+    "id": "Q156",
+    "theme": "Logement / nationalité",
+    "bloc": "Immigration / sécurité / justice / laïcité",
+    "question": "Priorité nationale",
+    "optionA": "Donner une priorité nationale pour le logement social",
+    "optionB": "Attribuer les logements sociaux selon les besoins, sans critère de nationalité",
+    "enonce": "Les Français doivent être prioritaires pour l'accès au logement social."
+  },
+  {
+    "id": "Q157",
+    "theme": "Immigration",
+    "bloc": "Immigration / sécurité / justice / laïcité",
+    "question": "Intégration",
+    "optionA": "Conditionner les titres longs à un examen de langue et de civisme",
+    "optionB": "Éviter de durcir les conditions de séjour pour les étrangers réguliers",
+    "enonce": "Un examen exigeant de langue et de civisme doit conditionner le renouvellement des titres de séjour longs."
+  },
+  {
+    "id": "Q158",
+    "theme": "Nationalité",
+    "bloc": "Immigration / sécurité / justice / laïcité",
+    "question": "Naturalisation",
+    "optionA": "Durcir la naturalisation en cas de condamnations répétées",
+    "optionB": "Maintenir des règles de naturalisation moins centrées sur le passé pénal",
+    "enonce": "La naturalisation doit être rendue plus difficile en cas de condamnations pénales répétées."
+  },
+  {
+    "id": "Q159",
+    "theme": "Sécurité / numérique",
+    "bloc": "Immigration / sécurité / justice / laïcité",
+    "question": "Reconnaissance faciale",
+    "optionA": "Autoriser la reconnaissance faciale ciblée dans les transports",
+    "optionB": "Interdire cette technologie pour protéger les libertés publiques",
+    "enonce": "La reconnaissance faciale doit être autorisée dans les transports publics pour certains objectifs de sécurité."
+  },
+  {
+    "id": "Q160",
+    "theme": "Numérique / sécurité",
+    "bloc": "Immigration / sécurité / justice / laïcité",
+    "question": "Anonymat en ligne",
+    "optionA": "Limiter l'anonymat sur les réseaux sociaux",
+    "optionB": "Protéger l'anonymat en ligne malgré les risques d'abus",
+    "enonce": "L'anonymat sur les réseaux sociaux doit être limité pour mieux lutter contre la haine en ligne."
+  },
+  {
+    "id": "Q161",
+    "theme": "Ordre public",
+    "bloc": "Immigration / sécurité / justice / laïcité",
+    "question": "Manifestations",
+    "optionA": "Permettre d'interdire plus facilement certaines manifestations à risque",
+    "optionB": "Protéger plus strictement le droit de manifester",
+    "enonce": "Les manifestations présentant un risque élevé de violences doivent pouvoir être interdites plus facilement."
+  },
+  {
+    "id": "Q162",
+    "theme": "Justice",
+    "bloc": "Immigration / sécurité / justice / laïcité",
+    "question": "Agents publics",
+    "optionA": "Renforcer les sanctions minimales pour les agressions contre agents publics",
+    "optionB": "Laisser les juges adapter librement les sanctions",
+    "enonce": "Les agressions contre les enseignants, soignants et forces de l'ordre doivent entraîner des sanctions minimales renforcées."
+  },
+  {
+    "id": "Q163",
+    "theme": "Prison",
+    "bloc": "Immigration / sécurité / justice / laïcité",
+    "question": "Travail carcéral",
+    "optionA": "Rendre le travail carcéral obligatoire",
+    "optionB": "Maintenir le travail en prison volontaire",
+    "enonce": "Le travail en prison doit devenir obligatoire pour les détenus qui en sont capables."
+  },
+  {
+    "id": "Q164",
+    "theme": "Justice",
+    "bloc": "Immigration / sécurité / justice / laïcité",
+    "question": "Justice restaurative",
+    "optionA": "Développer davantage la justice restaurative",
+    "optionB": "Prioriser la sanction classique plutôt que la médiation pénale",
+    "enonce": "La justice restaurative entre victimes et auteurs doit être davantage développée."
+  },
+  {
+    "id": "Q165",
+    "theme": "Sécurité locale",
+    "bloc": "Immigration / sécurité / justice / laïcité",
+    "question": "Police municipale",
+    "optionA": "Armer par défaut les polices municipales",
+    "optionB": "Laisser chaque commune décider ou limiter l'armement",
+    "enonce": "Les policiers municipaux doivent être armés par défaut."
+  },
+  {
+    "id": "Q166",
+    "theme": "Laïcité / sécurité",
+    "bloc": "Immigration / sécurité / justice / laïcité",
+    "question": "Associations radicalisées",
+    "optionA": "Faciliter les fermetures administratives d'associations radicalisées",
+    "optionB": "Renforcer les garanties judiciaires avant toute fermeture",
+    "enonce": "Les associations soupçonnées de radicalisation doivent pouvoir être fermées administrativement plus rapidement."
+  },
+  {
+    "id": "Q167",
+    "theme": "Terrorisme / nationalité",
+    "bloc": "Immigration / sécurité / justice / laïcité",
+    "question": "Déchéance",
+    "optionA": "Permettre la déchéance de nationalité pour terrorisme",
+    "optionB": "Refuser la déchéance de nationalité, même pour les binationaux",
+    "enonce": "Les binationaux condamnés pour terrorisme doivent pouvoir perdre la nationalité française."
+  },
+  {
+    "id": "Q168",
+    "theme": "Laïcité",
+    "bloc": "Immigration / sécurité / justice / laïcité",
+    "question": "Financement des cultes",
+    "optionA": "Interdire ou plafonner fortement le financement étranger des cultes",
+    "optionB": "Autoriser ce financement avec transparence et contrôle",
+    "enonce": "Le financement étranger des lieux de culte doit être interdit ou très strictement plafonné."
+  },
+  {
+    "id": "Q169",
+    "theme": "Asile",
+    "bloc": "Immigration / sécurité / justice / laïcité",
+    "question": "Procédures",
+    "optionA": "Accélérer fortement les procédures d'asile",
+    "optionB": "Préserver des délais plus longs pour mieux examiner les dossiers",
+    "enonce": "Les procédures d'asile doivent être fortement accélérées avec des délais de décision plus courts."
+  },
+  {
+    "id": "Q170",
+    "theme": "Délinquance des mineurs",
+    "bloc": "Immigration / sécurité / justice / laïcité",
+    "question": "Responsabilité parentale",
+    "optionA": "Sanctionner financièrement certains parents de mineurs récidivistes",
+    "optionB": "Éviter de punir les parents pour les actes de leurs enfants",
+    "enonce": "Les parents de mineurs récidivistes doivent pouvoir être financièrement sanctionnés."
+  },
+  {
+    "id": "Q171",
+    "theme": "Europe / industrie",
+    "bloc": "Europe / international",
+    "question": "Emprunt européen",
+    "optionA": "Autoriser un grand emprunt européen défense-industrie",
+    "optionB": "Refuser une dette européenne commune supplémentaire",
+    "enonce": "L'Union européenne doit pouvoir emprunter massivement pour financer la défense et l'industrie."
+  },
+  {
+    "id": "Q172",
+    "theme": "Europe sociale",
+    "bloc": "Europe / international",
+    "question": "Salaire minimum européen",
+    "optionA": "Créer un cadre européen de salaire minimum",
+    "optionB": "Laisser chaque pays fixer seul sa politique salariale",
+    "enonce": "Un salaire minimum européen adapté à chaque pays doit être instauré."
+  },
+  {
+    "id": "Q173",
+    "theme": "Europe",
+    "bloc": "Europe / international",
+    "question": "Élargissement",
+    "optionA": "Ralentir l'élargissement de l'Union européenne",
+    "optionB": "Poursuivre l'élargissement si les pays candidats remplissent les critères",
+    "enonce": "L'élargissement de l'Union européenne doit être fortement ralenti tant que les institutions ne sont pas réformées."
+  },
+  {
+    "id": "Q174",
+    "theme": "Diplomatie",
+    "bloc": "Europe / international",
+    "question": "Palestine",
+    "optionA": "Reconnaître officiellement l'État de Palestine",
+    "optionB": "Attendre un accord de paix ou un cadre international plus large",
+    "enonce": "La France doit reconnaître officiellement l'État de Palestine."
+  },
+  {
+    "id": "Q175",
+    "theme": "Commerce international",
+    "bloc": "Europe / international",
+    "question": "Accords commerciaux",
+    "optionA": "Conditionner les accords commerciaux à des normes strictes",
+    "optionB": "Signer des accords plus ouverts pour favoriser les échanges",
+    "enonce": "Les accords commerciaux doivent être conditionnés au respect de normes sociales et environnementales strictes."
+  },
+  {
+    "id": "Q176",
+    "theme": "Commerce international",
+    "bloc": "Europe / international",
+    "question": "Chine",
+    "optionA": "Durcir les sanctions commerciales contre la Chine",
+    "optionB": "Privilégier le dialogue commercial pour éviter l'escalade",
+    "enonce": "La France et l'Europe doivent durcir les sanctions commerciales contre la Chine en cas de concurrence déloyale."
+  },
+  {
+    "id": "Q177",
+    "theme": "Ukraine",
+    "bloc": "Europe / international",
+    "question": "Formation militaire",
+    "optionA": "Envoyer des instructeurs militaires en Ukraine",
+    "optionB": "Éviter toute présence militaire française sur le sol ukrainien",
+    "enonce": "La France doit pouvoir envoyer des instructeurs militaires en Ukraine sans participer directement aux combats."
+  },
+  {
+    "id": "Q178",
+    "theme": "Droits européens",
+    "bloc": "Europe / international",
+    "question": "CEDH",
+    "optionA": "Limiter l'influence de la CEDH sur le droit français",
+    "optionB": "Maintenir pleinement l'autorité de la CEDH",
+    "enonce": "La France doit reprendre davantage de souveraineté face à la Cour européenne des droits de l'homme."
+  },
+  {
+    "id": "Q179",
+    "theme": "Union européenne",
+    "bloc": "Europe / international",
+    "question": "Initiative parlementaire",
+    "optionA": "Donner plus de pouvoir législatif au Parlement européen",
+    "optionB": "Maintenir l'initiative principalement à la Commission et aux États",
+    "enonce": "Le Parlement européen doit obtenir un vrai droit d'initiative législative."
+  },
+  {
+    "id": "Q180",
+    "theme": "Asile européen",
+    "bloc": "Europe / international",
+    "question": "Relocalisation",
+    "optionA": "Rendre obligatoire la répartition européenne des demandeurs d'asile",
+    "optionB": "Laisser chaque pays décider librement de son accueil",
+    "enonce": "Les demandeurs d'asile doivent être répartis de manière obligatoire entre pays européens."
+  },
+  {
+    "id": "Q181",
+    "theme": "Démocratie",
+    "bloc": "Institutions / démocratie / numérique",
+    "question": "Vote obligatoire",
+    "optionA": "Rendre le vote obligatoire avec vote blanc reconnu",
+    "optionB": "Maintenir le vote facultatif",
+    "enonce": "Le vote doit devenir obligatoire, avec reconnaissance du vote blanc."
+  },
+  {
+    "id": "Q182",
+    "theme": "Démocratie",
+    "bloc": "Institutions / démocratie / numérique",
+    "question": "Vote blanc",
+    "optionA": "Donner un effet contraignant au vote blanc",
+    "optionB": "Compter le vote blanc sans annuler l'élection",
+    "enonce": "Une élection doit pouvoir être annulée si le vote blanc dépasse un certain seuil."
+  },
+  {
+    "id": "Q183",
+    "theme": "Démocratie",
+    "bloc": "Institutions / démocratie / numérique",
+    "question": "Révocation",
+    "optionA": "Créer un référendum révocatoire pour les députés",
+    "optionB": "Conserver des mandats représentatifs sans révocation populaire",
+    "enonce": "Les électeurs doivent pouvoir révoquer leur député en cours de mandat par référendum local."
+  },
+  {
+    "id": "Q184",
+    "theme": "Vie publique",
+    "bloc": "Institutions / démocratie / numérique",
+    "question": "Pantouflage",
+    "optionA": "Interdire le lobbying privé aux anciens ministres pendant cinq ans",
+    "optionB": "Limiter les interdictions pour ne pas bloquer les reconversions",
+    "enonce": "Les ministres doivent être interdits de lobbying privé pendant cinq ans après leur départ."
+  },
+  {
+    "id": "Q185",
+    "theme": "Vie politique",
+    "bloc": "Institutions / démocratie / numérique",
+    "question": "Financement",
+    "optionA": "Plafonner davantage les dons politiques importants",
+    "optionB": "Maintenir les plafonds actuels de financement politique",
+    "enonce": "Les dons politiques des grandes fortunes doivent être davantage plafonnés."
+  },
+  {
+    "id": "Q186",
+    "theme": "Institutions",
+    "bloc": "Institutions / démocratie / numérique",
+    "question": "Nombre d'élus",
+    "optionA": "Réduire le nombre de parlementaires",
+    "optionB": "Maintenir le nombre d'élus pour représenter les territoires",
+    "enonce": "Le nombre de députés et de sénateurs doit être réduit."
+  },
+  {
+    "id": "Q187",
+    "theme": "Démocratie participative",
+    "bloc": "Institutions / démocratie / numérique",
+    "question": "Citoyens tirés au sort",
+    "optionA": "Donner un rôle législatif aux citoyens tirés au sort",
+    "optionB": "Réserver l'initiative législative aux élus et au gouvernement",
+    "enonce": "Des assemblées de citoyens tirés au sort doivent pouvoir proposer des lois soumises au Parlement."
+  },
+  {
+    "id": "Q188",
+    "theme": "Transparence",
+    "bloc": "Institutions / démocratie / numérique",
+    "question": "Lobbying",
+    "optionA": "Publier systématiquement les rendez-vous de lobbying",
+    "optionB": "Préserver une part de confidentialité dans les échanges politiques",
+    "enonce": "Tous les rendez-vous entre ministres et représentants d'intérêts doivent être publiés en ligne."
+  },
+  {
+    "id": "Q189",
+    "theme": "Partis politiques",
+    "bloc": "Institutions / démocratie / numérique",
+    "question": "Démocratie interne",
+    "optionA": "Conditionner le financement public à la démocratie interne",
+    "optionB": "Ne pas conditionner le financement public au fonctionnement interne des partis",
+    "enonce": "Le financement public des partis doit dépendre de règles de démocratie interne."
+  },
+  {
+    "id": "Q190",
+    "theme": "Sondages",
+    "bloc": "Institutions / démocratie / numérique",
+    "question": "Élections",
+    "optionA": "Interdire les sondages dans le mois précédant le vote",
+    "optionB": "Maintenir la publication libre des sondages jusqu'à la période actuelle",
+    "enonce": "La publication de sondages électoraux doit être interdite le mois précédant un scrutin national."
+  },
+  {
+    "id": "Q191",
+    "theme": "Numérique",
+    "bloc": "Institutions / démocratie / numérique",
+    "question": "Algorithmes",
+    "optionA": "Rendre les algorithmes auditables par une autorité publique",
+    "optionB": "Protéger le secret industriel des plateformes",
+    "enonce": "Les grandes plateformes doivent rendre leurs algorithmes de recommandation auditables par une autorité publique."
+  },
+  {
+    "id": "Q192",
+    "theme": "Numérique / jeunesse",
+    "bloc": "Institutions / démocratie / numérique",
+    "question": "Temps d'écran",
+    "optionA": "Imposer un mode temps limité par défaut pour les mineurs",
+    "optionB": "Laisser les familles et plateformes gérer librement le temps d'écran",
+    "enonce": "Les réseaux sociaux doivent proposer par défaut un mode limité en temps pour les mineurs."
+  },
+  {
+    "id": "Q193",
+    "theme": "Numérique",
+    "bloc": "Institutions / démocratie / numérique",
+    "question": "Identité numérique",
+    "optionA": "Exiger une identité numérique vérifiée pour certains services",
+    "optionB": "Refuser l'identité numérique obligatoire pour protéger l'anonymat",
+    "enonce": "Une identité numérique vérifiée doit être requise pour accéder à certains services en ligne sensibles."
+  },
+  {
+    "id": "Q194",
+    "theme": "Sécurité numérique",
+    "bloc": "Institutions / démocratie / numérique",
+    "question": "Chiffrement",
+    "optionA": "Protéger le chiffrement de bout en bout sans exception",
+    "optionB": "Permettre un accès encadré de l'État dans certaines enquêtes",
+    "enonce": "Les messageries chiffrées doivent rester inaccessibles à l'État, même dans les enquêtes sensibles."
+  },
+  {
+    "id": "Q195",
+    "theme": "Élections / numérique",
+    "bloc": "Institutions / démocratie / numérique",
+    "question": "Deepfakes",
+    "optionA": "Interdire les deepfakes politiques en campagne",
+    "optionB": "Les autoriser s'ils sont clairement signalés comme contenus synthétiques",
+    "enonce": "Les deepfakes politiques doivent être interdits pendant les campagnes électorales."
+  },
+  {
+    "id": "Q196",
+    "theme": "Plateformes",
+    "bloc": "Institutions / démocratie / numérique",
+    "question": "Fil d'actualité",
+    "optionA": "Imposer le fil chronologique par défaut",
+    "optionB": "Laisser les plateformes choisir leur mode de classement des contenus",
+    "enonce": "Les réseaux sociaux doivent proposer le fil chronologique par défaut."
+  },
+  {
+    "id": "Q197",
+    "theme": "Souveraineté numérique",
+    "bloc": "Institutions / démocratie / numérique",
+    "question": "Cloud public",
+    "optionA": "Imposer un cloud européen souverain aux administrations",
+    "optionB": "Laisser les administrations choisir les solutions les plus efficaces, même étrangères",
+    "enonce": "Les administrations françaises doivent utiliser prioritairement un cloud européen souverain."
+  },
+  {
+    "id": "Q198",
+    "theme": "Culture / numérique",
+    "bloc": "Institutions / démocratie / numérique",
+    "question": "Streaming",
+    "optionA": "Augmenter la contribution des plateformes à la création française",
+    "optionB": "Limiter ces contributions pour préserver l'offre et les prix",
+    "enonce": "Les plateformes de streaming doivent contribuer davantage au financement de la création française."
+  },
+  {
+    "id": "Q199",
+    "theme": "Influenceurs",
+    "bloc": "Institutions / démocratie / numérique",
+    "question": "Régulation",
+    "optionA": "Réguler plus fortement les influenceurs politiques et financiers",
+    "optionB": "Préserver davantage la liberté d'expression des influenceurs",
+    "enonce": "Les influenceurs doivent être soumis à des règles proches des médias lorsqu'ils parlent de politique ou de produits financiers."
+  },
+  {
+    "id": "Q200",
+    "theme": "Campagnes électorales",
+    "bloc": "Institutions / démocratie / numérique",
+    "question": "Publicité ciblée",
+    "optionA": "Interdire la publicité politique ciblée en ligne",
+    "optionB": "Autoriser la publicité ciblée avec plus de transparence",
+    "enonce": "La publicité politique ciblée en ligne doit être interdite."
+  }
+]
