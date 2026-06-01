@@ -1,5 +1,4 @@
 import { Ionicons } from "@expo/vector-icons";
-import { LinearGradient } from "expo-linear-gradient";
 import * as Haptics from "expo-haptics";
 import { router } from "expo-router";
 import React, { useEffect, useRef } from "react";
@@ -13,39 +12,16 @@ import {
 } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
-import { QuizMode, useQuiz } from "@/contexts/QuizContext";
+import { useQuiz } from "@/contexts/QuizContext";
 import { useColors } from "@/hooks/useColors";
 
-const MODES: {
-  mode: QuizMode;
-  label: string;
-  questions: string;
-  time: string;
-  desc: string;
-  recommended?: boolean;
-}[] = [
-  {
-    mode: 10,
-    label: "Test rapide",
-    questions: "10 questions",
-    time: "≈ 1 minute",
-    desc: "Pour découvrir une première tendance.",
-  },
-  {
-    mode: 40,
-    label: "Test standard",
-    questions: "40 questions",
-    time: "≈ 4 à 6 min",
-    desc: "Le meilleur équilibre entre rapidité et fiabilité.",
-    recommended: true,
-  },
-  {
-    mode: 100,
-    label: "Test complet",
-    questions: "100 questions",
-    time: "≈ 10 à 15 min",
-    desc: "Pour un résultat plus détaillé et plus stable.",
-  },
+const THEMES = [
+  "Immigration · Sécurité",
+  "Économie · Fiscalité",
+  "Santé · Éducation",
+  "Environnement · Énergie",
+  "Europe · International",
+  "Démocratie · Société",
 ];
 
 export default function HomeScreen() {
@@ -54,258 +30,296 @@ export default function HomeScreen() {
   const { startQuiz } = useQuiz();
 
   const fadeAnim = useRef(new Animated.Value(0)).current;
-  const slideAnim = useRef(new Animated.Value(30)).current;
+  const slideAnim = useRef(new Animated.Value(40)).current;
+  const btnScale = useRef(new Animated.Value(1)).current;
+  const pulseAnim = useRef(new Animated.Value(1)).current;
 
   useEffect(() => {
     Animated.parallel([
-      Animated.timing(fadeAnim, { toValue: 1, duration: 600, useNativeDriver: true }),
-      Animated.timing(slideAnim, { toValue: 0, duration: 600, useNativeDriver: true }),
+      Animated.timing(fadeAnim, {
+        toValue: 1,
+        duration: 700,
+        useNativeDriver: true,
+      }),
+      Animated.timing(slideAnim, {
+        toValue: 0,
+        duration: 700,
+        useNativeDriver: true,
+      }),
     ]).start();
+
+    Animated.loop(
+      Animated.sequence([
+        Animated.timing(pulseAnim, {
+          toValue: 1.04,
+          duration: 1800,
+          useNativeDriver: true,
+        }),
+        Animated.timing(pulseAnim, {
+          toValue: 1,
+          duration: 1800,
+          useNativeDriver: true,
+        }),
+      ])
+    ).start();
   }, []);
 
-  const handleStart = (mode: QuizMode) => {
+  const handleStart = () => {
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
-    startQuiz(mode);
-    router.push("/quiz");
+    Animated.sequence([
+      Animated.timing(btnScale, {
+        toValue: 0.95,
+        duration: 100,
+        useNativeDriver: true,
+      }),
+      Animated.timing(btnScale, {
+        toValue: 1,
+        duration: 100,
+        useNativeDriver: true,
+      }),
+    ]).start(() => {
+      startQuiz();
+      router.push("/quiz");
+    });
   };
 
   const topPad = Platform.OS === "web" ? 67 : insets.top;
   const botPad = Platform.OS === "web" ? 34 : insets.bottom;
+
   const styles = makeStyles(colors);
 
   return (
-    <View style={[styles.container, { paddingTop: topPad + 16, paddingBottom: botPad + 20 }]}>
-      {/* Background glow blobs */}
-      <View style={[styles.blob, styles.blobTL, { backgroundColor: colors.gradientStart }]} />
-      <View style={[styles.blob, styles.blobBR, { backgroundColor: colors.gradientEnd }]} />
+    <View
+      style={[
+        styles.container,
+        { paddingTop: topPad + 20, paddingBottom: botPad + 20 },
+      ]}
+    >
+      {/* Flag accent bar */}
+      <View style={styles.flagBar}>
+        <View style={[styles.flagSegment, { backgroundColor: "#002395" }]} />
+        <View style={[styles.flagSegment, { backgroundColor: "#EDEDED" }]} />
+        <View style={[styles.flagSegment, { backgroundColor: "#ED2939" }]} />
+      </View>
 
       <Animated.View
-        style={[styles.content, { opacity: fadeAnim, transform: [{ translateY: slideAnim }] }]}
+        style={[
+          styles.content,
+          { opacity: fadeAnim, transform: [{ translateY: slideAnim }] },
+        ]}
       >
-        {/* Badge */}
-        <LinearGradient
-          colors={[colors.gradientStart, colors.gradientEnd]}
-          start={{ x: 0, y: 0 }}
-          end={{ x: 1, y: 1 }}
-          style={styles.badge}
-        >
-          <Text style={styles.badgeText}>Présidentielle 2027</Text>
-        </LinearGradient>
+        {/* Header */}
+        <View style={styles.header}>
+          <View style={styles.badge}>
+            <Ionicons name="stats-chart" size={14} color={colors.primary} />
+            <Text style={[styles.badgeText, { color: colors.primary }]}>
+              Présidentielle 2027
+            </Text>
+          </View>
 
-        {/* Title */}
-        <Text style={[styles.title, { color: colors.foreground }]}>
-          Tu préfères{"\n"}
-          <Text style={styles.titleGrad}>quel candidat ?</Text>
-        </Text>
+          <Text style={[styles.title, { color: colors.foreground }]}>
+            Tu préfères{"\n"}
+            <Text style={[styles.titleAccent, { color: colors.primary }]}>
+              quel candidat ?
+            </Text>
+          </Text>
 
-        <Text style={[styles.subtitle, { color: colors.mutedForeground }]}>
-          Choisis entre deux visions opposées de la France. Sélectionne un format, réponds aux dilemmes, puis découvre le classement complet.
-        </Text>
+          <Text style={[styles.subtitle, { color: colors.mutedForeground }]}>
+            40 questions · 23 candidats · Résultat immédiat
+          </Text>
+        </View>
 
-        {/* Mode cards */}
-        <View style={styles.modesGrid}>
-          {MODES.map((m) => (
-            <ModeCard
-              key={m.mode}
-              item={m}
-              onPress={() => handleStart(m.mode)}
-              colors={colors}
-            />
+        {/* Themes grid */}
+        <View style={styles.themesContainer}>
+          {THEMES.map((theme, i) => (
+            <View
+              key={i}
+              style={[
+                styles.themeChip,
+                {
+                  backgroundColor: colors.card,
+                  borderColor: colors.border,
+                },
+              ]}
+            >
+              <Text
+                style={[styles.themeText, { color: colors.mutedForeground }]}
+              >
+                {theme}
+              </Text>
+            </View>
           ))}
         </View>
 
-        <Text style={[styles.footer, { color: colors.mutedForeground }]}>
-          Anonyme · 23 candidats · 200 questions au total
+        {/* Info */}
+        <View
+          style={[
+            styles.infoBox,
+            { backgroundColor: colors.card, borderColor: colors.border },
+          ]}
+        >
+          <View style={styles.infoRow}>
+            <Ionicons
+              name="checkmark-circle"
+              size={18}
+              color={colors.success}
+            />
+            <Text style={[styles.infoText, { color: colors.foreground }]}>
+              Anonyme — aucune donnée personnelle collectée
+            </Text>
+          </View>
+          <View style={styles.infoRow}>
+            <Ionicons
+              name="time-outline"
+              size={18}
+              color={colors.mutedForeground}
+            />
+            <Text style={[styles.infoText, { color: colors.foreground }]}>
+              Environ 5 minutes
+            </Text>
+          </View>
+        </View>
+
+        {/* CTA */}
+        <Animated.View style={{ transform: [{ scale: btnScale }] }}>
+          <Animated.View style={{ transform: [{ scale: pulseAnim }] }}>
+            <Pressable
+              style={[styles.startBtn, { backgroundColor: colors.primary }]}
+              onPress={handleStart}
+              testID="start-quiz-btn"
+            >
+              <Text
+                style={[
+                  styles.startBtnText,
+                  { color: colors.primaryForeground },
+                ]}
+              >
+                Commencer le test
+              </Text>
+              <Ionicons
+                name="arrow-forward"
+                size={22}
+                color={colors.primaryForeground}
+              />
+            </Pressable>
+          </Animated.View>
+        </Animated.View>
+
+        <Text style={[styles.disclaimer, { color: colors.mutedForeground }]}>
+          Basé sur les positions publiques des candidats · 200 questions au total
         </Text>
       </Animated.View>
     </View>
   );
 }
 
-function ModeCard({
-  item,
-  onPress,
-  colors,
-}: {
-  item: (typeof MODES)[0];
-  onPress: () => void;
-  colors: ReturnType<typeof useColors>;
-}) {
-  const scale = useRef(new Animated.Value(1)).current;
-
-  const handlePress = () => {
-    Animated.sequence([
-      Animated.timing(scale, { toValue: 0.97, duration: 80, useNativeDriver: true }),
-      Animated.timing(scale, { toValue: 1, duration: 80, useNativeDriver: true }),
-    ]).start();
-    onPress();
-  };
-
-  return (
-    <Animated.View style={{ transform: [{ scale }] }}>
-      <Pressable
-        onPress={handlePress}
-        style={({ pressed }) => [
-          cardStyles.card,
-          {
-            borderColor: item.recommended
-              ? "rgba(147,197,253,0.55)"
-              : colors.border,
-            opacity: pressed ? 0.88 : 1,
-          },
-          item.recommended && { borderWidth: 1.5 },
-        ]}
-        testID={`mode-${item.mode}`}
-      >
-        {item.recommended && (
-          <LinearGradient
-            colors={[colors.gradientStart, colors.gradientEnd]}
-            start={{ x: 0, y: 0 }}
-            end={{ x: 1, y: 1 }}
-            style={[StyleSheet.absoluteFillObject, { borderRadius: 20, opacity: 0.18 }]}
-          />
-        )}
-
-        {item.recommended && (
-          <LinearGradient
-            colors={[colors.gradientStart, colors.gradientEnd]}
-            start={{ x: 0, y: 0 }}
-            end={{ x: 1, y: 1 }}
-            style={cardStyles.pill}
-          >
-            <Text style={cardStyles.pillText}>Recommandé</Text>
-          </LinearGradient>
-        )}
-
-        <Text style={[cardStyles.label, { color: colors.mutedForeground }]}>
-          {item.label}
-        </Text>
-        <Text style={[cardStyles.questions, { color: colors.foreground }]}>
-          {item.questions}
-        </Text>
-        <View style={[cardStyles.timeBadge, { backgroundColor: "rgba(255,255,255,0.13)" }]}>
-          <Ionicons name="time-outline" size={12} color={colors.mutedForeground} />
-          <Text style={[cardStyles.timeText, { color: colors.foreground }]}>
-            {item.time}
-          </Text>
-        </View>
-        <Text style={[cardStyles.desc, { color: colors.mutedForeground }]}>
-          {item.desc}
-        </Text>
-      </Pressable>
-    </Animated.View>
-  );
-}
-
-const cardStyles = StyleSheet.create({
-  card: {
-    borderRadius: 20,
-    borderWidth: 1,
-    padding: 18,
-    gap: 8,
-    overflow: "hidden",
-    backgroundColor: "rgba(255,255,255,0.09)",
-    minHeight: 160,
-  },
-  pill: {
-    alignSelf: "flex-start",
-    paddingHorizontal: 8,
-    paddingVertical: 4,
-    borderRadius: 999,
-    marginBottom: 2,
-  },
-  pillText: {
-    fontSize: 10,
-    fontFamily: "Inter_700Bold",
-    color: "#fff",
-    letterSpacing: 0.3,
-  },
-  label: {
-    fontSize: 11,
-    fontFamily: "Inter_700Bold",
-    textTransform: "uppercase",
-    letterSpacing: 0.8,
-  },
-  questions: {
-    fontSize: 24,
-    fontFamily: "Inter_700Bold",
-    letterSpacing: -0.5,
-  },
-  timeBadge: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 5,
-    alignSelf: "flex-start",
-    paddingHorizontal: 10,
-    paddingVertical: 5,
-    borderRadius: 999,
-  },
-  timeText: {
-    fontSize: 12,
-    fontFamily: "Inter_700Bold",
-  },
-  desc: {
-    fontSize: 13,
-    fontFamily: "Inter_400Regular",
-    lineHeight: 18,
-  },
-});
-
 function makeStyles(colors: ReturnType<typeof useColors>) {
   return StyleSheet.create({
     container: {
       flex: 1,
       backgroundColor: colors.background,
-      paddingHorizontal: 20,
-      overflow: "hidden",
     },
-    blob: {
+    flagBar: {
+      flexDirection: "row",
+      height: 4,
       position: "absolute",
-      width: 300,
-      height: 300,
-      borderRadius: 150,
-      opacity: 0.25,
+      top: 0,
+      left: 0,
+      right: 0,
     },
-    blobTL: { top: -80, left: -80 },
-    blobBR: { bottom: -80, right: -80 },
+    flagSegment: {
+      flex: 1,
+    },
     content: {
       flex: 1,
-      gap: 18,
+      paddingHorizontal: 24,
       justifyContent: "center",
+      gap: 24,
+    },
+    header: {
+      gap: 12,
     },
     badge: {
+      flexDirection: "row",
+      alignItems: "center",
+      gap: 6,
       alignSelf: "flex-start",
-      paddingHorizontal: 14,
-      paddingVertical: 7,
-      borderRadius: 999,
+      backgroundColor: colors.card,
+      borderWidth: 1,
+      borderColor: colors.border,
+      borderRadius: 20,
+      paddingHorizontal: 12,
+      paddingVertical: 5,
     },
     badgeText: {
       fontSize: 12,
-      fontFamily: "Inter_700Bold",
-      color: "#fff",
-      letterSpacing: 0.4,
+      fontFamily: "Inter_600SemiBold",
+      letterSpacing: 0.3,
     },
     title: {
-      fontSize: 36,
+      fontSize: 38,
       fontFamily: "Inter_700Bold",
-      lineHeight: 42,
+      lineHeight: 46,
       letterSpacing: -0.5,
     },
-    titleGrad: {
-      color: "#8b5cf6",
+    titleAccent: {
+      fontSize: 38,
+      fontFamily: "Inter_700Bold",
     },
     subtitle: {
+      fontSize: 15,
+      fontFamily: "Inter_400Regular",
+      lineHeight: 22,
+    },
+    themesContainer: {
+      flexDirection: "row",
+      flexWrap: "wrap",
+      gap: 8,
+    },
+    themeChip: {
+      borderRadius: 20,
+      borderWidth: 1,
+      paddingHorizontal: 12,
+      paddingVertical: 6,
+    },
+    themeText: {
+      fontSize: 12,
+      fontFamily: "Inter_500Medium",
+    },
+    infoBox: {
+      borderRadius: colors.radius,
+      borderWidth: 1,
+      padding: 16,
+      gap: 10,
+    },
+    infoRow: {
+      flexDirection: "row",
+      alignItems: "center",
+      gap: 10,
+    },
+    infoText: {
       fontSize: 14,
       fontFamily: "Inter_400Regular",
-      lineHeight: 20,
+      flex: 1,
     },
-    modesGrid: {
-      gap: 12,
+    startBtn: {
+      flexDirection: "row",
+      alignItems: "center",
+      justifyContent: "center",
+      borderRadius: colors.radius,
+      paddingVertical: 18,
+      gap: 10,
     },
-    footer: {
+    startBtnText: {
+      fontSize: 17,
+      fontFamily: "Inter_700Bold",
+      letterSpacing: 0.2,
+    },
+    disclaimer: {
       fontSize: 11,
       fontFamily: "Inter_400Regular",
       textAlign: "center",
+      lineHeight: 16,
     },
   });
 }
