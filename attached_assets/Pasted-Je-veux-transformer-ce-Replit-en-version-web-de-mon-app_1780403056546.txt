@@ -1,0 +1,191 @@
+Je veux transformer ce Replit en version web de mon app “Tu préfères 2027”, accessible par un simple lien navigateur, sans téléchargement Play Store.
+
+Objectif :
+Créer une web app Node.js / Express + HTML/CSS/JS simple, en gardant le concept de l’app :
+- écran d’accueil “Tu préfères 2027”
+- choix entre 3 formats : 10 questions, 40 questions, 100 questions
+- écran de quiz avec deux cartes bleues “Option A” et “Option B”
+- bouton gris “Neutre”
+- scoring simple
+- classement complet des candidats à la fin
+- page Méthodologie
+- page Admin avec statistiques anonymes
+
+IMPORTANT :
+Cette version web doit être séparée de la logique Expo.
+Je veux pouvoir lancer le projet avec :
+
+npm install
+npm start
+
+et ouvrir l’app dans le navigateur Replit.
+
+À faire :
+
+1. Créer ou remplacer le serveur web avec Express
+
+Créer un fichier server.js à la racine avec :
+- express
+- cors
+- lecture de fichiers JSON dans /data
+- routes API :
+  GET /api/questions
+  GET /api/candidates
+  POST /api/session
+  POST /api/vote
+  POST /api/finish
+  GET /api/admin/stats
+- servir le dossier public/ en statique
+- écouter sur process.env.PORT || 3000
+
+2. Créer la structure web :
+
+public/index.html
+public/style.css
+public/app.js
+public/methodologie.html
+public/admin.html
+
+3. Créer ou garder le dossier data :
+
+data/questions.json
+data/candidates.json
+data/positions.json
+data/votes.json
+data/results.json
+
+Si les données existent déjà dans le projet, les réutiliser.
+Sinon créer un exemple fonctionnel avec quelques questions et candidats.
+
+4. Modifier package.json
+
+Remplacer ou adapter les scripts pour que la version web fonctionne :
+
+{
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "cors": "^2.8.5",
+    "nanoid": "^3.3.7"
+  }
+}
+
+Si le projet contient encore des dépendances Expo, ne pas les utiliser pour la version web.
+L’objectif est que le Replit web démarre avec npm start.
+
+5. Interface écran d’accueil
+
+L’écran d’accueil doit afficher uniquement comme titre principal :
+
+Tu préfères 2027
+
+Sous-titre :
+
+Le jeu politique qui te fait choisir entre deux propositions opposées. Choisis un format, réponds aux dilemmes, puis découvre ton classement.
+
+Afficher 3 boutons/cartes :
+
+- Test rapide — 10 questions — environ 1 minute
+- Test standard — 40 questions — environ 4 à 6 minutes
+- Test complet — 100 questions — environ 10 à 15 minutes
+
+6. Écran question
+
+Ne pas afficher de titre séparé de question.
+
+Afficher simplement au centre :
+
+Tu préfères [proposition A] ou [proposition B]
+
+Puis en dessous deux grandes cartes bleues :
+
+Option A
+[proposition A]
+
+Option B
+[proposition B]
+
+Puis en bas un bouton gris :
+
+Neutre
+
+7. Scoring
+
+Utiliser un scoring simple :
+
+- si l’utilisateur choisit A, les candidats positionnés A sur cette question gagnent +1
+- si l’utilisateur choisit B, les candidats positionnés B gagnent +1
+- si l’utilisateur choisit Neutre, personne ne gagne de point
+- si un candidat est N / neutre / inconnu, il ne gagne pas de point
+
+À la fin, afficher le classement complet des candidats par points décroissants.
+
+8. Données utilisateurs
+
+Ne pas demander de compte.
+Ne pas demander de nom.
+Ne pas demander d’email.
+
+Enregistrer seulement :
+- sessionId aléatoire
+- questionId
+- choix A/B/N
+- date
+- résultat final
+
+Les données doivent être anonymes.
+
+9. Page Méthodologie
+
+Ajouter un bouton “Méthodologie” sur l’accueil.
+
+Créer une page /methodologie.html expliquant :
+- les questions utilisées
+- les positions candidats
+- la méthode de scoring
+- les données utilisateurs
+- que l’app ne demande aucun compte, nom ou email
+- qu’il est impossible de relier les résultats de vote à une personne en particulier dans cette version
+- que les données servent uniquement à améliorer l’application et mieux refléter les positions de chacun
+
+10. Page Admin
+
+Créer /admin avec mot de passe simple.
+
+Mot de passe par défaut :
+admin2027
+
+Pouvoir le modifier avec la variable d’environnement :
+ADMIN_PASSWORD
+
+La page admin doit afficher :
+- nombre total de votes
+- nombre de tests terminés
+- votes A/B/Neutre par question
+- candidats arrivés premiers le plus souvent
+
+11. Design
+
+Garder un style moderne :
+- bleu / violet
+- cartes arrondies
+- glassmorphism
+- responsive mobile
+- gros boutons faciles à cliquer
+
+12. Très important
+
+Ne pas utiliser Expo pour cette version web.
+Ne pas essayer de générer un .aab.
+Ne pas lancer Metro.
+Ne pas utiliser App.js comme entrée principale.
+La version web doit fonctionner avec Express et le dossier public.
+
+Quand c’est fini, je dois pouvoir faire :
+
+npm install
+npm start
+
+Puis ouvrir le lien Replit dans le navigateur.
