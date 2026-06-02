@@ -60,10 +60,7 @@ export default function ResultsScreen() {
   const [copied, setCopied] = useState(false);
 
   useEffect(() => {
-    if (!results) {
-      router.replace("/");
-      return;
-    }
+    if (!results) return;
     Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
     Animated.parallel([
       Animated.spring(heroScale, { toValue: 1, tension: 60, friction: 8, useNativeDriver: true }),
@@ -133,11 +130,15 @@ export default function ResultsScreen() {
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
     try {
       if (Platform.OS === "web") {
-        const uri = await captureRef(cardRef, { format: "png", quality: 1, result: "data-uri" });
+        const { toPng } = await import("html-to-image");
+        const node = cardRef.current as unknown as HTMLElement;
+        const dataUrl = await toPng(node, { pixelRatio: 2 });
         const link = document.createElement("a");
-        link.href = uri;
+        link.href = dataUrl;
         link.download = "tu-preferes-2027.png";
+        document.body.appendChild(link);
         link.click();
+        document.body.removeChild(link);
       } else {
         const uri = await captureRef(cardRef, { format: "png", quality: 1, result: "tmpfile" });
         const available = await Sharing.isAvailableAsync();
