@@ -125,21 +125,29 @@ export default function ResultsScreen() {
     });
   };
 
+  const captureCard = async (): Promise<string | null> => {
+    if (Platform.OS === "web") {
+      const { toPng } = await import("html-to-image");
+      const node = cardRef.current as unknown as HTMLElement;
+      return toPng(node, { pixelRatio: 2 });
+    } else {
+      return captureRef(cardRef, { format: "png", quality: 1, result: "tmpfile" });
+    }
+  };
+
   const handleDownload = async () => {
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
     try {
+      const uri = await captureCard();
+      if (!uri) return;
       if (Platform.OS === "web") {
-        const { toPng } = await import("html-to-image");
-        const node = cardRef.current as unknown as HTMLElement;
-        const dataUrl = await toPng(node, { pixelRatio: 2 });
         const link = document.createElement("a");
-        link.href = dataUrl;
+        link.href = uri;
         link.download = "tu-preferes-2027.png";
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
       } else {
-        const uri = await captureRef(cardRef, { format: "png", quality: 1, result: "tmpfile" });
         const available = await Sharing.isAvailableAsync();
         if (available) {
           await Sharing.shareAsync(uri, { mimeType: "image/png", dialogTitle: "Télécharger mon résultat" });
@@ -147,6 +155,34 @@ export default function ResultsScreen() {
       }
     } catch (e) {
       console.warn("Capture failed", e);
+    }
+  };
+
+  const handleInstagram = async () => {
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
+    try {
+      const uri = await captureCard();
+      if (!uri) return;
+      if (Platform.OS === "web") {
+        const link = document.createElement("a");
+        link.href = uri;
+        link.download = "tu-preferes-2027.png";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        Linking.openURL("https://www.instagram.com");
+      } else {
+        const available = await Sharing.isAvailableAsync();
+        if (available) {
+          await Sharing.shareAsync(uri, {
+            mimeType: "image/png",
+            dialogTitle: "Partager sur Instagram",
+            UTI: "public.png",
+          });
+        }
+      }
+    } catch (e) {
+      console.warn("Instagram share failed", e);
     }
   };
 
@@ -214,6 +250,14 @@ export default function ResultsScreen() {
             onPress={() => openSocial("facebook")}
             colors={colors}
             testID="share-facebook"
+          />
+          <SocialBtn
+            label="Instagram"
+            icon="logo-instagram"
+            bg="#E1306C"
+            onPress={handleInstagram}
+            colors={colors}
+            testID="share-instagram"
           />
         </View>
       </View>
