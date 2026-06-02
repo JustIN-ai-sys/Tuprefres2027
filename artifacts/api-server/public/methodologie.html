@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Méthodologie — Tu préfères 2027</title>
+  <link rel="stylesheet" href="/style.css" />
+  <style>
+    .page-wrap {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 4rem;
+    }
+    .page-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    .btn-back {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 10px;
+      color: rgba(241,245,249,0.6);
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: background 0.2s;
+      flex-shrink: 0;
+    }
+    .btn-back:hover { background: rgba(255,255,255,0.1); color: #f1f5f9; }
+    .page-title {
+      font-size: clamp(1.6rem, 5vw, 2.2rem);
+      font-weight: 800;
+      background: linear-gradient(135deg, #a5b4fc 0%, #e879f9 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .section {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin-bottom: 1.25rem;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+    .section h2 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #a5b4fc;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .section p, .section li {
+      font-size: 0.92rem;
+      color: rgba(241,245,249,0.75);
+      line-height: 1.65;
+    }
+    .section ul {
+      padding-left: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      background: rgba(99,102,241,0.15);
+      border: 1px solid rgba(99,102,241,0.3);
+      border-radius: 100px;
+      padding: 0.25rem 0.7rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #a5b4fc;
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrap">
+    <div class="page-header">
+      <a href="/" class="btn-back">←</a>
+      <h1 class="page-title">Méthodologie</h1>
+    </div>
+
+    <div class="section">
+      <div class="tag">📋 Les questions</div>
+      <h2>D'où viennent les questions ?</h2>
+      <p>
+        Les questions portent sur des sujets politiques majeurs de la campagne présidentielle 2027 : 
+        immigration, économie, écologie, Europe, laïcité, sécurité, travail, santé, etc.
+        Chaque question propose deux positions clairement opposées (Option A et Option B), 
+        reflétant de vrais clivages du débat politique français.
+      </p>
+    </div>
+
+    <div class="section">
+      <div class="tag">🧑‍💼 Les candidats</div>
+      <h2>Qui sont les candidats ?</h2>
+      <p>
+        L'application inclut une sélection de personnalités politiques françaises susceptibles
+        de se présenter à l'élection présidentielle de 2027, couvrant l'ensemble du spectre 
+        politique : extrême gauche, gauche, centre, droite, extrême droite et souverainistes.
+        La liste est indicative et sera mise à jour au fil de l'actualité.
+      </p>
+    </div>
+
+    <div class="section">
+      <div class="tag">📍 Les positions</div>
+      <h2>Comment sont établies les positions des candidats ?</h2>
+      <p>
+        Pour chaque question, chaque candidat se voit attribuer une position :
+      </p>
+      <ul>
+        <li><strong>A</strong> — le candidat est en accord avec l'option A</li>
+        <li><strong>B</strong> — le candidat est en accord avec l'option B</li>
+        <li><strong>N</strong> — position neutre, ambiguë ou inconnue</li>
+      </ul>
+      <br />
+      <p>
+        Ces positions sont établies à partir de leurs programmes officiels, interviews, 
+        discours et votes au Parlement. Elles restent une interprétation éditoriale 
+        et peuvent être imparfaites. Elles seront régulièrement révisées.
+      </p>
+    </div>
+
+    <div class="section">
+      <div class="tag">⚖️ Le scoring</div>
+      <h2>Comment le score est-il calculé ?</h2>
+      <ul>
+        <li>Si tu choisis <strong>A</strong>, les candidats positionnés A sur cette question gagnent +1 point.</li>
+        <li>Si tu choisis <strong>B</strong>, les candidats positionnés B gagnent +1 point.</li>
+        <li>Si tu choisis <strong>Neutre</strong>, personne ne gagne de point.</li>
+        <li>Les candidats avec une position N (neutre/inconnue) ne gagnent jamais de point.</li>
+      </ul>
+      <br />
+      <p>
+        À la fin, chaque candidat a un score entre 0 et le nombre total de questions.
+        Le score est converti en pourcentage de compatibilité pour l'affichage.
+      </p>
+    </div>
+
+    <div class="section">
+      <div class="tag">🔒 Données personnelles</div>
+      <h2>Quelles données sont collectées ?</h2>
+      <p>L'application <strong>ne demande aucun compte, aucun nom, aucun email</strong>.</p>
+      <br />
+      <p>Seules les données suivantes sont enregistrées de façon anonyme :</p>
+      <ul>
+        <li>Un identifiant de session aléatoire (généré côté serveur, sans lien avec votre identité)</li>
+        <li>L'identifiant de la question</li>
+        <li>Le choix effectué (A, B ou Neutre)</li>
+        <li>La date et l'heure du vote</li>
+        <li>Le score final par candidat</li>
+      </ul>
+      <br />
+      <p>
+        <strong>Il est impossible de relier les résultats de vote à une personne en particulier.</strong>
+        Aucune donnée d'identification (IP, cookie persistant, empreinte navigateur) n'est conservée.
+      </p>
+    </div>
+
+    <div class="section">
+      <div class="tag">🎯 Utilisation des données</div>
+      <h2>À quoi servent les données ?</h2>
+      <p>
+        Les données anonymes servent uniquement à améliorer l'application : 
+        identifier les questions les plus clivantes, ajuster les positions des candidats
+        lorsque les réponses révèlent des incohérences, et mieux refléter les positions 
+        réelles de chacun. Elles ne sont ni vendues, ni partagées avec des tiers.
+      </p>
+    </div>
+  </div>
+</body>
+</html>

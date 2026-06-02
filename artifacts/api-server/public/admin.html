@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin — Tu préfères 2027</title>
+  <link rel="stylesheet" href="/style.css" />
+  <style>
+    .page-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 4rem;
+    }
+    .page-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    .btn-back {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 10px;
+      color: rgba(241,245,249,0.6);
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: background 0.2s;
+      flex-shrink: 0;
+    }
+    .btn-back:hover { background: rgba(255,255,255,0.1); color: #f1f5f9; }
+    .page-title {
+      font-size: clamp(1.6rem, 5vw, 2.2rem);
+      font-weight: 800;
+      background: linear-gradient(135deg, #a5b4fc 0%, #e879f9 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Login */
+    .login-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.25rem;
+      margin-top: 3rem;
+      text-align: center;
+    }
+    .login-icon { font-size: 3rem; }
+    .login-title { font-size: 1.2rem; font-weight: 700; }
+    .login-subtitle { font-size: 0.9rem; color: rgba(241,245,249,0.6); }
+    .login-form {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 16px;
+      padding: 1.5rem;
+      width: 100%;
+      max-width: 360px;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      backdrop-filter: blur(20px);
+    }
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .input-group label {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: rgba(241,245,249,0.6);
+    }
+    .input-group input {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 10px;
+      padding: 0.75rem 1rem;
+      color: #f1f5f9;
+      font-size: 0.95rem;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.2s;
+      width: 100%;
+    }
+    .input-group input:focus {
+      border-color: rgba(99,102,241,0.6);
+    }
+    .error-msg {
+      color: #f87171;
+      font-size: 0.85rem;
+      text-align: center;
+      display: none;
+    }
+
+    /* Stats */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    @media (max-width: 400px) { .stats-grid { grid-template-columns: 1fr; } }
+
+    .stat-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 14px;
+      padding: 1.25rem;
+      backdrop-filter: blur(20px);
+      text-align: center;
+    }
+    .stat-value {
+      font-size: 2rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #a5b4fc, #e879f9);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .stat-label {
+      font-size: 0.8rem;
+      color: rgba(241,245,249,0.55);
+      margin-top: 0.3rem;
+    }
+
+    .section {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 16px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1.25rem;
+      backdrop-filter: blur(20px);
+    }
+    .section h2 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #a5b4fc;
+      margin-bottom: 1rem;
+    }
+
+    .win-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      font-size: 0.88rem;
+    }
+    .win-item:last-child { border-bottom: none; }
+    .win-name { font-weight: 600; }
+    .win-count {
+      background: rgba(99,102,241,0.15);
+      border: 1px solid rgba(99,102,241,0.25);
+      border-radius: 100px;
+      padding: 0.15rem 0.6rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #a5b4fc;
+    }
+
+    .votes-table {
+      width: 100%;
+      font-size: 0.82rem;
+      border-collapse: collapse;
+    }
+    .votes-table th {
+      text-align: left;
+      color: rgba(241,245,249,0.5);
+      font-weight: 600;
+      padding: 0 0.5rem 0.6rem;
+      font-size: 0.75rem;
+    }
+    .votes-table td {
+      padding: 0.4rem 0.5rem;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+    .votes-table .q-id { color: rgba(241,245,249,0.5); }
+    .votes-table .v-a { color: #60a5fa; font-weight: 600; }
+    .votes-table .v-b { color: #c084fc; font-weight: 600; }
+    .votes-table .v-n { color: rgba(241,245,249,0.4); }
+
+    .logout-btn {
+      background: rgba(239,68,68,0.1);
+      border: 1px solid rgba(239,68,68,0.25);
+      border-radius: 10px;
+      color: #f87171;
+      font-size: 0.85rem;
+      font-weight: 600;
+      font-family: inherit;
+      padding: 0.6rem 1.2rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .logout-btn:hover { background: rgba(239,68,68,0.18); }
+  </style>
+</head>
+<body>
+  <div class="page-wrap">
+    <div class="page-header">
+      <a href="/" class="btn-back">←</a>
+      <h1 class="page-title">Administration</h1>
+    </div>
+
+    <div id="login-section">
+      <div class="login-wrap">
+        <div class="login-icon">🔒</div>
+        <div class="login-title">Accès restreint</div>
+        <div class="login-subtitle">Entrez le mot de passe admin pour accéder aux statistiques.</div>
+        <div class="login-form">
+          <div class="input-group">
+            <label>Mot de passe</label>
+            <input type="password" id="pwd-input" placeholder="••••••••" />
+          </div>
+          <span class="error-msg" id="error-msg">Mot de passe incorrect.</span>
+          <button class="btn-primary" id="btn-login" style="margin-top: 0.25rem;">Connexion</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="stats-section" style="display: none;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+        <span style="font-size: 0.8rem; color: rgba(241,245,249,0.45);">Données en temps réel</span>
+        <button class="logout-btn" id="btn-logout">Déconnexion</button>
+      </div>
+
+      <div class="stats-grid" id="stats-overview"></div>
+
+      <div class="section" id="section-wins" style="display:none;">
+        <h2>🏆 Candidats arrivés premiers</h2>
+        <div id="wins-list"></div>
+      </div>
+
+      <div class="section" id="section-votes" style="display:none;">
+        <h2>📊 Votes par question</h2>
+        <table class="votes-table">
+          <thead>
+            <tr>
+              <th>Question</th>
+              <th>A</th>
+              <th>B</th>
+              <th>Neutre</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody id="votes-table-body"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let savedPwd = sessionStorage.getItem('admin_pwd');
+    if (savedPwd) loadStats(savedPwd);
+
+    document.getElementById('btn-login').addEventListener('click', () => {
+      const pwd = document.getElementById('pwd-input').value.trim();
+      if (!pwd) return;
+      loadStats(pwd);
+    });
+
+    document.getElementById('pwd-input').addEventListener('keydown', e => {
+      if (e.key === 'Enter') document.getElementById('btn-login').click();
+    });
+
+    document.getElementById('btn-logout').addEventListener('click', () => {
+      sessionStorage.removeItem('admin_pwd');
+      document.getElementById('stats-section').style.display = 'none';
+      document.getElementById('login-section').style.display = 'block';
+      document.getElementById('pwd-input').value = '';
+    });
+
+    async function loadStats(pwd) {
+      try {
+        const res = await fetch(`/api/admin/stats?pwd=${encodeURIComponent(pwd)}`);
+        if (res.status === 401) {
+          document.getElementById('error-msg').style.display = 'block';
+          return;
+        }
+        const data = await res.json();
+        sessionStorage.setItem('admin_pwd', pwd);
+        renderStats(data);
+      } catch (err) {
+        document.getElementById('error-msg').style.display = 'block';
+        document.getElementById('error-msg').textContent = 'Erreur de connexion.';
+      }
+    }
+
+    function renderStats(data) {
+      document.getElementById('login-section').style.display = 'none';
+      document.getElementById('stats-section').style.display = 'block';
+
+      document.getElementById('stats-overview').innerHTML = `
+        <div class="stat-card">
+          <div class="stat-value">${data.totalVotes.toLocaleString()}</div>
+          <div class="stat-label">votes enregistrés</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">${data.totalFinished.toLocaleString()}</div>
+          <div class="stat-label">tests terminés</div>
+        </div>
+      `;
+
+      const wins = Object.entries(data.candidateWins || {})
+        .sort(([, a], [, b]) => b - a)
+        .slice(0, 10);
+
+      if (wins.length > 0) {
+        document.getElementById('section-wins').style.display = 'block';
+        document.getElementById('wins-list').innerHTML = wins.map(([id, count]) => `
+          <div class="win-item">
+            <span class="win-name">${escapeHtml(id.replace(/_/g, ' '))}</span>
+            <span class="win-count">${count} victoire${count > 1 ? 's' : ''}</span>
+          </div>
+        `).join('');
+      }
+
+      const qVotes = Object.entries(data.votesByQuestion || {})
+        .sort(([a], [b]) => {
+          const na = parseInt(a.replace('Q', '')) || 0;
+          const nb = parseInt(b.replace('Q', '')) || 0;
+          return na - nb;
+        });
+
+      if (qVotes.length > 0) {
+        document.getElementById('section-votes').style.display = 'block';
+        document.getElementById('votes-table-body').innerHTML = qVotes.map(([qId, v]) => {
+          const total = (v.A || 0) + (v.B || 0) + (v.N || 0);
+          return `
+            <tr>
+              <td class="q-id">${escapeHtml(qId)}</td>
+              <td class="v-a">${v.A || 0}</td>
+              <td class="v-b">${v.B || 0}</td>
+              <td class="v-n">${v.N || 0}</td>
+              <td>${total}</td>
+            </tr>
+          `;
+        }).join('');
+      }
+    }
+
+    function escapeHtml(str) {
+      if (!str) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+  </script>
+</body>
+</html>
