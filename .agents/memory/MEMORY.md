@@ -1,0 +1,2 @@
+- [React version pinning](react-version-pin.md) — any non-Expo dep can pull a newer React and break "Invalid hook call"; override react+react-dom in pnpm-workspace.yaml.
+- [pnpm phantom variants](pnpm-phantom-variant.md) — installing a new package can create an incomplete @expo/cli variant dir; fix by symlinking the phantom hash to a healthy same-version variant.
