@@ -24,9 +24,8 @@ import candidatePhotos from "@/constants/candidatePhotos";
 import { CandidateResult, useQuiz } from "@/contexts/QuizContext";
 import { useColors } from "@/hooks/useColors";
 
-const APP_URL = process.env.EXPO_PUBLIC_DOMAIN
-  ? `https://${process.env.EXPO_PUBLIC_DOMAIN}`
-  : "https://tu-preferes-2027.replit.app";
+const APP_URL =
+  process.env.EXPO_PUBLIC_APP_URL ?? "https://tu-preferes-2027.replit.app";
 
 const MEDALS = ["🥇", "🥈", "🥉"];
 
