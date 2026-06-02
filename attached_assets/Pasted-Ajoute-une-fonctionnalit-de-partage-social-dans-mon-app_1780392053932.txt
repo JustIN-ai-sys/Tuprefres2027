@@ -1,0 +1,97 @@
+Ajoute une fonctionnalité de partage social dans mon app Replit “Tu préfères 2027”.
+
+Contexte :
+L’app est une application Node.js / Express avec un frontend HTML/CSS/JS. Après le quiz, l’utilisateur voit un classement complet des candidats.
+
+Objectif :
+Quand l’utilisateur arrive sur l’écran de résultat, ajoute une section “Partager mon résultat”.
+
+Fonctionnalités à ajouter :
+
+1. Sous le top 3 et le classement, ajoute un bloc :
+
+Titre :
+Partager mon résultat
+
+Texte :
+Montre à tes amis quel candidat est le plus proche de tes réponses.
+
+2. Ajoute un bouton principal :
+
+Partager mon résultat
+
+Si le navigateur supporte `navigator.share()`, utilise l’API Web Share.
+
+Le texte partagé doit être :
+
+J’ai fait le test Tu préfères 2027 🇫🇷
+
+Mon candidat le plus proche est : [candidat #1]
+
+Top 3 :
+🥇 [candidat #1]
+🥈 [candidat #2]
+🥉 [candidat #3]
+
+Fais le test ici :
+[URL de l’app]
+
+3. Si `navigator.share()` n’est pas supporté, affiche des boutons de fallback :
+
+- Copier le résultat
+- WhatsApp
+- X / Twitter
+- LinkedIn
+- Facebook
+
+4. Le bouton “Copier le résultat” doit copier le texte du résultat dans le presse-papiers.
+
+5. Les boutons sociaux doivent ouvrir les URLs de partage correspondantes avec le texte encodé.
+
+6. Ne partage jamais :
+- les réponses individuelles de l’utilisateur
+- l’historique des votes
+- l’identifiant de session
+- les données internes
+
+Partager uniquement :
+- le candidat arrivé premier
+- le top 3
+- le nombre de questions répondues
+- l’URL de l’app
+
+7. Ajoute une carte visuelle partageable sous le bloc de partage.
+
+La carte doit afficher :
+- Tu préfères 2027
+- candidat #1
+- score du candidat #1
+- top 3
+- nombre de questions répondues
+- URL de l’app
+
+8. Ajoute un bouton :
+
+Télécharger mon résultat
+
+Ce bouton doit télécharger la carte en PNG.
+
+Utilise `html2canvas` côté frontend.
+
+Ajoute le CDN dans `index.html` :
+
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+
+9. Le design doit rester cohérent :
+- bleu / violet
+- cartes arrondies
+- glassmorphism
+- responsive mobile
+
+10. Implémente ça directement dans les fichiers existants :
+- public/index.html
+- public/app.js
+- public/style.css
+
+Ne change pas la logique de scoring.
+Ne modifie pas les fichiers data/questions.json, data/candidates.json ou data/positions.json.
