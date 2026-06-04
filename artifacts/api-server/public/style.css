@@ -357,10 +357,10 @@ body {
 }
 
 .option-card .option-text {
-  font-size: clamp(1.1rem, 4vw, 1.3rem);
+  font-size: clamp(1.3rem, 5vw, 1.6rem);
   font-weight: 800;
   color: white;
-  line-height: 1.45;
+  line-height: 1.4;
 }
 
 .ou-separator {
