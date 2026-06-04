@@ -1,1 +1,62 @@
-[]
+[
+  {
+    "sessionId": "weqc3ettlzampzk44tp",
+    "scores": {
+      "n_dupont_aignan": 5,
+      "e_philippe": 5,
+      "j_guedj": 6,
+      "x_bertrand": 5,
+      "d_batho": 6,
+      "f_roussel": 4,
+      "f_philippot": 4,
+      "b_cazeneuve": 5,
+      "f_ruffin": 5,
+      "j_branco": 3,
+      "g_attal": 5,
+      "b_retailleau": 4,
+      "n_arthaud": 4,
+      "c_autain": 5,
+      "j_bardella": 3,
+      "m_tondelier": 6,
+      "d_de_villepin": 4,
+      "d_lisnard": 4,
+      "j_melenchon": 5,
+      "f_asselineau": 4,
+      "o_faure": 6,
+      "e_zemmour": 5,
+      "r_glucksmann": 5
+    },
+    "questionCount": 10,
+    "completedAt": "2026-06-04T13:54:53.283Z"
+  },
+  {
+    "sessionId": "sip1a8iao3hmpzk53s1",
+    "scores": {
+      "n_dupont_aignan": 7,
+      "e_philippe": 4,
+      "j_guedj": 7,
+      "x_bertrand": 4,
+      "d_batho": 7,
+      "f_roussel": 5,
+      "f_philippot": 7,
+      "b_cazeneuve": 6,
+      "f_ruffin": 6,
+      "j_branco": 5,
+      "g_attal": 4,
+      "b_retailleau": 3,
+      "n_arthaud": 6,
+      "c_autain": 6,
+      "j_bardella": 4,
+      "m_tondelier": 7,
+      "d_de_villepin": 5,
+      "d_lisnard": 3,
+      "j_melenchon": 6,
+      "f_asselineau": 9,
+      "o_faure": 7,
+      "e_zemmour": 4,
+      "r_glucksmann": 7
+    },
+    "questionCount": 10,
+    "completedAt": "2026-06-04T13:55:17.577Z"
+  }
+]
