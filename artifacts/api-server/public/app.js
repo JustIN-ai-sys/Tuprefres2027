@@ -1,6 +1,34 @@
-/* Tu préfères 2027 — Single Page App */
+/* Tu préfères 2027 — Interface */
 
 const app = document.getElementById('app');
+
+// Extensions connues pour les photos
+const PHOTO_EXT = {
+  j_guedj: 'webp',
+  d_lisnard: 'webp',
+  c_autain: 'png',
+};
+
+function photoUrl(id) {
+  const ext = PHOTO_EXT[id] || 'jpg';
+  return `/images/candidates/${id}.${ext}`;
+}
+
+function initials(name) {
+  return name.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase();
+}
+
+function photoOrInitials(c, size = 'normal') {
+  const cls = size === 'large' ? 'winner-photo' : 'rank-photo';
+  const clsPh = size === 'large' ? 'winner-photo-placeholder' : 'rank-photo-placeholder';
+  return `
+    <img class="${cls}" src="${photoUrl(c.id)}" alt="${escapeHtml(c.name)}"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <div class="${clsPh}" style="background:${escapeHtml(c.color)};display:none">
+      ${initials(c.name)}
+    </div>
+  `;
+}
 
 let state = {
   screen: 'home',
@@ -11,57 +39,72 @@ let state = {
   scores: {},
   currentIndex: 0,
   totalQuestions: 10,
-  answers: [],
 };
+
+function blobs() {
+  return `
+    <div class="blob blob-purple"></div>
+    <div class="blob blob-blue"></div>
+    <div class="blob blob-purple-2"></div>
+  `;
+}
 
 function render() {
   switch (state.screen) {
-    case 'home': renderHome(); break;
+    case 'home':    renderHome(); break;
     case 'loading': renderLoading(); break;
-    case 'quiz': renderQuiz(); break;
+    case 'quiz':    renderQuiz(); break;
     case 'results': renderResults(); break;
   }
 }
 
+/* ── HOME ── */
 function renderHome() {
+  const total = state.questions.length || 100;
   app.innerHTML = `
-    <div class="screen-home">
-      <div class="home-header">
-        <h1 class="home-title">Tu préfères 2027</h1>
-        <p class="home-subtitle">
-          Le jeu politique qui te fait choisir entre deux propositions opposées.
-          Choisis un format, réponds aux dilemmes, puis découvre ton classement.
-        </p>
-      </div>
+    ${blobs()}
+    <div class="screen screen-home">
+      <span class="home-badge">Présidentielle 2027</span>
 
-      <div class="format-cards">
+      <h1 class="home-title">
+        Tu préfères<br>
+        <span class="home-title-accent">2027</span>
+      </h1>
+
+      <p class="home-subtitle">
+        Le jeu politique qui te fait choisir entre deux propositions opposées.
+        Choisis un format, réponds aux dilemmes, puis découvre ton classement.
+      </p>
+
+      <div class="format-list">
         <button class="format-card" data-limit="10">
-          <span class="format-icon">⚡</span>
-          <div class="format-info">
-            <span class="format-name">Test rapide</span>
-            <span class="format-count">10 questions</span>
-            <span class="format-time">environ 1 minute</span>
-          </div>
+          <span class="format-label">Test rapide</span>
+          <span class="format-count">10 questions</span>
+          <div class="format-meta"><span class="clock">⏱</span> ≈ 1 minute</div>
+          <p class="format-desc">Pour découvrir une première tendance.</p>
         </button>
-        <button class="format-card" data-limit="40">
-          <span class="format-icon">🧭</span>
-          <div class="format-info">
-            <span class="format-name">Test standard</span>
-            <span class="format-count">40 questions</span>
-            <span class="format-time">environ 4 à 6 minutes</span>
-          </div>
+
+        <button class="format-card recommended" data-limit="40">
+          <span class="format-badge">✓ Recommandé</span>
+          <span class="format-label">Test standard</span>
+          <span class="format-count">40 questions</span>
+          <div class="format-meta"><span class="clock">⏱</span> ≈ 4 à 6 min</div>
+          <p class="format-desc">Le meilleur équilibre entre rapidité et fiabilité.</p>
         </button>
+
         <button class="format-card" data-limit="100">
-          <span class="format-icon">🏛️</span>
-          <div class="format-info">
-            <span class="format-name">Test complet</span>
-            <span class="format-count">100 questions</span>
-            <span class="format-time">environ 10 à 15 minutes</span>
-          </div>
+          <span class="format-label">Test complet</span>
+          <span class="format-count">100 questions</span>
+          <div class="format-meta"><span class="clock">⏱</span> ≈ 10 à 15 min</div>
+          <p class="format-desc">Pour un résultat plus détaillé et plus stable.</p>
         </button>
       </div>
 
-      <div class="home-footer">
+      <div class="home-footer-bar">
+        <p>Anonyme · ${state.candidates.length || 23} candidats · ${total} questions au total</p>
+      </div>
+
+      <div class="home-links">
         <button class="link-btn" id="btn-methodologie">Méthodologie</button>
         <button class="link-btn" id="btn-admin">Admin</button>
       </div>
@@ -79,15 +122,18 @@ function renderHome() {
   });
 }
 
+/* ── LOADING ── */
 function renderLoading() {
   app.innerHTML = `
-    <div class="screen-loading">
+    ${blobs()}
+    <div class="screen screen-loading">
       <div class="spinner"></div>
-      <p style="color: var(--text-muted); font-size: 0.95rem;">Chargement…</p>
+      <p style="color:var(--text-muted);font-size:0.9rem;font-weight:600;">Chargement…</p>
     </div>
   `;
 }
 
+/* ── START QUIZ ── */
 async function startQuiz(limit) {
   state.screen = 'loading';
   state.totalQuestions = limit;
@@ -102,21 +148,22 @@ async function startQuiz(limit) {
     ]);
 
     const sessionData = await sessionRes.json();
-    const questions = await questionsRes.json();
-    const candidates = await candidatesRes.json();
-    const positions = await positionsRes.json();
+    const questions   = await questionsRes.json();
+    const candidates  = await candidatesRes.json();
+    const positions   = await positionsRes.json();
 
     const scores = {};
     candidates.forEach(c => { scores[c.id] = 0; });
 
-    state.sessionId = sessionData.sessionId;
-    state.questions = questions;
-    state.candidates = candidates;
-    state.positions = positions;
-    state.scores = scores;
-    state.currentIndex = 0;
-    state.answers = [];
-    state.screen = 'quiz';
+    Object.assign(state, {
+      sessionId: sessionData.sessionId,
+      questions,
+      candidates,
+      positions,
+      scores,
+      currentIndex: 0,
+      screen: 'quiz',
+    });
     render();
   } catch (err) {
     console.error(err);
@@ -126,43 +173,37 @@ async function startQuiz(limit) {
   }
 }
 
+/* ── QUIZ ── */
 function renderQuiz() {
-  const q = state.questions[state.currentIndex];
-  const progress = state.currentIndex / state.questions.length;
-  const progressPct = Math.round(progress * 100);
+  const q   = state.questions[state.currentIndex];
+  const cur = state.currentIndex + 1;
+  const tot = state.questions.length;
 
   app.innerHTML = `
-    <div class="screen-quiz">
+    ${blobs()}
+    <div class="screen screen-quiz">
       <div class="quiz-topbar">
         <button class="btn-back" id="btn-back">←</button>
-        <div class="progress-wrap">
-          <span class="progress-label">${state.currentIndex + 1} / ${state.questions.length}</span>
-          <div class="progress-bar">
-            <div class="progress-fill" style="width: ${progressPct}%"></div>
-          </div>
-        </div>
+        <span class="quiz-counter">${cur} / ${tot}</span>
+        <span class="quiz-theme-pill">${escapeHtml(q.theme)}</span>
       </div>
 
+      <p class="tu-preferes-label">Tu préfères</p>
+
       <div class="quiz-body">
-        <span class="question-theme">${escapeHtml(q.theme)}</span>
+        <button class="option-card option-card-a" data-choice="A">
+          <span class="option-text">${escapeHtml(q.optionA)}</span>
+        </button>
 
-        <p class="question-text">
-          Tu préfères <span class="highlight">${escapeHtml(q.optionA)}</span>
-          ou <span class="highlight">${escapeHtml(q.optionB)}</span> ?
-        </p>
+        <div class="ou-separator">ou</div>
 
-        <div class="options-grid">
-          <button class="option-card option-a" data-choice="A">
-            <span class="option-label">Option A</span>
-            <span class="option-text">${escapeHtml(q.optionA)}</span>
-          </button>
-          <button class="option-card option-b" data-choice="B">
-            <span class="option-label">Option B</span>
-            <span class="option-text">${escapeHtml(q.optionB)}</span>
-          </button>
-        </div>
+        <button class="option-card option-card-b" data-choice="B">
+          <span class="option-text">${escapeHtml(q.optionB)}</span>
+        </button>
+      </div>
 
-        <button class="neutral-btn" data-choice="N">Neutre</button>
+      <div class="quiz-footer">
+        <button class="neutral-btn" data-choice="N">Neutre / Sans opinion</button>
       </div>
     </div>
   `;
@@ -180,44 +221,33 @@ function renderQuiz() {
 async function handleAnswer(choice) {
   const q = state.questions[state.currentIndex];
 
-  // Visual feedback
-  if (choice === 'A') {
-    document.querySelector('.option-card.option-a')?.classList.add('selected-a');
-  } else if (choice === 'B') {
-    document.querySelector('.option-card.option-b')?.classList.add('selected-b');
-  } else {
-    document.querySelector('.neutral-btn')?.classList.add('selected-n');
-  }
+  // Feedback visuel
+  const cardA = document.querySelector('.option-card-a');
+  const cardB = document.querySelector('.option-card-b');
+  const neutralBtn = document.querySelector('.neutral-btn');
+  if (choice === 'A' && cardA) cardA.classList.add('selected');
+  if (choice === 'B' && cardB) cardB.classList.add('selected');
+  if (choice === 'N' && neutralBtn) neutralBtn.classList.add('selected');
 
   // Scoring
   if (choice !== 'N') {
     state.candidates.forEach(c => {
-      const pos = state.positions[c.id]?.[q.id];
-      if (pos === choice) {
+      if (state.positions[c.id]?.[q.id] === choice) {
         state.scores[c.id] = (state.scores[c.id] || 0) + 1;
       }
     });
   }
 
-  // Record vote
-  state.answers.push({ questionId: q.id, choice });
-
-  // Fire and forget vote recording
+  // Enregistrement
   fetch('/api/vote', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      sessionId: state.sessionId,
-      questionId: q.id,
-      choice,
-    }),
+    body: JSON.stringify({ sessionId: state.sessionId, questionId: q.id, choice }),
   }).catch(() => {});
 
-  // Brief delay for visual feedback
   await sleep(200);
 
   state.currentIndex++;
-
   if (state.currentIndex >= state.questions.length) {
     await finishQuiz();
   } else {
@@ -228,7 +258,6 @@ async function handleAnswer(choice) {
 async function finishQuiz() {
   state.screen = 'loading';
   render();
-
   try {
     await fetch('/api/finish', {
       method: 'POST',
@@ -240,69 +269,80 @@ async function finishQuiz() {
       }),
     });
   } catch (_) {}
-
   state.screen = 'results';
   render();
 }
 
+/* ── RESULTS ── */
 function renderResults() {
+  const total = state.questions.length;
   const sorted = state.candidates
     .map(c => ({ ...c, score: state.scores[c.id] || 0 }))
     .sort((a, b) => b.score - a.score);
 
   const maxScore = sorted[0]?.score || 1;
-  const total = state.questions.length;
   const first = sorted[0];
+  const firstPct = Math.round(((first?.score || 0) / total) * 100);
 
-  const rankingItems = sorted.slice(1).map((c, i) => {
-    const pct = Math.round((c.score / total) * 100);
-    const barWidth = Math.round((c.score / maxScore) * 100);
-    return `
-      <div class="ranking-item">
-        <span class="rank-num">${i + 2}</span>
-        <span class="rank-dot" style="background: ${escapeHtml(c.color)}"></span>
-        <div class="rank-info">
-          <div class="rank-name">${escapeHtml(c.name)}</div>
-          <div class="rank-party">${escapeHtml(c.party)}</div>
+  // Winner card
+  const winnerHtml = `
+    <div class="winner-card">
+      <div class="winner-badge">🏆 Votre candidat</div>
+      <div class="winner-content">
+        <div style="position:relative;flex-shrink:0">
+          ${photoOrInitials(first, 'large')}
         </div>
-        <div class="rank-bar-wrap">
-          <span class="rank-score">${pct}%</span>
-          <div class="rank-bar">
-            <div class="rank-bar-fill" style="width: ${barWidth}%"></div>
+        <div class="winner-info">
+          <div class="winner-name">${escapeHtml(first.name)}</div>
+          <div class="winner-party">${escapeHtml(first.party)}</div>
+          <div>
+            <span class="winner-pct">${firstPct}%</span>
+            <span class="winner-pct-label"> de compatibilité</span>
           </div>
         </div>
       </div>
-    `;
-  }).join('');
+    </div>
+  `;
 
-  const firstPct = Math.round(((first?.score || 0) / total) * 100);
+  // TOP 3
+  const top3Html = `
+    <div class="ranking-section">
+      <div class="ranking-section-label">Top 3</div>
+      ${sorted.slice(0, 3).map((c, i) => rankRow(c, i, total, maxScore, true)).join('')}
+    </div>
+  `;
+
+  // Classement complet
+  const fullHtml = `
+    <div class="ranking-section">
+      <div class="ranking-section-label">Classement complet</div>
+      ${sorted.map((c, i) => rankRow(c, i, total, maxScore, false)).join('')}
+    </div>
+  `;
 
   app.innerHTML = `
-    <div class="screen-results">
-      <h2 class="results-title">Ton classement</h2>
-      <p class="results-subtitle">
-        Sur ${total} questions, voici les candidats les plus proches de tes positions.
-      </p>
-
-      <div class="podium-card">
-        <div class="podium-medal">🥇</div>
-        <div class="podium-name">${escapeHtml(first?.name || '')}</div>
-        <div class="podium-party">${escapeHtml(first?.party || '')}</div>
-        <div class="podium-score">${firstPct}%</div>
-        <div class="podium-score-label">de compatibilité</div>
+    ${blobs()}
+    <div class="screen screen-results">
+      <div class="results-topbar">
+        <button class="btn-close" id="btn-close">✕</button>
+        <h2>Vos résultats</h2>
       </div>
-
-      <div class="ranking-list">
-        ${rankingItems}
+      <div class="results-body">
+        ${winnerHtml}
+        ${top3Html}
+        ${fullHtml}
       </div>
-
-      <div class="results-actions">
+      <div class="results-actions" style="margin-top:1.25rem">
         <button class="btn-primary" id="btn-restart">Recommencer un test</button>
         <button class="btn-secondary" id="btn-home">Retour à l'accueil</button>
       </div>
     </div>
   `;
 
+  document.getElementById('btn-close').addEventListener('click', () => {
+    state.screen = 'home';
+    render();
+  });
   document.getElementById('btn-restart').addEventListener('click', () => {
     startQuiz(state.totalQuestions);
   });
@@ -312,6 +352,34 @@ function renderResults() {
   });
 }
 
+function rankRow(c, idx, total, maxScore, showPhoto) {
+  const pct = Math.round((c.score / total) * 100);
+  const barW = maxScore > 0 ? Math.round((c.score / maxScore) * 100) : 0;
+  const badgeCls = idx === 0 ? 'rank-badge-1' : 'rank-badge-other';
+
+  return `
+    <div class="ranking-row">
+      <div class="rank-badge ${badgeCls}">${idx + 1}</div>
+      ${showPhoto ? `
+        <div style="position:relative;flex-shrink:0">
+          ${photoOrInitials(c, 'small')}
+        </div>
+      ` : ''}
+      <div class="rank-info">
+        <div class="rank-name">${escapeHtml(c.name)}</div>
+        <div class="rank-party">${escapeHtml(c.party)}</div>
+      </div>
+      <div class="rank-right">
+        <span class="rank-pct" style="color:${escapeHtml(c.color)}">${pct}%</span>
+        <div class="rank-bar-track">
+          <div class="rank-bar-fill" style="width:${barW}%;background:${escapeHtml(c.color)}"></div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+/* ── Utils ── */
 function escapeHtml(str) {
   if (!str) return '';
   return String(str)
@@ -321,8 +389,19 @@ function escapeHtml(str) {
     .replace(/"/g, '&quot;');
 }
 
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
+function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+
+/* ── Init : précharge les métadonnées ── */
+async function init() {
+  try {
+    const [candidatesRes, questionsRes] = await Promise.all([
+      fetch('/api/candidates'),
+      fetch('/api/questions?limit=100'),
+    ]);
+    state.candidates = await candidatesRes.json();
+    state.questions  = await questionsRes.json();
+  } catch (_) {}
+  render();
 }
 
-render();
+init();

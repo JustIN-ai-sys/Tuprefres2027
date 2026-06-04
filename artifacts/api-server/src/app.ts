@@ -36,6 +36,17 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use("/api", router);
 
+const candidatePhotosDir = path.resolve(
+  __dirname,
+  "..",
+  "..",
+  "mobile",
+  "assets",
+  "images",
+  "candidates",
+);
+app.use("/images/candidates", express.static(candidatePhotosDir));
+
 app.use(express.static(publicDir));
 
 app.get("/methodologie", (_req, res) => {
