@@ -42,6 +42,13 @@
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
+    .page-subtitle {
+      font-size: 1rem;
+      color: #374151;
+      line-height: 1.65;
+      margin-bottom: 1.75rem;
+      font-weight: 600;
+    }
     .section {
       background: white;
       border: 1px solid rgba(124,111,247,0.12);
@@ -64,11 +71,18 @@
       color: #374151;
       line-height: 1.65;
     }
+    .section p + p {
+      margin-top: 0.65rem;
+    }
     .section ul {
       padding-left: 1.25rem;
       display: flex;
       flex-direction: column;
       gap: 0.4rem;
+      margin-top: 0.5rem;
+    }
+    .section li strong {
+      color: #0f172a;
     }
     .tag {
       display: inline-flex;
@@ -83,6 +97,57 @@
       color: #7c6ff7;
       margin-bottom: 0.5rem;
     }
+    .format-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 0.75rem;
+      font-size: 0.88rem;
+    }
+    .format-table th {
+      text-align: left;
+      font-weight: 700;
+      color: #0f172a;
+      padding: 0.4rem 0.5rem;
+      border-bottom: 2px solid rgba(124,111,247,0.15);
+    }
+    .format-table td {
+      color: #374151;
+      padding: 0.5rem 0.5rem;
+      border-bottom: 1px solid #f0f0f8;
+    }
+    .format-table tr:last-child td { border-bottom: none; }
+    .download-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      background: linear-gradient(135deg, #7c6ff7 0%, #4b76f5 100%);
+      color: white;
+      border: none;
+      border-radius: 14px;
+      padding: 1rem 1.5rem;
+      font-size: 0.95rem;
+      font-weight: 800;
+      font-family: inherit;
+      cursor: pointer;
+      text-decoration: none;
+      width: 100%;
+      margin-top: 0.5rem;
+      box-shadow: 0 4px 18px rgba(124,111,247,0.3);
+      transition: opacity 0.15s, transform 0.15s;
+    }
+    .download-btn:hover { opacity: 0.9; transform: translateY(-1px); }
+    .warning-box {
+      background: #fffbeb;
+      border: 1px solid #fbbf24;
+      border-radius: 10px;
+      padding: 0.85rem 1rem;
+      margin-top: 0.75rem;
+    }
+    .warning-box p {
+      color: #92400e !important;
+      font-size: 0.85rem !important;
+    }
   </style>
 </head>
 <body>
@@ -92,14 +157,30 @@
       <h1 class="page-title">Méthodologie</h1>
     </div>
 
+    <p class="page-subtitle">
+      Cette application propose un test politique sous forme de dilemmes : à chaque question, l'utilisateur choisit entre deux propositions opposées, ou sélectionne "Neutre".
+    </p>
+
     <div class="section">
-      <div class="tag">📋 Les questions</div>
-      <h2>D'où viennent les questions ?</h2>
+      <div class="tag">🎯 Principe du test</div>
+      <h2>À quoi sert ce test ?</h2>
       <p>
-        Les questions portent sur des sujets politiques majeurs de la campagne présidentielle 2027 : 
-        immigration, économie, écologie, Europe, laïcité, sécurité, travail, santé, etc.
-        Chaque question propose deux positions clairement opposées (Option A et Option B), 
-        reflétant de vrais clivages du débat politique français.
+        "Tu préfères 2027" n'est pas un sondage électoral et ne prédit pas un vote. L'objectif est de comparer les réponses de l'utilisateur à des positions politiques attribuées aux candidats sur une série de grands thèmes : économie, fiscalité, immigration, sécurité, écologie, institutions, social, Europe, société, santé, éducation et politique étrangère.
+      </p>
+      <p>
+        Chaque question oppose deux orientations politiques différentes. L'utilisateur choisit l'option dont il se sent le plus proche, ou "Neutre" s'il ne souhaite pas trancher.
+      </p>
+    </div>
+
+    <div class="section">
+      <div class="tag">❓ Format des questions</div>
+      <h2>Comment sont formulées les questions ?</h2>
+      <p>
+        Les questions sont formulées sous la forme :<br>
+        <strong>"Tu préfères [option A] ou [option B] ?"</strong>
+      </p>
+      <p>
+        Chaque option représente une orientation politique possible. Les formulations sont volontairement synthétiques afin de rendre le test rapide et compréhensible. Elles ne résument pas toute la complexité d'un programme politique.
       </p>
     </div>
 
@@ -107,62 +188,106 @@
       <div class="tag">🧑‍💼 Les candidats</div>
       <h2>Qui sont les candidats ?</h2>
       <p>
-        L'application inclut une sélection de personnalités politiques françaises susceptibles
-        de se présenter à l'élection présidentielle de 2027, couvrant l'ensemble du spectre 
-        politique : extrême gauche, gauche, centre, droite, extrême droite et souverainistes.
-        La liste est indicative et sera mise à jour au fil de l'actualité.
+        L'application inclut une sélection de personnalités politiques françaises susceptibles de se présenter à l'élection présidentielle de 2027, couvrant l'ensemble du spectre politique : extrême gauche, gauche, centre, droite, extrême droite et souverainistes. La liste est indicative et sera mise à jour au fil de l'actualité.
       </p>
     </div>
 
     <div class="section">
-      <div class="tag">📍 Les positions</div>
+      <div class="tag">📍 Attribution des positions</div>
       <h2>Comment sont établies les positions des candidats ?</h2>
-      <p>
-        Pour chaque question, chaque candidat se voit attribuer une position :
-      </p>
+      <p>Pour chaque question, chaque candidat reçoit une position estimée :</p>
       <ul>
-        <li><strong>A</strong> — le candidat est en accord avec l'option A</li>
-        <li><strong>B</strong> — le candidat est en accord avec l'option B</li>
-        <li><strong>N</strong> — position neutre, ambiguë ou inconnue</li>
+        <li><strong>A</strong> — le candidat est plutôt aligné avec l'option A</li>
+        <li><strong>B</strong> — le candidat est plutôt aligné avec l'option B</li>
+        <li><strong>N</strong> — position neutre, inconnue, ambiguë ou non directement identifiable</li>
       </ul>
-      <br />
-      <p>
-        Ces positions sont établies à partir de leurs programmes officiels, interviews, 
-        discours et votes au Parlement. Elles restent une interprétation éditoriale 
-        et peuvent être imparfaites. Elles seront régulièrement révisées.
+      <p style="margin-top:0.75rem">
+        Les positions sont établies à partir d'éléments publics : programmes, déclarations, votes, prises de position médiatiques, lignes politiques connues des partis ou mouvements associés. Lorsque l'information est insuffisante ou ambiguë, la position est classée "N".
       </p>
     </div>
 
     <div class="section">
-      <div class="tag">⚖️ Le scoring</div>
+      <div class="tag">⚖️ Calcul du score</div>
       <h2>Comment le score est-il calculé ?</h2>
+      <p>Le calcul est volontairement simple :</p>
       <ul>
-        <li>Si tu choisis <strong>A</strong>, les candidats positionnés A sur cette question gagnent +1 point.</li>
-        <li>Si tu choisis <strong>B</strong>, les candidats positionnés B gagnent +1 point.</li>
-        <li>Si tu choisis <strong>Neutre</strong>, personne ne gagne de point.</li>
-        <li>Les candidats avec une position N (neutre/inconnue) ne gagnent jamais de point.</li>
+        <li>si l'utilisateur choisit <strong>A</strong>, les candidats positionnés A gagnent 1 point</li>
+        <li>si l'utilisateur choisit <strong>B</strong>, les candidats positionnés B gagnent 1 point</li>
+        <li>si l'utilisateur choisit <strong>Neutre</strong>, aucun candidat ne gagne de point</li>
+        <li>si un candidat est classé <strong>N</strong> sur une question, il ne gagne aucun point sur cette question</li>
       </ul>
-      <br />
-      <p>
-        À la fin, chaque candidat a un score entre 0 et le nombre total de questions.
-        Le score est converti en pourcentage de compatibilité pour l'affichage.
+      <p style="margin-top:0.75rem">
+        Le score final correspond au nombre de convergences entre les réponses de l'utilisateur et les positions attribuées aux candidats.
       </p>
+    </div>
+
+    <div class="section">
+      <div class="tag">🏆 Classement final</div>
+      <h2>Comment est établi le classement ?</h2>
+      <p>
+        À la fin du test, l'application affiche un classement des candidats selon le score obtenu. Les trois premiers candidats sont mis en avant, mais l'utilisateur peut consulter l'ensemble du classement.
+      </p>
+      <p>
+        Un score élevé signifie une proximité sur les questions posées, pas une recommandation de vote. Le résultat dépend du nombre de questions, des thèmes sélectionnés et de la formulation des dilemmes.
+      </p>
+    </div>
+
+    <div class="section">
+      <div class="tag">⏱️ Formats disponibles</div>
+      <h2>Différents formats de test</h2>
+      <p>L'application propose plusieurs formats :</p>
+      <table class="format-table">
+        <thead>
+          <tr>
+            <th>Format</th>
+            <th>Questions</th>
+            <th>Durée estimée</th>
+            <th>Usage</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Test rapide</strong></td>
+            <td>10 questions</td>
+            <td>≈ 1 minute</td>
+            <td>Indication légère et ludique</td>
+          </tr>
+          <tr>
+            <td><strong>Test standard</strong></td>
+            <td>40 questions</td>
+            <td>≈ 4 à 6 min</td>
+            <td>Résultat plus représentatif</td>
+          </tr>
+          <tr>
+            <td><strong>Test complet</strong></td>
+            <td>100 questions</td>
+            <td>≈ 10 à 15 min</td>
+            <td>Comparaison large sur davantage de thèmes</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="tag">⚠️ Limites de la méthode</div>
+      <h2>Quelles sont les limites de ce test ?</h2>
+      <ul>
+        <li>les positions politiques évoluent avec le temps</li>
+        <li>certains candidats peuvent avoir des positions nuancées qui ne rentrent pas parfaitement dans A ou B</li>
+        <li>certains sujets sont plus importants que d'autres pour certains utilisateurs</li>
+        <li>le test ne prend pas en compte la personnalité, la crédibilité, l'expérience ou la stratégie électorale</li>
+        <li>les positions attribuées doivent être régulièrement vérifiées et mises à jour</li>
+      </ul>
+      <div class="warning-box">
+        <p>L'application doit être comprise comme un <strong>outil pédagogique et comparatif</strong>, pas comme une vérité politique absolue.</p>
+      </div>
     </div>
 
     <div class="section">
       <div class="tag">🔒 Données personnelles</div>
       <h2>Quelles données sont collectées ?</h2>
-      <p>L'application <strong>ne demande aucun compte, aucun nom, aucun email</strong>.</p>
-      <br />
-      <p>Seules les données suivantes sont enregistrées de façon anonyme :</p>
-      <ul>
-        <li>Un identifiant de session aléatoire (généré côté serveur, sans lien avec votre identité)</li>
-        <li>L'identifiant de la question</li>
-        <li>Le choix effectué (A, B ou Neutre)</li>
-        <li>La date et l'heure du vote</li>
-        <li>Le score final par candidat</li>
-      </ul>
-      <br />
+      <p>L'application <strong>ne demande pas de compte, de nom ou d'adresse e-mail</strong>. Les réponses sont associées à un identifiant de session anonyme.</p>
+      <p>Dans cette version, les données servent uniquement à améliorer l'application, comprendre les tendances générales d'utilisation et affiner la qualité des questions.</p>
       <p>
         <strong>Il est impossible de relier les résultats de vote à une personne en particulier.</strong>
         Aucune donnée d'identification (IP, cookie persistant, empreinte navigateur) n'est conservée.
@@ -170,14 +295,14 @@
     </div>
 
     <div class="section">
-      <div class="tag">🎯 Utilisation des données</div>
-      <h2>À quoi servent les données ?</h2>
+      <div class="tag">📂 Transparence</div>
+      <h2>Accéder aux données brutes</h2>
       <p>
-        Les données anonymes servent uniquement à améliorer l'application : 
-        identifier les questions les plus clivantes, ajuster les positions des candidats
-        lorsque les réponses révèlent des incohérences, et mieux refléter les positions 
-        réelles de chacun. Elles ne sont ni vendues, ni partagées avec des tiers.
+        Le fichier complet des 200 questions et des positions attribuées à chaque candidat est disponible en téléchargement. Il contient l'intégralité des données utilisées pour calculer les scores.
       </p>
+      <a href="/downloads/positions_candidats_questions_Q1_Q200_FINAL_complete.xlsx" class="download-btn" download>
+        ⬇ Télécharger le fichier des questions et positions candidates
+      </a>
     </div>
   </div>
 </body>

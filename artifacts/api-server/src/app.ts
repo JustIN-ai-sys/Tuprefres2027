@@ -49,11 +49,11 @@ app.use("/images/candidates", express.static(candidatePhotosDir));
 
 app.use(express.static(publicDir));
 
-app.get("/methodologie", (_req, res) => {
+app.get(["/methodologie", "/api/methodologie"], (_req, res) => {
   res.sendFile(path.join(publicDir, "methodologie.html"));
 });
 
-app.get("/admin", (_req, res) => {
+app.get(["/admin", "/api/admin"], (_req, res) => {
   res.sendFile(path.join(publicDir, "admin.html"));
 });
 

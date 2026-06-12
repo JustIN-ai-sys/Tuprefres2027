@@ -18,10 +18,10 @@
       margin-bottom: 2.5rem;
     }
     .btn-back {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(124,111,247,0.1);
+      border: 1px solid rgba(124,111,247,0.2);
       border-radius: 10px;
-      color: rgba(241,245,249,0.6);
+      color: #7c6ff7;
       width: 38px;
       height: 38px;
       display: flex;
@@ -33,11 +33,11 @@
       transition: background 0.2s;
       flex-shrink: 0;
     }
-    .btn-back:hover { background: rgba(255,255,255,0.1); color: #f1f5f9; }
+    .btn-back:hover { background: rgba(124,111,247,0.18); }
     .page-title {
       font-size: clamp(1.6rem, 5vw, 2.2rem);
       font-weight: 800;
-      background: linear-gradient(135deg, #a5b4fc 0%, #e879f9 100%);
+      background: linear-gradient(135deg, #7c6ff7 0%, #e879f9 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -53,11 +53,11 @@
       text-align: center;
     }
     .login-icon { font-size: 3rem; }
-    .login-title { font-size: 1.2rem; font-weight: 700; }
-    .login-subtitle { font-size: 0.9rem; color: rgba(241,245,249,0.6); }
+    .login-title { font-size: 1.2rem; font-weight: 700; color: #0f172a; }
+    .login-subtitle { font-size: 0.9rem; color: #475569; }
     .login-form {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12);
+      background: white;
+      border: 1px solid rgba(124,111,247,0.15);
       border-radius: 16px;
       padding: 1.5rem;
       width: 100%;
@@ -65,7 +65,7 @@
       display: flex;
       flex-direction: column;
       gap: 1rem;
-      backdrop-filter: blur(20px);
+      box-shadow: 0 2px 16px rgba(0,0,0,0.06);
     }
     .input-group {
       display: flex;
@@ -75,14 +75,14 @@
     .input-group label {
       font-size: 0.82rem;
       font-weight: 600;
-      color: rgba(241,245,249,0.6);
+      color: #334155;
     }
     .input-group input {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.15);
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
       border-radius: 10px;
       padding: 0.75rem 1rem;
-      color: #f1f5f9;
+      color: #0f172a;
       font-size: 0.95rem;
       font-family: inherit;
       outline: none;
@@ -90,10 +90,11 @@
       width: 100%;
     }
     .input-group input:focus {
-      border-color: rgba(99,102,241,0.6);
+      border-color: #7c6ff7;
+      box-shadow: 0 0 0 3px rgba(124,111,247,0.12);
     }
     .error-msg {
-      color: #f87171;
+      color: #dc2626;
       font-size: 0.85rem;
       text-align: center;
       display: none;
@@ -109,39 +110,39 @@
     @media (max-width: 400px) { .stats-grid { grid-template-columns: 1fr; } }
 
     .stat-card {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12);
+      background: white;
+      border: 1px solid rgba(124,111,247,0.12);
       border-radius: 14px;
       padding: 1.25rem;
-      backdrop-filter: blur(20px);
       text-align: center;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
     }
     .stat-value {
       font-size: 2rem;
       font-weight: 800;
-      background: linear-gradient(135deg, #a5b4fc, #e879f9);
+      background: linear-gradient(135deg, #7c6ff7, #e879f9);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
     .stat-label {
       font-size: 0.8rem;
-      color: rgba(241,245,249,0.55);
+      color: #64748b;
       margin-top: 0.3rem;
     }
 
     .section {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12);
+      background: white;
+      border: 1px solid rgba(124,111,247,0.12);
       border-radius: 16px;
       padding: 1.25rem 1.5rem;
       margin-bottom: 1.25rem;
-      backdrop-filter: blur(20px);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
     }
     .section h2 {
       font-size: 0.95rem;
       font-weight: 700;
-      color: #a5b4fc;
+      color: #7c6ff7;
       margin-bottom: 1rem;
     }
 
@@ -150,19 +151,19 @@
       align-items: center;
       justify-content: space-between;
       padding: 0.6rem 0;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
+      border-bottom: 1px solid #f0f0f8;
       font-size: 0.88rem;
     }
     .win-item:last-child { border-bottom: none; }
-    .win-name { font-weight: 600; }
+    .win-name { font-weight: 600; color: #0f172a; }
     .win-count {
-      background: rgba(99,102,241,0.15);
-      border: 1px solid rgba(99,102,241,0.25);
+      background: rgba(124,111,247,0.1);
+      border: 1px solid rgba(124,111,247,0.2);
       border-radius: 100px;
       padding: 0.15rem 0.6rem;
       font-size: 0.78rem;
       font-weight: 700;
-      color: #a5b4fc;
+      color: #7c6ff7;
     }
 
     .votes-table {
@@ -172,25 +173,26 @@
     }
     .votes-table th {
       text-align: left;
-      color: rgba(241,245,249,0.5);
+      color: #64748b;
       font-weight: 600;
       padding: 0 0.5rem 0.6rem;
       font-size: 0.75rem;
     }
     .votes-table td {
       padding: 0.4rem 0.5rem;
-      border-top: 1px solid rgba(255,255,255,0.05);
+      border-top: 1px solid #f0f0f8;
+      color: #334155;
     }
-    .votes-table .q-id { color: rgba(241,245,249,0.5); }
-    .votes-table .v-a { color: #60a5fa; font-weight: 600; }
-    .votes-table .v-b { color: #c084fc; font-weight: 600; }
-    .votes-table .v-n { color: rgba(241,245,249,0.4); }
+    .votes-table .q-id { color: #94a3b8; }
+    .votes-table .v-a { color: #2563eb; font-weight: 600; }
+    .votes-table .v-b { color: #7c6ff7; font-weight: 600; }
+    .votes-table .v-n { color: #94a3b8; }
 
     .logout-btn {
-      background: rgba(239,68,68,0.1);
-      border: 1px solid rgba(239,68,68,0.25);
+      background: rgba(239,68,68,0.08);
+      border: 1px solid rgba(239,68,68,0.2);
       border-radius: 10px;
-      color: #f87171;
+      color: #dc2626;
       font-size: 0.85rem;
       font-weight: 600;
       font-family: inherit;
@@ -198,7 +200,7 @@
       cursor: pointer;
       transition: background 0.2s;
     }
-    .logout-btn:hover { background: rgba(239,68,68,0.18); }
+    .logout-btn:hover { background: rgba(239,68,68,0.14); }
   </style>
 </head>
 <body>
@@ -226,7 +228,7 @@
 
     <div id="stats-section" style="display: none;">
       <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
-        <span style="font-size: 0.8rem; color: rgba(241,245,249,0.45);">Données en temps réel</span>
+        <span style="font-size: 0.8rem; color: #64748b;">Données en temps réel</span>
         <button class="logout-btn" id="btn-logout">Déconnexion</button>
       </div>
 

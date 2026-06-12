@@ -1,0 +1,250 @@
+Modifie la version web de l’application “Tu préfères 2027” avec les améliorations suivantes.
+
+Objectifs :
+
+Corriger les textes peu lisibles : tous les textes placés sur fond clair doivent être foncés.
+Détailler davantage la page Méthodologie.
+Rendre le fichier Excel des 200 questions + positions candidats accessible publiquement en téléchargement.
+Changer la photo de Jean-Luc Mélenchon.
+
+Fichier Excel à rendre public :
+positions_candidats_questions_Q1_Q200_FINAL_complete(1).xlsx
+
+Lisibilité des textes sur fond clair
+
+Parcours tous les fichiers CSS, notamment :
+
+public/style.css
+public/styles.css
+public/app.css
+ou tout autre fichier CSS utilisé par l’app
+
+Corrige les cartes, blocs, boutons secondaires, modales, tableaux, méthodologie, résultat et admin qui utilisent un fond clair ou semi-clair.
+
+Règle à appliquer :
+
+sur fond clair, utiliser une couleur de texte foncée : #0f172a ou #111827
+les textes secondaires sur fond clair doivent utiliser #334155 ou #475569
+éviter le blanc ou gris trop clair sur fond blanc, gris clair ou glassmorphism clair
+
+Ajoute ou corrige notamment ces classes si elles existent :
+
+.light-card,
+.method-card,
+.info-card,
+.result-card,
+.admin-card,
+.modal,
+.white-card,
+.glass-light {
+color: #0f172a;
+}
+
+.light-card p,
+.method-card p,
+.info-card p,
+.result-card p,
+.admin-card p,
+.modal p,
+.white-card p,
+.glass-light p {
+color: #334155;
+}
+
+.light-card h1,
+.light-card h2,
+.light-card h3,
+.method-card h1,
+.method-card h2,
+.method-card h3,
+.info-card h1,
+.info-card h2,
+.info-card h3,
+.result-card h1,
+.result-card h2,
+.result-card h3,
+.admin-card h1,
+.admin-card h2,
+.admin-card h3,
+.modal h1,
+.modal h2,
+.modal h3 {
+color: #0f172a;
+}
+
+Si certaines cartes ont un fond blanc ou rgba(255,255,255,...), vérifie que les titres, paragraphes, labels, liens et petits textes restent lisibles.
+
+Page Méthodologie plus détaillée
+
+Trouve la page ou section Méthodologie, par exemple :
+
+public/methodology.html
+public/methodologie.html
+public/index.html
+public/app.js
+ou une route Express qui sert la méthodologie
+
+Remplace ou complète le contenu par une méthodologie plus détaillée, claire et transparente.
+
+Texte à intégrer :
+
+Titre :
+Méthodologie
+
+Sous-titre :
+Cette application propose un test politique sous forme de dilemmes : à chaque question, l’utilisateur choisit entre deux propositions opposées, ou sélectionne “Neutre”.
+
+Sections à ajouter :
+
+Principe du test
+
+“Tu préfères 2027” n’est pas un sondage électoral et ne prédit pas un vote. L’objectif est de comparer les réponses de l’utilisateur à des positions politiques attribuées aux candidats sur une série de grands thèmes : économie, fiscalité, immigration, sécurité, écologie, institutions, social, Europe, société, santé, éducation et politique étrangère.
+
+Chaque question oppose deux orientations politiques différentes. L’utilisateur choisit l’option dont il se sent le plus proche, ou “Neutre” s’il ne souhaite pas trancher.
+
+Format des questions
+
+Les questions sont formulées sous la forme :
+“Tu préfères [option A] ou [option B] ?”
+
+Chaque option représente une orientation politique possible. Les formulations sont volontairement synthétiques afin de rendre le test rapide et compréhensible. Elles ne résument pas toute la complexité d’un programme politique.
+
+Attribution des positions candidates
+
+Pour chaque question, chaque candidat reçoit une position estimée :
+
+A : le candidat est plutôt aligné avec l’option A
+B : le candidat est plutôt aligné avec l’option B
+N : position neutre, inconnue, ambiguë ou non directement identifiable
+
+Les positions sont établies à partir d’éléments publics : programmes, déclarations, votes, prises de position médiatiques, lignes politiques connues des partis ou mouvements associés. Lorsque l’information est insuffisante ou ambiguë, la position est classée “N”.
+
+Calcul du score
+
+Le calcul est volontairement simple :
+
+si l’utilisateur choisit A, les candidats positionnés A gagnent 1 point
+si l’utilisateur choisit B, les candidats positionnés B gagnent 1 point
+si l’utilisateur choisit Neutre, aucun candidat ne gagne de point
+si un candidat est classé N sur une question, il ne gagne aucun point sur cette question
+
+Le score final correspond au nombre de convergences entre les réponses de l’utilisateur et les positions attribuées aux candidats.
+
+Classement final
+
+À la fin du test, l’application affiche un classement des candidats selon le score obtenu. Les trois premiers candidats sont mis en avant, mais l’utilisateur peut consulter l’ensemble du classement.
+
+Un score élevé signifie une proximité sur les questions posées, pas une recommandation de vote. Le résultat dépend du nombre de questions, des thèmes sélectionnés et de la formulation des dilemmes.
+
+Différents formats de test
+
+L’application propose plusieurs formats :
+
+Test rapide : 10 questions, environ 1 minute
+Test standard : 40 questions, environ 4 à 6 minutes
+Test complet : 100 questions, environ 10 à 15 minutes
+
+Le test rapide donne une indication légère et ludique. Le test standard offre un résultat plus représentatif. Le test complet permet une comparaison plus large sur davantage de thèmes.
+
+Limites de la méthode
+
+Cette méthode a plusieurs limites :
+
+les positions politiques évoluent avec le temps
+certains candidats peuvent avoir des positions nuancées qui ne rentrent pas parfaitement dans A ou B
+certains sujets sont plus importants que d’autres pour certains utilisateurs
+le test ne prend pas en compte la personnalité, la crédibilité, l’expérience ou la stratégie électorale
+les positions attribuées doivent être régulièrement vérifiées et mises à jour
+
+L’application doit donc être comprise comme un outil pédagogique et comparatif, pas comme une vérité politique absolue.
+
+Données personnelles
+
+L’application ne demande pas de compte, de nom ou d’adresse e-mail. Les réponses sont associées à un identifiant de session anonyme. Dans cette version, les données servent uniquement à améliorer l’application, comprendre les tendances générales d’utilisation et affiner la qualité des questions.
+
+Transparence
+
+Ajoute à la fin de la page un bouton de téléchargement public vers le fichier Excel complet :
+
+Texte du bouton :
+Télécharger le fichier des questions et positions candidates
+
+Lien :
+/downloads/positions_candidats_questions_Q1_Q200_FINAL_complete.xlsx
+
+Rendre le fichier Excel public
+
+Crée un dossier public téléchargeable si nécessaire :
+
+public/downloads/
+
+Copie le fichier Excel fourni dans ce dossier avec le nom exact :
+
+positions_candidats_questions_Q1_Q200_FINAL_complete.xlsx
+
+Le fichier doit être accessible publiquement à cette URL :
+
+/downloads/positions_candidats_questions_Q1_Q200_FINAL_complete.xlsx
+
+Vérifie que le serveur Express sert bien les fichiers statiques du dossier public, par exemple :
+
+app.use(express.static("public"));
+
+Si nécessaire, ajoute une route explicite :
+
+app.get("/downloads/positions_candidats_questions_Q1_Q200_FINAL_complete.xlsx", (req, res) => {
+res.download(path.join(__dirname, "public", "downloads", "positions_candidats_questions_Q1_Q200_FINAL_complete.xlsx"));
+});
+
+Attention :
+Ne pas mettre le fichier uniquement dans data/ si ce dossier n’est pas servi publiquement. Il doit être dans public/downloads/.
+
+Changer la photo de Jean-Luc Mélenchon
+
+Cherche dans les données candidates le candidat :
+Jean-Luc Mélenchon
+
+Fichiers possibles :
+
+data/candidates.json
+public/data/candidates.json
+public/app.js
+server.js
+tout fichier contenant les photos ou avatars candidats
+
+Remplace son image actuelle par une nouvelle image plus propre et publique.
+
+Utilise cette URL si le projet accepte les images distantes :
+
+https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Jean-Luc_M%C3%A9lenchon_2022.jpg/512px-Jean-Luc_M%C3%A9lenchon_2022.jpg
+
+Si l’app utilise uniquement des images locales :
+
+télécharge ou ajoute une image locale dans public/assets/candidates/
+nomme-la jean-luc-melenchon.jpg
+remplace la valeur image/photo/avatar de Jean-Luc Mélenchon par :
+/assets/candidates/jean-luc-melenchon.jpg
+
+Conserve son nom exact :
+Jean-Luc Mélenchon
+
+Ne modifie pas les scores ni les positions politiques.
+
+Vérifications finales
+
+Après modification, vérifie :
+
+les textes sur fond clair sont lisibles
+la page Méthodologie est plus longue et structurée
+le bouton de téléchargement Excel apparaît sur la page Méthodologie
+l’URL suivante fonctionne dans le navigateur :
+/downloads/positions_candidats_questions_Q1_Q200_FINAL_complete.xlsx
+la photo de Jean-Luc Mélenchon a bien changé
+aucune route API existante n’est cassée
+l’app démarre toujours avec :
+npm start
+
+Ne supprime aucune donnée existante.
+Ne change pas la logique de scoring.
+Ne change pas les questions.
+Ne change pas les positions candidates.
