@@ -1,11 +1,11 @@
 {
   "expo": {
     "name": "Tu préfères 2027",
-    "slug": "mobile",
+    "slug": "tu-preferes-2027",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "mobile",
+    "scheme": "tu-preferes-2027",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "splash": {
@@ -14,9 +14,14 @@
       "backgroundColor": "#060d1c"
     },
     "ios": {
-      "supportsTablet": false
+      "supportsTablet": false,
+      "bundleIdentifier": "com.realjustin.tupreferes2027",
+      "buildNumber": "1"
     },
-    "android": {},
+    "android": {
+      "package": "com.realjustin.tupreferes2027",
+      "versionCode": 1
+    },
     "web": {
       "favicon": "./assets/images/icon.png"
     },

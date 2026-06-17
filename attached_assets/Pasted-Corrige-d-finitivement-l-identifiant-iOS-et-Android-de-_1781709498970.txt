@@ -1,0 +1,117 @@
+Corrige définitivement l’identifiant iOS et Android de l’app Expo.
+
+Problème actuel :
+Le build iOS a été généré avec le mauvais Bundle Identifier :
+com.realjustin.workspace
+
+L’app doit utiliser exactement :
+
+Android package :
+com.realjustin.tupreferes2027
+
+iOS bundleIdentifier :
+com.realjustin.tupreferes2027
+
+Nom Expo :
+Tu préfères 2027
+
+Slug Expo :
+tu-preferes-2027
+
+Version :
+1.0.0
+
+À faire :
+
+1. Cherche tous les fichiers de configuration Expo :
+
+* app.json
+* app.config.js
+* app.config.ts
+* package.json
+* eas.json
+
+2. Attention :
+   Si app.config.js ou app.config.ts existe, il est prioritaire sur app.json. Il faut donc corriger la configuration réellement utilisée par Expo, pas seulement app.json.
+
+3. La config finale Expo doit contenir exactement :
+
+{
+"expo": {
+"name": "Tu préfères 2027",
+"slug": "tu-preferes-2027",
+"version": "1.0.0",
+"ios": {
+"supportsTablet": false,
+"bundleIdentifier": "com.realjustin.tupreferes2027",
+"buildNumber": "1"
+},
+"android": {
+"package": "com.realjustin.tupreferes2027",
+"versionCode": 1
+}
+}
+}
+
+4. Si les sections ios ou android existent déjà, conserve les champs utiles comme icon, adaptiveIcon, splash, permissions, plugins, experiments, extra.eas.projectId, etc. Mais remplace obligatoirement :
+
+* ios.bundleIdentifier par com.realjustin.tupreferes2027
+* ios.buildNumber par "1"
+* android.package par com.realjustin.tupreferes2027
+* android.versionCode par 1
+* name par Tu préfères 2027
+* slug par tu-preferes-2027
+* version par 1.0.0
+
+5. Vérifie package.json :
+   Si le nom du projet est "workspace", ce n’est pas bloquant pour l’App Store, mais tu peux le remplacer par :
+   "tu-preferes-2027"
+
+Ne casse pas les scripts existants.
+
+6. Vérifie eas.json :
+   Le profil production doit être correct pour iOS et Android.
+   Exemple :
+
+{
+"build": {
+"production": {
+"distribution": "store",
+"android": {
+"buildType": "app-bundle"
+},
+"ios": {
+"simulator": false
+}
+}
+}
+}
+
+7. Ajoute ou garde ce script dans package.json :
+
+"check:expo-config": "npx expo config --type public"
+
+8. Lance ensuite :
+
+npx expo config --type public
+
+La sortie doit contenir exactement :
+name: Tu préfères 2027
+slug: tu-preferes-2027
+version: 1.0.0
+ios.bundleIdentifier: com.realjustin.tupreferes2027
+ios.buildNumber: 1
+android.package: com.realjustin.tupreferes2027
+android.versionCode: 1
+
+9. Très important :
+   La sortie ne doit plus contenir :
+   com.realjustin.workspace
+   workspace
+   version 0.0.0
+
+10. Si la sortie contient encore workspace ou com.realjustin.workspace, cherche quel fichier ou variable écrase la configuration et corrige-le.
+
+Ne change pas la logique de l’app.
+Ne supprime pas les données.
+Ne modifie pas les questions ni les scores.

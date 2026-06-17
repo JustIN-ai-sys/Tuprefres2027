@@ -7,6 +7,12 @@
     },
     "android": {
       "package": "com.realjustin.workspace"
+    },
+    "ios": {
+      "bundleIdentifier": "com.realjustin.workspace",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     }
   }
 }
