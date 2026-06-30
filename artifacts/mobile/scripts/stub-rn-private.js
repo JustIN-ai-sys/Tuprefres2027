@@ -4,11 +4,12 @@ const path = require("path");
 
 const STUB = "module.exports = {};\n";
 
+// __dirname = <repo>/artifacts/mobile/scripts
+// Try all likely node_modules locations in the EAS monorepo layout
 const searchRoots = [
-  // monorepo root node_modules (hoisted)
-  path.resolve(__dirname, "../../node_modules"),
-  // artifacts/mobile local node_modules
-  path.resolve(__dirname, "../node_modules"),
+  path.resolve(__dirname, "../../../node_modules"), // repo root (EAS: /workingdir/build/node_modules)
+  path.resolve(__dirname, "../../node_modules"),    // artifacts/node_modules
+  path.resolve(__dirname, "../node_modules"),       // artifacts/mobile/node_modules
 ];
 
 let count = 0;
