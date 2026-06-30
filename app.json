@@ -1,17 +1,26 @@
 {
   "expo": {
-    "extra": {
-      "eas": {
-        "projectId": "aa027310-9341-4fe2-a213-4b28748a64fa"
-      }
+    "name": "Tu préfères 2027",
+    "slug": "tu-preferes-2027",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "tupreferes2027",
+    "userInterfaceStyle": "automatic",
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.realjustin.tupreferes2027",
+      "buildNumber": "1"
     },
     "android": {
-      "package": "com.realjustin.workspace"
+      "package": "com.realjustin.tupreferes2027v5",
+      "versionCode": 5,
+      "permissions": []
     },
-    "ios": {
-      "bundleIdentifier": "com.realjustin.workspace",
-      "infoPlist": {
-        "ITSAppUsesNonExemptEncryption": false
+    "web": {},
+    "plugins": ["expo-font", "expo-web-browser"],
+    "extra": {
+      "eas": {
+        "projectId": "37d82f39-ae9d-42ab-bcc1-a18db0597a6f"
       }
     }
   }
