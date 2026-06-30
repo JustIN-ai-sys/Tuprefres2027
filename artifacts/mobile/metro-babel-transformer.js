@@ -4,7 +4,7 @@ module.exports = {
   ...upstreamTransformer,
   transform(props) {
     // Skip babel codegen for all virtualview components that break old-arch Flow codegen (RN 0.76+)
-    if (props.filename.includes("/react-native/src/private/components/virtualview/")) {
+    if (props.filename.includes("components/virtualview/")) {
       return { code: "module.exports = {};", map: { version: 3, sources: [], mappings: "" } };
     }
     return upstreamTransformer.transform(props);
