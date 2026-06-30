@@ -7,7 +7,6 @@
     "icon": "./assets/images/icon.png",
     "scheme": "tu-preferes-2027",
     "userInterfaceStyle": "automatic",
-    "newArchEnabled": false,
     "splash": {
       "image": "./assets/images/icon.png",
       "resizeMode": "contain",
