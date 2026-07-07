@@ -16,7 +16,7 @@
     "ios": {
       "supportsTablet": false,
       "bundleIdentifier": "com.realjustin.tupreferes2027",
-      "buildNumber": "1"
+      "buildNumber": "5"
     },
     "android": {
       "package": "com.realjustin.tupreferes2027v5",
