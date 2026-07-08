@@ -2,7 +2,7 @@
   "expo": {
     "name": "Tu préfères 2027",
     "slug": "tu-preferes-2027",
-    "version": "1.0.0",
+    "version": "1.0.2",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "tu-preferes-2027",
