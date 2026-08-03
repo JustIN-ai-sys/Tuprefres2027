@@ -9,17 +9,13 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import React, { useEffect } from "react";
-import { View } from "react-native";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { QuizProvider } from "@/contexts/QuizContext";
 
-try {
-  SplashScreen.preventAutoHideAsync();
-} catch (e) {
-  console.error("SplashScreen error:", e);
-}
+SplashScreen.preventAutoHideAsync().catch(() => {});
 
 const queryClient = new QueryClient();
 
@@ -53,11 +49,11 @@ export default function RootLayout() {
     <SafeAreaProvider>
       <ErrorBoundary>
         <QueryClientProvider client={queryClient}>
-          <View style={{ flex: 1 }}>
+          <GestureHandlerRootView style={{ flex: 1 }}>
             <QuizProvider>
               <RootLayoutNav />
             </QuizProvider>
-          </View>
+          </GestureHandlerRootView>
         </QueryClientProvider>
       </ErrorBoundary>
     </SafeAreaProvider>
