@@ -15,8 +15,6 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { QuizProvider } from "@/contexts/QuizContext";
 
-SplashScreen.preventAutoHideAsync().catch(() => {});
-
 const queryClient = new QueryClient();
 
 function RootLayoutNav() {
@@ -38,8 +36,12 @@ export default function RootLayout() {
   });
 
   useEffect(() => {
+    SplashScreen.preventAutoHideAsync().catch(() => {});
+  }, []);
+
+  useEffect(() => {
     if (fontsLoaded || fontError) {
-      SplashScreen.hideAsync();
+      SplashScreen.hideAsync().catch(() => {});
     }
   }, [fontsLoaded, fontError]);
 
