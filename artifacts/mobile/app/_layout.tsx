@@ -7,7 +7,6 @@ import {
 } from "@expo-google-fonts/inter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Stack } from "expo-router";
-import * as SplashScreen from "expo-splash-screen";
 import React, { useEffect } from "react";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { SafeAreaProvider } from "react-native-safe-area-context";
@@ -36,12 +35,8 @@ export default function RootLayout() {
   });
 
   useEffect(() => {
-    SplashScreen.preventAutoHideAsync().catch(() => {});
-  }, []);
-
-  useEffect(() => {
     if (fontsLoaded || fontError) {
-      SplashScreen.hideAsync().catch(() => {});
+      // Splash screen closes automatically, fonts are ready
     }
   }, [fontsLoaded, fontError]);
 
