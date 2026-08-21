@@ -16,11 +16,11 @@
     "ios": {
       "supportsTablet": false,
       "bundleIdentifier": "com.realjustin.tupreferes2027",
-      "buildNumber": "34"
+      "buildNumber": "35"
     },
     "android": {
       "package": "com.realjustin.tupreferes2027v5",
-      "versionCode": 34
+      "versionCode": 35
     },
     "web": {
       "favicon": "./assets/images/icon.png"

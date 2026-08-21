@@ -1,6 +1,7 @@
 import { Stack } from "expo-router";
 import React from "react";
 import { View } from "react-native";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 
@@ -16,10 +17,12 @@ function RootLayoutNav() {
 
 export default function RootLayout() {
   return (
-    <View style={{ flex: 1 }}>
-      <ErrorBoundary>
-        <RootLayoutNav />
-      </ErrorBoundary>
-    </View>
+    <SafeAreaProvider>
+      <View style={{ flex: 1 }}>
+        <ErrorBoundary>
+          <RootLayoutNav />
+        </ErrorBoundary>
+      </View>
+    </SafeAreaProvider>
   );
 }
